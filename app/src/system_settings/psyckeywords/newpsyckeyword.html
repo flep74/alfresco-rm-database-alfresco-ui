@@ -1,0 +1,28 @@
+<md-dialog aria-label="Omdøb">
+    <form name="renameForm" ng-submit="vm.addNew(newEntry)">
+
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>{{'COMMON.RENAME' | translate}}</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cancel()">
+                    <i class="material-icons" aria-label="Luk dialogboks">close</i>
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content class="md-padding">
+            <md-input-container class="md-block">
+                <label>{{'MEMBER.NAME' | translate}}</label>
+                <input ng-model="newEntry" md-autofocus required>
+            </md-input-container>
+        </md-dialog-content>
+
+        <md-dialog-actions>
+            <md-button type="submit" class="md-primary"  aria-label="{{'COMMON.RENAME' | translate}}">{{'COMMON.RENAME' | translate}}</md-button>
+            <md-button class="md-primary" ng-click="vm.cancelDialog();" >
+                {{'COMMON.CANCEL'  | translate }}
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

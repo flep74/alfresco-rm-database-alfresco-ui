@@ -16,7 +16,18 @@ function DeclarationController($scope, propertyService, $rootScope, HeaderServic
     });
   }
 
+  function gotoPsyc() {
+    $state.go('declaration.show.psyc', {
+      breadcrumbPath: [],
+      tmpNodeRef: null,
+      emailPayload: null,
+    }).then(function (response) {
+      console.log(response)
+    });
+  }
+
   $scope.gotoDocuments = gotoDocuments;
+  $scope.gotoPsyc = gotoPsyc;
 
 
 

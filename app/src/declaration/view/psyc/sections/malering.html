@@ -1,0 +1,29 @@
+<style>
+    .oneormore {
+        font-weight: bold;
+    }
+</style>
+
+<md-card>
+    <md-card-title>
+        <md-card-title-text>
+            <span class="md-headline">Psykologisk vurdering af forekomst af malingering</span>
+        </md-card-title-text>
+    </md-card-title>
+    <md-card-content>
+        <div layout="row">
+
+            <md-input-container class="md-block" flex>
+                <label ng-show="vm.oneormoreForeMalering" class="oneormore" >Psykologisk vurdering af forekomst af malingering</label>
+                <label ng-hide="vm.oneormoreForeMalering" >Psykologisk vurdering af forekomst af malingering</label>
+                <input ng-model="vm.PsycInstruments" maxlength="10" minlength="10" name="cprNo" ng-disabled="true">
+            </md-input-container>
+
+            <md-button class="md-icon-button" ng-click="vm.viewButton2(vm.PROP_PSYC_LIBRARY_PSYCH_MALERING)" ">
+                <md-icon>edit</md-icon>
+            </md-button>
+
+        </div>
+
+    </md-card-content>
+</md-card>

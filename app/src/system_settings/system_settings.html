@@ -12,9 +12,17 @@
             </li>
 
 
-                <li ng-hide="vm.bua" class="nav-list__item" ng-if="userRoles.indexOf('TemplateFolderValueManager') > -1 || userRoles.indexOf('SiteManager') > -1" aria-label="Rapporter">
-                <a ui-sref="administration.deleteobs" ng-click="vm.changePageHeading('reports')" class="nav-list__link"><md-icon>content_copy</md-icon>Slet Observand</a>
-                </li>
+            <li ng-hide="vm.bua" class="nav-list__item" ng-if="userRoles.indexOf('TemplateFolderValueManager') > -1 || userRoles.indexOf('SiteManager') > -1" aria-label="Rapporter">
+            <a ui-sref="administration.deleteobs" ng-click="vm.changePageHeading('reports')" class="nav-list__link"><md-icon>content_copy</md-icon>Slet Observand</a>
+            </li>
+
+            <li ng-hide="vm.bua" class="nav-list__item" ng-if="userRoles.indexOf('TemplateFolderValueManager') > -1 || userRoles.indexOf('SiteManager') > -1" aria-label="Rapporter">
+                <a ui-sref="administration.psyckeywords" ng-click="vm.changePageHeading('reports')" class="nav-list__link"><md-icon>content_copy</md-icon>Vedligehold psykolog udtryk</a>
+            </li>
+
+            <li ng-hide="vm.bua" class="nav-list__item" ng-if="userRoles.indexOf('TemplateFolderValueManager') > -1 || userRoles.indexOf('SiteManager') > -1" aria-label="Rapporter">
+                <a ui-sref="administration.forceunlock" ng-click="vm.changePageHeading('reports')" class="nav-list__link"><md-icon>content_copy</md-icon>Fjern lås på sag</a>
+            </li>
 
             <li class="nav-list__item" ng-if="userRoles.indexOf('TemplateFolderValueManager') > -1 || userRoles.indexOf('SiteManager') > -1" aria-label="Dokumentskabeloner">
                 <a ui-sref="administration.document_templates" ng-click="vm.changePageHeading('document_templates')" class="nav-list__link"><md-icon>content_copy</md-icon>Dokumentskabeloner</a>

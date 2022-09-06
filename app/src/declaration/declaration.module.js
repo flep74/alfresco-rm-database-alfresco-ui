@@ -74,27 +74,40 @@ function config($stateProvider) {
       },
       redirectTo: 'declaration.show.patientdata'
     })
-    .state('declaration.show.documents', {
-      url: '/dokumenter',
-      params: {
-        path: "/Sites/retspsyk/documentLibary",
-        breadcrumbPath: [],
+      .state('declaration.show.documents', {
+        url: '/dokumenter',
+        params: {
+          path: "/Sites/retspsyk/documentLibary",
+          breadcrumbPath: [],
           tmpNodeRef: null,
-        emailPayload : {},
-        selectedFiles : {},
-        init : false,
-        selectedDefaultBody : {}
+          emailPayload : {},
+          selectedFiles : {},
+          init : false,
+          selectedDefaultBody : {}
 
 
-      },
-      views: {
-        'declarations': {
-          templateUrl: 'app/src/declaration/view/documents.html',
-          controller: 'DeclarationDocumentController',
-          controllerAs: 'vm'
+        },
+        views: {
+          'declarations': {
+            templateUrl: 'app/src/declaration/view/documents.html',
+            controller: 'DeclarationDocumentController',
+            controllerAs: 'vm'
+          }
         }
-      }
-    })
+      })
+      .state('declaration.show.psyc', {
+        url: '/psyc',
+        params: {
+          caseData: {}
+        },
+        views: {
+          'declarations': {
+            templateUrl: 'app/src/declaration/view/psyc/info.html',
+            controller: 'DeclarationPsycController',
+            controllerAs: 'vm'
+          }
+        }
+  })
     .state('declaration.show.patientdata', {
       url: '/patientdata',
       params: {

@@ -1,0 +1,31 @@
+<form name="psyc" ng-hide="isLoading">
+
+    <div layout="row" layout-wrap>
+
+        <div layout="column" flex-gt-sm="35" flex-sm="50" flex="100">
+            <ng-include src="'app/src/declaration/view/psyc/sections/psykunder.html'"></ng-include>
+            <ng-include src="'app/src/declaration/view/psyc/sections/undersogelsesintrumenter.html'"></ng-include>
+        </div>
+
+        <div layout="column" flex-gt-sm="35" flex-sm="50"flex="100">
+            <ng-include src="'app/src/declaration/view/psyc/sections/malering.html'"></ng-include>
+            <ng-include src="'app/src/declaration/view/psyc/sections/konklusion.html'"></ng-include>
+        </div>
+
+
+
+<!--        <div layout="column" flex-gt-sm="25" flex-sm="50" flex="100">-->
+<!--            <ng-include src="'app/src/declaration/view/sections/declaration.html'"></ng-include>-->
+<!--            <ng-include src="'app/src/declaration/view/sections/icd-10.html'"></ng-include>-->
+<!--        </div>-->
+
+<!--        <div layout="column" flex-gt-sm="25" flex-sm="50" flex="100">-->
+<!--            <ng-include src="'app/src/declaration/view/sections/judgement.html'"></ng-include>-->
+<!--        </div>-->
+
+<!--        <div layout="column" flex-gt-sm="25" flex-sm="50" flex="100">-->
+<!--            <ng-include src="'app/src/declaration/view/sections/doctor-board.html'"></ng-include>-->
+<!--            <ng-include src="'app/src/declaration/view/sections/history.html'"></ng-include>-->
+<!--        </div>-->
+    </div>
+</form>

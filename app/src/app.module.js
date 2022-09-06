@@ -7,6 +7,7 @@ angular
         'ngMessages',
         'ngCookies',
         'ui.router',
+        'angular.filter',
         'rt.encodeuri',
         'ngResource',
         'pdf',

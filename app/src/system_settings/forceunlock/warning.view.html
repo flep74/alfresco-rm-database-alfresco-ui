@@ -1,5 +1,5 @@
 <md-dialog aria-label="upload-files">
-    <form name="uploadForm" ng-submit="deleteObs()">
+    <form name="uploadForm" ng-submit="dum()">
         <md-toolbar>
             <div class="md-toolbar-tools">
                 <h2>{{'COMMON.DELETEOBS' | translate  }}</h2>
@@ -15,10 +15,7 @@
 
 
             <ul>
-          Observanden med cpr: {{ cpr }}, navn: {{ navn }} og sagsnummer: {{ sagsnr}} slettes. Der er ikke mulighed for efterfølgende at fortryde.
-            </ul>
-            <ul>
-                Sagsnummeret bliver ikke genbrugt næste gang der oprettes en observand.
+          Ophæv lås på observanden med cpr: {{ cpr }}, navn: {{ navn }} og sagsnummer: {{ sagsnr}}
             </ul>
 
         </md-dialog-content>
@@ -26,8 +23,8 @@
         <md-dialog-actions>
 
 
-            <md-button class="md-primary" type="submit" ng-disabled="vm.files.length == 0 || vm.uploading">
-                {{'COMMON.DELETEOBS'  | translate }}
+            <md-button class="md-primary" ng-click="vm.removeLock();">
+                LÅS OP
             </md-button>
 
             <md-button class="md-primary" ng-click="vm.cancelDialog();" >

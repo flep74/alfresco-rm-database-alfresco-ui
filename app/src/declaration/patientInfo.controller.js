@@ -77,8 +77,6 @@ function PatientInfoController($scope, $state, $stateParams, $mdDialog, Declarat
 
 //show/hide flag for normal or bua users
 	DeclarationService.isBUAUser().then(function(response) {
-		console.log("to be bua or not to be?...");
-		console.log(response);
 		vm.isBua = response;
 	});
 
@@ -137,15 +135,14 @@ function PatientInfoController($scope, $state, $stateParams, $mdDialog, Declarat
 				vm.afslutwarning_rulingDate = ($scope.case.rulingDate == undefined);
 				vm.afslutwarning_rulingCourt = ($scope.case.rulingCourt == undefined);
 
-				console.log("hvad er vm.afslutwarning_rulingCourt");
-				console.log(vm.afslutwarning_rulingCourt);
-
 				Toast.show('Følgende felter mangler at blive udfyldt');
 			}
 			else {
 				DeclarationService.makeDeclarationDocument($scope.case)
 					.then(function (response) {
-						$state.go('document', {doc: response.id});
+
+						Toast.show('Erklæringsdokumentet blev oprettet');
+						// $state.go('document', {doc: response.id});
 					});
 			}
 		}
@@ -418,8 +415,6 @@ function PatientInfoController($scope, $state, $stateParams, $mdDialog, Declarat
 
 	function canAccessUndoCloseCase() {
 		var roles = authService.getUserRoles();
-		console.log("roles");
-		console.log(roles);
 
 		if (!roles) return false;
 
@@ -432,7 +427,7 @@ function PatientInfoController($scope, $state, $stateParams, $mdDialog, Declarat
 	$scope.canAccessUndoCloseCase = canAccessUndoCloseCase;
 
     $scope.unlockCase = function () {
-console.log("duff");
+
 
 		if (($scope.unlockCaseParams == 'undoCloseCase')) {
 			$mdDialog.cancel();
@@ -751,7 +746,6 @@ console.log("duff");
 	}
 
 	$scope.afbryd = function () {
-    	console.log("true");
 		vm.afslutwarning = true;
         $mdDialog.cancel();
 	}

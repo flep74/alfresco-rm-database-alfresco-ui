@@ -58,10 +58,13 @@ function DocumentController($scope, documentService, $stateParams, $state,
           var splittedpath = vm.doc.location.path.split('/');
           var id = splittedpath[4];
 
-          console.log("er tmpcrumb corrupt?: ");
-          console.log($stateParams.tmpcrumb);
+          if (id != undefined) {
+            $state.go('declaration.show.documents', { caseid: id, breadcrumbPath: $stateParams.tmpcrumb, tmpNodeRef : $stateParams.tmpNodeRef });
+          }
+          else {
+            $window.history.back();
+          }
 
-          $state.go('declaration.show.documents', { caseid: id, breadcrumbPath: $stateParams.tmpcrumb, tmpNodeRef : $stateParams.tmpNodeRef });
       }
   }
   vm.back = back;
@@ -70,6 +73,7 @@ function DocumentController($scope, documentService, $stateParams, $state,
       var splittedpath = vm.doc.location.path.split('/');
       var id = splittedpath[4];
       $state.go('declaration.show.documents', { caseid: id });
+
   }
   vm.backToCase = backToCase;
 

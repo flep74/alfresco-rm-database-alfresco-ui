@@ -89,6 +89,7 @@ function AdvancedSearchController($scope, $state, $templateCache, $mdDialog, $tr
 
   $scope.searchParams.bua = "PS";
   $scope.searchParams.closed = "CLOSED";
+  $scope.searchParams.koen = "alle";
 
   if (Object.keys($stateParams.searchquery).length) {
         $scope.searchParams = $stateParams.searchquery;
@@ -392,6 +393,10 @@ function AdvancedSearchController($scope, $state, $templateCache, $mdDialog, $tr
   }
 
   function advancedSearch(skip, max, query, preview) {
+
+    console.log("hvad er query?");
+    console.log(query);
+
     clean(query);
     vm.isLoading = true;
     query.createdFromDate= $filter('date')(query.createdFromDate,'yyyy-MM-dd');

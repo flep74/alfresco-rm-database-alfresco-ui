@@ -333,6 +333,17 @@
                                     </md-input-container>
                                 </div>
 
+                                <div ng-show="searchParams.evalAll">
+                                <md-input-container class="md-block">
+                                    <label>Køn</label>
+                                    <md-select ng-model="searchParams.koen">
+                                        <md-option ng-value="'K'">kvinde</md-option>
+                                        <md-option ng-value="'M'">mand</md-option>
+                                        <md-option ng-value="'alle'" >alle</md-option>
+                                    </md-select>
+                                </md-input-container>
+                                </div>
+
                             </div>
 
 

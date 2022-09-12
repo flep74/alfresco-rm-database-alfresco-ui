@@ -58,9 +58,17 @@ function DocumentController($scope, $mdDialog, $stateParams, DeclarationService,
       HeaderService.addAction('COMMON.DELETE', 'delete', deleteContent)
     }
 
+    HeaderService.addAction('GENVEJ TIL FLOWCHART', 'bar_chart', flowchart)
     HeaderService.addAction('COMMON.NEW_FOLDER', 'create_new_folder', newFolderDialog)
     HeaderService.addAction('CONTENT.NEW_DOCUMENT', 'file_upload', uploadDialog)
   }
+
+
+  function flowchart() {
+    $state.go('flowchart', { declarationShortcutId: null })
+  }
+
+
 
   function newFolderDialog() {
     $mdDialog.show({

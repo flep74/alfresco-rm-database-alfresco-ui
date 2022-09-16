@@ -495,7 +495,7 @@ function PatientInfoController($scope, $state, $stateParams, $mdDialog, Declarat
 									});
 								}
 								else {
-									HeaderService.addAction('DECLARATION.SAVE_AND_LOCK', 'save', lockCaseDialog)
+//									HeaderService.addAction('DECLARATION.SAVE_AND_LOCK', 'save', lockCaseDialog)
 									HeaderService.addAction('COMMON.SAVE', 'save', saveCase)
 								}
 

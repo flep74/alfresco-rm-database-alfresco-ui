@@ -349,7 +349,7 @@ function AdvancedSearchController($scope, $state, $templateCache, $mdDialog, $tr
 
 
     $mdDialog.show({
-      templateUrl: 'app/src/declaration/view/psyc/sections/popupSearch.html',
+      templateUrl: 'app/src/declaration/view/psyc/sections/popupSearch2.html',
       scope: $scope, // use parent scope in template
       preserveScope: true, // do not forget this if use parent scope
       clickOutsideToClose: false

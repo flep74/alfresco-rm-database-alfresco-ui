@@ -47,6 +47,10 @@ function DocumentController($scope, $mdDialog, $stateParams, DeclarationService,
         const nodeRef = response['store-protocol'] + '://' + response['store-identifier'] + '/' + response['node-uuid']
         ContentService.setCurrentFolderNodeRef(nodeRef);
         $scope.folderUuid = response['node-uuid'];
+
+        $scope.nodeUID = response['node-uuid'];
+
+
       })
   }
 
@@ -65,7 +69,37 @@ function DocumentController($scope, $mdDialog, $stateParams, DeclarationService,
 
 
   function flowchart() {
-    $state.go('flowchart', { declarationShortcutId: null })
+
+    DeclarationService.getStateOfDeclaration($scope.vm.$resolve.$stateParams.caseid).then (function(stateReponse) {
+
+        console.log("hvad er stateReponse.data.state")
+        console.log($scope.vm.$resolve.$stateParams);
+        console.log($scope.vm.$resolve.$stateParams);
+        console.log($scope.vm.$resolve.$stateParams);
+
+
+
+            //fejl $scope.case["node-uuid"]
+
+
+
+        $state.go('flowchart', { declarationShortcutId: $scope.nodeUID, category: stateReponse.data.state });
+    });
+
+
+
+
+    //$state.go('flowchart', { declarationShortcutId: null })
+
+    // gå til observand
+
+
+
+//    console.log('hvad er $scope');
+//    console.log($scope);
+//    console.log($scope.vm.$resolve.$stateParams.caseid);
+//    console.log($scope);
+
   }
 
 

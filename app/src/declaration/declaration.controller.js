@@ -4,13 +4,17 @@ angular
   .module('openDeskApp.declaration')
   .controller('DeclarationController', DeclarationController);
 
-function DeclarationController($scope, propertyService, $rootScope, HeaderService, $mdDialog, $state, $stateParams) {
+function DeclarationController($scope, propertyService, $rootScope, HeaderService, $mdDialog, $state, $stateParams, DeclarationService) {
+
+  console.log("hvad er $stateParams");
+  console.log($stateParams)
+
 
   function gotoDocuments() {
     $state.go('declaration.show.documents', {
       breadcrumbPath: [],
       tmpNodeRef: null,
-      emailPayload: null,
+      emailPayload: null
     }, {reload: true}).then(function (response) {
       console.log(response)
     });

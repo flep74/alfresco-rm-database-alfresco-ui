@@ -332,18 +332,6 @@
                                         <md-datepicker ng-model="searchParams.declarationToDate"></md-datepicker>
                                     </md-input-container>
                                 </div>
-
-                                <div ng-show="searchParams.evalAll">
-                                <md-input-container class="md-block">
-                                    <label>Køn</label>
-                                    <md-select ng-model="searchParams.koen">
-                                        <md-option ng-value="'K'">kvinde</md-option>
-                                        <md-option ng-value="'M'">mand</md-option>
-                                        <md-option ng-value="'alle'" >alle</md-option>
-                                    </md-select>
-                                </md-input-container>
-                                </div>
-
                             </div>
 
 
@@ -452,6 +440,18 @@
                             <md-option ng-value="'risikovurderingsinstrumenter'" >Risikovurderingsinstrumenter</md-option>
                             <md-option ng-value="'psykologisk_vurdering_af_forekomst_af_malingering'" >Psykologisk vurdering af forekomst af malingering</md-option>
                             <md-option ng-value="'konklusion_tags'" >Standard formuleringer</md-option>
+                        </md-select>
+                    </md-input-container>
+
+
+
+
+                    <md-input-container class="md-block">
+                        <label>Køn</label>
+                        <md-select ng-model="searchParams.koen">
+                            <md-option ng-value="'K'">kvinde</md-option>
+                            <md-option ng-value="'M'">mand</md-option>
+                            <md-option ng-value="'alle'" >alle</md-option>
                         </md-select>
                     </md-input-container>
 

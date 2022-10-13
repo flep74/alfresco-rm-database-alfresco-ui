@@ -107,6 +107,8 @@ function PatientInfoController($scope, $state, $stateParams, $mdDialog, Declarat
 
 	activated();
 
+
+
 	function makeDeclarationDocument() {
 
 		// check if all mandatory fields have been completed
@@ -241,6 +243,9 @@ function PatientInfoController($scope, $state, $stateParams, $mdDialog, Declarat
         }
 
 		// only show button for flowchart if it has a state that will make it visible inside the flowchart
+
+		console.log("hvad er $scope.case");
+                console.log($scope.case.status);
 
 		DeclarationService.getStateOfDeclaration(response.caseNumber).then (function(stateReponse) {
 

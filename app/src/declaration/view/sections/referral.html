@@ -123,25 +123,70 @@
         </md-input-container>
         </div>
 
-        <md-radio-group ng-model="case.declarationType" ng-disabled="!editPatientData">
-            <md-radio-button value="kendelse" class="md-primary">Kendelse</md-radio-button>
-            <md-radio-button value="samtykke">Samtykke</md-radio-button>
-        </md-radio-group>
 
 
-        <div ng-if="case.declarationType === 'kendelse'">
+        <div ng-if="case.status != 'Indlagt til observation'">
+
+            <md-radio-group ng-model="case.declarationType" ng-disabled="!editPatientData">
+                <md-radio-button value="kendelse" class="md-primary">Kendelse</md-radio-button>
+                <md-radio-button value="samtykke">Samtykke</md-radio-button>
+            </md-radio-group>
+
+
+            <div ng-if="case.declarationType === 'kendelse'">
+
+                <div ng-hide="vm.afslutwarning_rulingDate">
+                    <div layout="row">
+                        <md-input-container flex>
+                            <label>Kendelsesdato</label>
+                            <md-datepicker ng-model="case.rulingDate" ng-disabled="!editPatientData"></md-datepicker>
+                        </md-input-container>
+                    </div>
+                </div>
+
+                <div ng-show="vm.afslutwarning_rulingDate">
+                    <div class="ghostbusters">
+                        <div layout="row">
+                            <md-input-container flex>
+                                <label>Kendelsesdato</label>
+                                <md-datepicker ng-model="case.rulingDate" ng-disabled="!editPatientData"></md-datepicker>
+                            </md-input-container>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div ng-hide="vm.afslutwarning_rulingCourt">
+                    <md-input-container class="md-block">
+                        <label>Retten i</label>
+                        <input ng-model="case.rulingCourt" ng-disabled="!editPatientData">
+                    </md-input-container>
+                </div>
+
+                <div ng-show="vm.afslutwarning_rulingCourt">
+                    <div class="ghostbusters">
+                        <md-input-container class="md-block">
+                            <label>Retten i</label>
+                            <input ng-model="case.rulingCourt" ng-disabled="!editPatientData">
+                        </md-input-container>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+
+
+
+        <div ng-if="case.status === 'Indlagt til observation'">
+
+            <md-radio-group ng-model="case.declarationType" ng-disabled="!editPatientData">
+                <md-radio-button value="kendelse" class="md-primary">Kendelse</md-radio-button>
+<!--                <md-radio-button value="samtykke">Samtykke</md-radio-button>-->
+            </md-radio-group>
+
 
             <div ng-hide="vm.afslutwarning_rulingDate">
-            <div layout="row">
-                <md-input-container flex>
-                    <label>Kendelsesdato</label>
-                    <md-datepicker ng-model="case.rulingDate" ng-disabled="!editPatientData"></md-datepicker>
-                </md-input-container>
-            </div>
-            </div>
-
-            <div ng-show="vm.afslutwarning_rulingDate">
-                <div class="ghostbusters">
                 <div layout="row">
                     <md-input-container flex>
                         <label>Kendelsesdato</label>
@@ -149,26 +194,37 @@
                     </md-input-container>
                 </div>
             </div>
+
+            <div ng-show="vm.afslutwarning_rulingDate">
+                <div class="ghostbusters">
+                    <div layout="row">
+                        <md-input-container flex>
+                            <label>Kendelsesdato</label>
+                            <md-datepicker ng-model="case.rulingDate" ng-disabled="!editPatientData"></md-datepicker>
+                        </md-input-container>
+                    </div>
+                </div>
             </div>
 
 
 
             <div ng-hide="vm.afslutwarning_rulingCourt">
-            <md-input-container class="md-block">
-                <label>Retten i</label>
-                <input ng-model="case.rulingCourt" ng-disabled="!editPatientData">
-            </md-input-container>
-            </div>
-
-            <div ng-show="vm.afslutwarning_rulingCourt">
-                <div class="ghostbusters">
                 <md-input-container class="md-block">
                     <label>Retten i</label>
                     <input ng-model="case.rulingCourt" ng-disabled="!editPatientData">
                 </md-input-container>
+            </div>
+
+            <div ng-show="vm.afslutwarning_rulingCourt">
+                <div class="ghostbusters">
+                    <md-input-container class="md-block">
+                        <label>Retten i</label>
+                        <input ng-model="case.rulingCourt" ng-disabled="!editPatientData">
+                    </md-input-container>
                 </div>
             </div>
         </div>
         </div>
+
     </md-card-content>
 </md-card>

@@ -47,7 +47,6 @@ function DeclarationCreateController($scope, $state, $translate, DeclarationServ
     }
 }
 
-
   function lookupCPR() {
     cprService.getCPRData($scope.case.cprNumber)
       .then(function (response) {

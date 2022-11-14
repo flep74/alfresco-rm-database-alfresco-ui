@@ -125,7 +125,7 @@
 
 
 
-        <div ng-if="case.status != 'Indlagt til observation'">
+        <div ng-if="case.status != 'Indlagt til observation' && case.status != 'Gr-Indlagt til observation'">
 
             <md-radio-group ng-model="case.declarationType" ng-disabled="!editPatientData">
                 <md-radio-button value="kendelse" class="md-primary">Kendelse</md-radio-button>
@@ -178,7 +178,7 @@
 
 
 
-        <div ng-if="case.status === 'Indlagt til observation'">
+        <div ng-if="case.status === 'Indlagt til observation' || case.status === 'Gr-Indlagt til observation'">
 
             <md-radio-group ng-model="case.declarationType" ng-disabled="!editPatientData">
                 <md-radio-button value="kendelse" class="md-primary">Kendelse</md-radio-button>

@@ -45,6 +45,7 @@ function AdvancedSearchController($scope, $state, $translate, DeclarationService
   vm.selectedSUPERVISOR = null;
   vm.selectedSanctionProposal = null;
 
+  vm.showSearch = {};
 
   $scope.searchParams.bua = "PS";
   $scope.searchParams.closed = "CLOSED";
@@ -204,8 +205,19 @@ function AdvancedSearchController($scope, $state, $translate, DeclarationService
 
           angular.forEach(response.entries, entry => {
             vm.searchResults.push(entry);
-
           });
+
+          console.log("hvad er query")
+          console.log(query)
+          console.log($scope)
+
+          if (query.createdFromDate != undefined ) {
+          console.log("jeg sætter noget...")
+            vm.showSearch.h = query.createdFromDate;
+          }
+
+
+
         }
       })
   }

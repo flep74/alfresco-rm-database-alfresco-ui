@@ -203,6 +203,10 @@ function PatientInfoController($scope, $state, $stateParams, $mdDialog, Declarat
 	}
 
 	function activated() {
+
+	    console.log("hvad er $stateParams.caseData");
+	    console.log($stateParams.caseData);
+
 		if (Object.keys($stateParams.caseData).length) {
 			setEverything($stateParams.caseData)
 		} else {
@@ -214,6 +218,9 @@ function PatientInfoController($scope, $state, $stateParams, $mdDialog, Declarat
 	}
 
 	function setEverything(response) {
+
+        console.log("set everything");
+        console.log(response);
 
 		$scope.case = response;
 		var bua = response.bua ? ' (BUA)' : '';

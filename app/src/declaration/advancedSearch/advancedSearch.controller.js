@@ -431,15 +431,15 @@ function AdvancedSearchController($scope, $state, $templateCache, $mdDialog, $tr
 
           // setup the display of criteries
 
-    vm.showCriteria = "";
+          vm.showCriteria = "";
 
           if (query.createdFromDate != undefined && query.createdToDate != undefined) {
             vm.showCriteria = vm.showCriteria + "periode=" + query.createdFromDate + " - " + query.createdToDate + ", "
           }
-          else if ( (query.createdFromDate != undefined) && (query.createdToDate = undefined)) {
+          else if ( (query.createdFromDate != undefined) && (query.createdToDate == undefined)) {
             vm.showCriteria = vm.showCriteria + "periode=" + query.createdFromDate + " - " + ", "
           }
-          else if (query.createdFromDate = undefined && query.createdToDate != undefined) {
+          else if (query.createdFromDate == undefined && query.createdToDate != undefined) {
             vm.showCriteria = vm.showCriteria + "periode=" + " - " + query.createdToDate + ", "
           }
 
@@ -456,6 +456,112 @@ function AdvancedSearchController($scope, $state, $templateCache, $mdDialog, $tr
           else  {
             vm.showCriteria = vm.showCriteria + " sagsstatus=åben" + ", "
           }
+
+          if (query.mainCharge.length > 0) {
+            vm.showCriteria = vm.showCriteria + "hovedsigtelse=" + query.mainCharge + ", "
+          }
+
+          if (query.mainDiagnosis.length > 0) {
+            vm.showCriteria = vm.showCriteria + "hoveddiagnose=" + query.mainDiagnosis + ", "
+          }
+
+        if (query.placement.length > 0) {
+            vm.showCriteria = vm.showCriteria + "placering=" + query.placement + ", "
+        }
+
+        if (!query.sanctionProposal) {
+            vm.showCriteria = vm.showCriteria + "sanktionsforslag=" + query.sanctionProposal + ", "
+        }
+
+        if (query.sanctionProposal.length > 0) {
+            vm.showCriteria = vm.showCriteria + "sanktionsforslag=" + query.sanctionProposal + ", "
+        }
+
+
+        if (query.waitingTime != undefined) {
+            var ventetid = "";
+            if (query.waitingTime.time == "total") {
+                ventetid = "samlet ventetid "
+            }
+            else if (query.waitingTime.time == "active") {
+                ventetid = "aktiv ventetid "
+            }
+            else if (query.waitingTime.time == "passive") {
+                ventetid = "passiv ventetid "
+            }
+
+            var modifier = "";
+            if (query.waitingTime.modifier == "equal") {
+                modifier = "lig med "
+            }
+            else if (query.waitingTime.modifier == "over") {
+                modifier = "over "
+            }
+            else if (query.waitingTime.modifier == "under") {
+                modifier = "under "
+            }
+            var output = ventetid  + modifier + query.waitingTime.days + " dage";
+            vm.showCriteria = vm.showCriteria + "ventetid=" + output + ", "
+        }
+
+        if (query.status.length > 0) {
+            vm.showCriteria = vm.showCriteria + "retslig status=" + query.status + ", "
+        }
+
+        if (query.evalAll) {
+            vm.showCriteria = vm.showCriteria + "erklæring afgivet" + ", "
+
+            if (query.psychologist.length > 0) {
+                vm.showCriteria = vm.showCriteria + "psykolog " + query.psychologist + ", "
+            }
+
+            if (query.doctor.length > 0) {
+                vm.showCriteria = vm.showCriteria + "læge " + query.doctor + ", "
+            }
+
+            if (query.supervisingDoctor.length > 0) {
+                vm.showCriteria = vm.showCriteria + "tiltrædes af læge  " + query.supervisingDoctor + ", "
+            }
+
+            if (query.socialworker.length > 0) {
+                vm.showCriteria = vm.showCriteria + "socialrådgiver  " + query.socialworker + ", "
+            }
+
+            if (query.declarationFromDate != undefined && query.declarationToDate != undefined) {
+                vm.showCriteria = vm.showCriteria + "periode for afgivet erklæring=" + query.declarationFromDate + " - " + query.declarationToDate + ", "
+            }
+            else if (query.declarationFromDate != undefined && query.declarationToDate == undefined) {
+                 vm.showCriteria = vm.showCriteria + "periode for afgivet erklæring=" + query.declarationFromDate + " - " + ", "
+            }
+            else if (query.declarationFromDate == undefined && query.declarationToDate != undefined) {
+                 vm.showCriteria = vm.showCriteria + "periode for afgivet erklæring=" + " - " + query.declarationToDate + ", "
+            }
+
+        }
+
+
+
+
+
+declarationFromDate
+
+
+
+
+
+
+
+
+
+
+
+
+
+//waitingTime days, modifier, time
+
+//psychologist
+
+
 
 
 

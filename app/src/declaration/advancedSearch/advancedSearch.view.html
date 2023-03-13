@@ -491,10 +491,21 @@
     <md-card ng-show="showResults">
         <md-card-title>
             <md-button class="md-raised" ng-click="vm.toggleResults(); vm.clearResults()">Ret søgning</md-button>
+
+            <span>
+            <div class="md-body-2">søgekriterier</div>
+
+            <div style=" font-size: 10px;" class="md-body-2" > {{ vm.showCriteria }} </div>
+
+                </span>
+
             <span flex></span>
             <div layout="row" layout-align="center center">
                 <div>Antal: <span class="md-body-2">{{vm.totalResults}}</span></div>
             </div>
+
+
+
         </md-card-title>
         <md-card-content>
             <md-progress-linear md-mode="indeterminate" ng-show="vm.isLoading"></md-progress-linear>

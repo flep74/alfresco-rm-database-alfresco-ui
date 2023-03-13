@@ -19,6 +19,8 @@ function AdvancedSearchController($scope, $state, $templateCache, $mdDialog, $tr
   $scope.propertyValues = propertyService.getAllPropertyValues();
   $scope.propertyFilter = propertyFilter;
 
+  vm.showCriteria = "";
+
   vm.printFriendlytStarted = false;
   vm.toggleResults = toggleResults;
   vm.advancedSearch = advancedSearch;
@@ -426,6 +428,45 @@ function AdvancedSearchController($scope, $state, $templateCache, $mdDialog, $tr
           vm.isLoading = false;
           vm.totalResults = Number(response.total);
           vm.next = Number(response.next);
+
+          // setup the display of criteries
+
+    vm.showCriteria = "";
+
+          if (query.createdFromDate != undefined && query.createdToDate != undefined) {
+            vm.showCriteria = vm.showCriteria + "periode=" + query.createdFromDate + " - " + query.createdToDate + ", "
+          }
+          else if ( (query.createdFromDate != undefined) && (query.createdToDate = undefined)) {
+            vm.showCriteria = vm.showCriteria + "periode=" + query.createdFromDate + " - " + ", "
+          }
+          else if (query.createdFromDate = undefined && query.createdToDate != undefined) {
+            vm.showCriteria = vm.showCriteria + "periode=" + " - " + query.createdToDate + ", "
+          }
+
+          if (query.bua != undefined) {
+            vm.showCriteria = vm.showCriteria + "type=" + query.bua + ", "
+          }
+
+          if (query.closed == undefined) {
+            vm.showCriteria = vm.showCriteria + " sagsstatus=alle" + ", "
+            }
+          else if (query.closed == "CLOSED") {
+            vm.showCriteria = vm.showCriteria + " sagsstatus=lukket" + ", "
+          }
+          else  {
+            vm.showCriteria = vm.showCriteria + " sagsstatus=åben" + ", "
+          }
+
+
+
+
+
+
+          console.log("her kommer søge kriterierne: ");
+          console.log(query);
+
+
+
 
           angular.forEach(response.entries, entry => {
             vm.searchResults.push(entry);

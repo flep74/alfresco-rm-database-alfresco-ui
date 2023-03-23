@@ -543,7 +543,7 @@ function AdvancedSearchController($scope, $state, $templateCache, $mdDialog, $tr
 
 
 
-declarationFromDate
+
 
 
 

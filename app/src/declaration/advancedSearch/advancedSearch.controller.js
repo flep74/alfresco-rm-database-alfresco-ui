@@ -19,6 +19,8 @@ function AdvancedSearchController($scope, $state, $templateCache, $mdDialog, $tr
   $scope.propertyValues = propertyService.getAllPropertyValues();
   $scope.propertyFilter = propertyFilter;
 
+  vm.showCriteria = "";
+
   vm.printFriendlytStarted = false;
   vm.toggleResults = toggleResults;
   vm.advancedSearch = advancedSearch;
@@ -426,6 +428,143 @@ function AdvancedSearchController($scope, $state, $templateCache, $mdDialog, $tr
           vm.isLoading = false;
           vm.totalResults = Number(response.total);
           vm.next = Number(response.next);
+
+          // setup the display of criteries
+
+          vm.showCriteria = "";
+
+          if (query.createdFromDate != undefined && query.createdToDate != undefined) {
+            vm.showCriteria = vm.showCriteria + "periode=" + query.createdFromDate + " - " + query.createdToDate + ", "
+          }
+          else if ( (query.createdFromDate != undefined) && (query.createdToDate == undefined)) {
+            vm.showCriteria = vm.showCriteria + "periode=" + query.createdFromDate + " - " + ", "
+          }
+          else if (query.createdFromDate == undefined && query.createdToDate != undefined) {
+            vm.showCriteria = vm.showCriteria + "periode=" + " - " + query.createdToDate + ", "
+          }
+
+          if (query.bua != undefined) {
+            vm.showCriteria = vm.showCriteria + query.bua + ", "
+          }
+
+          if (query.closed == undefined) {
+            vm.showCriteria = vm.showCriteria + " alle" + ", "
+            }
+          else if (query.closed == "CLOSED") {
+            vm.showCriteria = vm.showCriteria + " lukket" + ", "
+          }
+          else  {
+            vm.showCriteria = vm.showCriteria + " åben" + ", "
+          }
+
+          if (query.mainCharge.length > 0) {
+            vm.showCriteria = vm.showCriteria + query.mainCharge + ", "
+          }
+
+          if (query.mainDiagnosis.length > 0) {
+            vm.showCriteria = vm.showCriteria + "hoveddiagnose=" + query.mainDiagnosis + ", "
+          }
+
+        if (query.placement.length > 0) {
+            vm.showCriteria = vm.showCriteria + query.placement + ", "
+        }
+
+        if (query.sanctionProposal.length > 0) {
+            vm.showCriteria = vm.showCriteria + "sanktionsforslag=" + query.sanctionProposal + ", "
+        }
+
+
+        if (query.waitingTime != undefined) {
+            var ventetid = "";
+            if (query.waitingTime.time == "total") {
+                ventetid = "samlet ventetid "
+            }
+            else if (query.waitingTime.time == "active") {
+                ventetid = "aktiv ventetid "
+            }
+            else if (query.waitingTime.time == "passive") {
+                ventetid = "passiv ventetid "
+            }
+
+            var modifier = "";
+            if (query.waitingTime.modifier == "equal") {
+                modifier = "lig med "
+            }
+            else if (query.waitingTime.modifier == "over") {
+                modifier = "over "
+            }
+            else if (query.waitingTime.modifier == "under") {
+                modifier = "under "
+            }
+            var output = ventetid  + modifier + query.waitingTime.days + " dage";
+            vm.showCriteria = vm.showCriteria + output + ", "
+        }
+
+        if (query.status.length > 0) {
+            vm.showCriteria = vm.showCriteria + query.status + ", "
+        }
+
+        if (query.evalAll) {
+            vm.showCriteria = vm.showCriteria + "erklæring afgivet af= ";
+
+            if (query.psychologist.length > 0) {
+                vm.showCriteria = vm.showCriteria + "psykolog " + query.psychologist + ", "
+            }
+
+            if (query.doctor.length > 0) {
+                vm.showCriteria = vm.showCriteria + "læge " + query.doctor + ", "
+            }
+
+            if (query.supervisingDoctor.length > 0) {
+                vm.showCriteria = vm.showCriteria + "tiltrædes af læge  " + query.supervisingDoctor + ", "
+            }
+
+            if (query.socialworker.length > 0) {
+                vm.showCriteria = vm.showCriteria + "socialrådgiver  " + query.socialworker + ", "
+            }
+
+            if (query.declarationFromDate != undefined && query.declarationToDate != undefined) {
+                vm.showCriteria = vm.showCriteria + query.declarationFromDate + " - " + query.declarationToDate + ", "
+            }
+            else if (query.declarationFromDate != undefined && query.declarationToDate == undefined) {
+                 vm.showCriteria = vm.showCriteria + query.declarationFromDate + " - " + ", "
+            }
+            else if (query.declarationFromDate == undefined && query.declarationToDate != undefined) {
+                 vm.showCriteria = vm.showCriteria + query.declarationToDate + ", "
+            }
+        }
+
+        if (query.noDeclaration) {
+            vm.showCriteria = vm.showCriteria + "afsluttet uden erklæring " + ", "
+
+            if (query.closedWithoutDeclarationReason != undefined) {
+                vm.showCriteria = vm.showCriteria + query.closedWithoutDeclarationReason + ", "
+            }
+        }
+
+        if (query.koen == "alle") {
+            vm.showCriteria = vm.showCriteria + "begge køn" + ", "
+        }
+        else if (query.koen == "M") {
+             vm.showCriteria = vm.showCriteria + "mand " + ", "
+        }
+        else if (query.koen == "K") {
+             vm.showCriteria = vm.showCriteria + "kvinde " + ", "
+        }
+
+        if (query.firstName != undefined) {
+            vm.showCriteria = vm.showCriteria + query.firstName + ", "
+        }
+
+        if (query.koen != "cpr") {
+            vm.showCriteria = vm.showCriteria + query.cpr + ", "
+        }
+
+          console.log("her kommer søge kriterierne: ");
+          console.log(query);
+
+
+
 
           angular.forEach(response.entries, entry => {
             vm.searchResults.push(entry);

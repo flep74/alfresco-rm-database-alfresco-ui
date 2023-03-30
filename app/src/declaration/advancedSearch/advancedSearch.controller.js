@@ -505,7 +505,6 @@ function AdvancedSearchController($scope, $state, $templateCache, $mdDialog, $tr
         }
 
         if (query.evalAll) {
-            vm.showCriteria = vm.showCriteria + "erklæring afgivet af= ";
 
             if (query.psychologist.length > 0) {
                 vm.showCriteria = vm.showCriteria + "psykolog " + query.psychologist + ", "

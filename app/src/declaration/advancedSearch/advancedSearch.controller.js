@@ -556,14 +556,9 @@ function AdvancedSearchController($scope, $state, $templateCache, $mdDialog, $tr
             vm.showCriteria = vm.showCriteria + query.firstName + ", "
         }
 
-        if (query.koen != "cpr") {
+        if (query.cpr != undefined) {
             vm.showCriteria = vm.showCriteria + query.cpr + ", "
         }
-
-          console.log("her kommer søge kriterierne: ");
-          console.log(query);
-
-
 
 
           angular.forEach(response.entries, entry => {

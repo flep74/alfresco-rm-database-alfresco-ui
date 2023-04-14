@@ -4,7 +4,7 @@ angular
   .module('openDeskApp.declaration')
   .controller('AdvancedSearchController', AdvancedSearchController);
 
-function AdvancedSearchController($scope, $state, $templateCache, $mdDialog, $translate, DeclarationService, filterService, propertyService, HeaderService, $filter, $stateParams, DeclarationPsycService) {
+function AdvancedSearchController($scope, $state, $templateCache, $mdDialog, $translate, DeclarationService, filterService, propertyService, HeaderService, $filter, $stateParams, DeclarationPsycService, authService) {
 
   var vm = this;
 
@@ -418,8 +418,11 @@ function AdvancedSearchController($scope, $state, $templateCache, $mdDialog, $tr
 
         if (preview) {
 
-          var printUrl = "/alfresco/s/api/node/content/workspace/SpacesStore/" + response.nodeRef;
+          // add login token to url
+          var printUrl = "/alfresco/s/api/node/content/workspace/SpacesStore/" + response.nodeRef + "?alf_ticket=" + authService.getUserInfo().ticket;
 
+          console.log("printUrl")
+          console.log(printUrl)
           printJS(printUrl);
           query.preview = false;
           vm.printFriendlytStarted = false;
@@ -523,13 +526,13 @@ function AdvancedSearchController($scope, $state, $templateCache, $mdDialog, $tr
             }
 
             if (query.declarationFromDate != undefined && query.declarationToDate != undefined) {
-                vm.showCriteria = vm.showCriteria + query.declarationFromDate + " - " + query.declarationToDate + ", "
+                vm.showCriteria = vm.showCriteria + "erklæringsperiode: " + query.declarationFromDate + " - " + query.declarationToDate + ", "
             }
             else if (query.declarationFromDate != undefined && query.declarationToDate == undefined) {
-                 vm.showCriteria = vm.showCriteria + query.declarationFromDate + " - " + ", "
+                 vm.showCriteria = vm.showCriteria + "erklæringsperiode: " + query.declarationFromDate + " - " + ", "
             }
             else if (query.declarationFromDate == undefined && query.declarationToDate != undefined) {
-                 vm.showCriteria = vm.showCriteria + query.declarationToDate + ", "
+                 vm.showCriteria = vm.showCriteria + "erklæringsperiode: - " + query.declarationToDate + ", "
             }
         }
 

@@ -454,7 +454,7 @@ function AdvancedSearchController($scope, $state, $templateCache, $mdDialog, $tr
             vm.showCriteria = vm.showCriteria + " alle" + ", "
             }
           else if (query.closed == "CLOSED") {
-            vm.showCriteria = vm.showCriteria + " lukket" + ", "
+            vm.showCriteria = vm.showCriteria + " afsluttet" + ", "
           }
           else  {
             vm.showCriteria = vm.showCriteria + " åben" + ", "

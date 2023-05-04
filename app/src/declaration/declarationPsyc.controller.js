@@ -25,6 +25,8 @@ function PsycController($scope, $mdDialog, $stateParams, DeclarationService, Toa
   vm.PsycInstruments = "";
   vm.selectedValues = [];
 
+  vm.showText = [];
+
   vm.oneormorePsykologiskUnder = false;
 
   vm.oneormoreRisikoVurdering = false;
@@ -253,6 +255,57 @@ function PsycController($scope, $mdDialog, $stateParams, DeclarationService, Toa
       });
   }
 
+  function viewButtonUndersoegelsestype(instrument) {
+
+      $scope.myCountry = {
+        selected:{}
+      };
+
+      vm.selectedInstrument = instrument;
+      vm.selectedInstrumentName = vm.titleMappings[instrument];
+
+      DeclarationPsycService.getDetailViewData($stateParams.caseid, instrument).then(function (response) {
+        vm.items = response.data;
+        let numberOfItems = vm.items.length;
+
+        console.log("vm.items: ");
+        console.log(vm.items);
+
+        // ide hente værdi 1 og vis label og om den er valgt.
+
+        vm.showText[1] = getItemWithID(1, vm.items);
+
+      });
+
+      $mdDialog.show({
+        templateUrl: 'app/src/declaration/view/psyc/sections/popupUndersoegelsestype.html',
+        scope: $scope, // use parent scope in template
+        preserveScope: true, // do not forget this if use parent scope
+        clickOutsideToClose: false
+      });
+    }
+
+  function getItemWithID(id, itemList) {
+
+    var found = false;
+    var i = 0;
+
+    while (!found && i <= itemList.length-1) {
+        if (itemList[i].id == id) {
+            console.log("me found you");
+            console.log(itemList[i]);
+            return itemList[i];
+            found = true;
+        }
+        else {
+            i = i +1;
+        }
+
+    }
+
+  }
+
+
   function viewButton2(instrument) {
     // console.log("hvad er items");
 
@@ -345,8 +398,8 @@ function PsycController($scope, $mdDialog, $stateParams, DeclarationService, Toa
   }
 
   vm.viewButton2 = viewButton2;
-
   vm.viewButton = viewButton;
+  vm.viewButtonUndersoegelsestype = viewButtonUndersoegelsestype;
 
   function cancelDialog() {
     $scope.myCountry = {

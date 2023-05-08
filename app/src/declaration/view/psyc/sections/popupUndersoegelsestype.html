@@ -1,21 +1,27 @@
 <style type="text/css">
         .true {
-            background: red;
-            color: white;
+            color: green;
+            text-align: center;
         }
         .false {
-            background: green;
-            color: white;
+            color: red;
+            text-align: center;
         }
         .myBorder {
             border-width:3px;
             border-style:solid;
-            border-color:#FF0000;
-            padding: 1em;
+            border-color: black;
+            padding: 0.1em;
+            width:350px;
+            margin: 0 auto;
+            display: block;
+            vertical-align: middle;
         }
+
 </style>
 
 <html>
+
 <md-card>
     <md-card-title>
         <md-card-title-text>
@@ -24,35 +30,24 @@
             </div>
         </md-card-title-text>
     </md-card-title>
-    <md-card-content>
-
-        <table style="word-wrap:break-word;table-layout:fixed;">
-        <tr>
-
-        <td >
+    <md-card-content >
 
 
-        <div>  </div>
-
-
-        <div layout="column">
-            <div>
-                <div>
-                    <div layout="row">
-                        <p class="myBorder"> <div class="{{ vm.showText[1].val }}" ng-click="vm.showTextClicked(1)"> {{ vm.showText[1].label }} </div> </p>
+                    <div class="myBorder"  layout-align="center" >
+                        <p> <div class="{{ vm.showText[1].val }}" ng-click="vm.showTextClicked(1)"> {{ vm.showText[1].label }} </div> </p>
                     </div>
-                    <div layout="row">
+                    <p></p>
+                    <div class="myBorder" layout-align="center" >
                         <div class="{{ vm.showText[2].val }}" ng-click="vm.showTextClicked(2)"> {{ vm.showText[2].label }} </div>
                     </div>
-                </div>
-            </div>
-        </div>
-        </td>
 
 
 
-        </tr>
-        </table>
+
+
+
+
+
     </md-card-content>
 </md-card>
 </html>

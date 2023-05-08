@@ -7,6 +7,12 @@
             background: green;
             color: white;
         }
+        .myBorder {
+            border-width:3px;
+            border-style:solid;
+            border-color:#FF0000;
+            padding: 1em;
+        }
 </style>
 
 <html>
@@ -33,7 +39,7 @@
             <div>
                 <div>
                     <div layout="row">
-                        <div class="{{ vm.showText[1].val }}" ng-click="vm.showTextClicked(1)"> {{ vm.showText[1].label }} </div>
+                        <p class="myBorder"> <div class="{{ vm.showText[1].val }}" ng-click="vm.showTextClicked(1)"> {{ vm.showText[1].label }} </div> </p>
                     </div>
                     <div layout="row">
                         <div class="{{ vm.showText[2].val }}" ng-click="vm.showTextClicked(2)"> {{ vm.showText[2].label }} </div>

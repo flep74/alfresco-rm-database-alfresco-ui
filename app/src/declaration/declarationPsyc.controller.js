@@ -93,21 +93,40 @@ function PsycController($scope, $mdDialog, $stateParams, DeclarationService, Toa
 
     let val = $scope.myCountry.selected;
 
+    console.log("vm.showText")
+    console.log(vm.showText);
 
     let selectedIds = "";
+    for (var i =1; i<=vm.showText.length-1;i++) {
+        var instrument = vm.showText[i];
+        console.log("hvad er instrument");
 
-    for (const [key, value] of Object.entries(val)) {
-      // response for getOverViewData
-
-      if (value) {
-        if (selectedIds == "") {
-          selectedIds = key;
+        if (instrument.val) {
+            if (selectedIds == "") {
+                  selectedIds = instrument.id;
+            }
+            else {
+              selectedIds = selectedIds + "," + instrument.id;
+            }
         }
-        else {
-          selectedIds = selectedIds + "," + key;
-        }
-      }
     }
+
+
+
+
+
+//    for (const [key, value] of Object.entries(val)) {
+//      // response for getOverViewData
+//
+//      if (value) {
+//        if (selectedIds == "") {
+//          selectedIds = key;
+//        }
+//        else {
+//          selectedIds = selectedIds + "," + key;
+//        }
+//      }
+//    }
 
 
     DeclarationPsycService.saveDetailViewData($stateParams.caseid, vm.selectedInstrument, selectedIds).then(function (response) {
@@ -289,7 +308,6 @@ function PsycController($scope, $mdDialog, $stateParams, DeclarationService, Toa
   function showTextClicked(item) {
     console.log("jeg har klikket: " + item)
     vm.showText[item].val = !vm.showText[item].val;
-
   }
   vm.showTextClicked = showTextClicked;
 

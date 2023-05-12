@@ -1,3 +1,7 @@
+
+
+<html>
+
 <style type="text/css">
         .true {
             color: green;
@@ -19,19 +23,21 @@
 
 </style>
 
-<html>
-
-<md-card>
+<md-card style="width: 1000px;">
     <md-card-title>
         <md-card-title-text>
             <div>
-            <span class="md-headline">{{vm.selectedInstrumentName}} <md-button ng-click="vm.save()"> gem</md-button> </span> <md-button class="md-icon-button" ng-click="vm.cancelDialog()"><md-icon>close</md-icon></md-button>
+            <center><span class="md-headline">{{vm.selectedInstrumentName}}</span></center>
             </div>
         </md-card-title-text>
     </md-card-title>
     <md-card-content >
 
-
+                    <div class="myBorder"  style="width: 600px;" layout-align="center" >
+                        <p> Den psykologiske undersøgelse har haft primær fokus på, foretaget sekundær vurdering af, og
+                        har ført til underbyggede konklusioner om følgende områder: </p>
+                    </div>
+                    <p></p>
                     <div class="myBorder"  layout-align="center" >
                         <p> <div class="{{ vm.showText[0].val }}" ng-click="vm.showTextClicked(0)"> {{ vm.showText[0].label }} </div> </p>
                     </div>
@@ -59,9 +65,12 @@
                     <div class="myBorder" layout-align="center" >
                         <div class="{{ vm.showText[6].val }}" ng-click="vm.showTextClicked(6)"> {{ vm.showText[6].label }} </div>
                     </div>
-                        <div class="{{ vm.showText[2].val }}" ng-click="vm.showTextClicked(2)"> {{ vm.showText[2].label }} </div>
-                    </div>
                     <p></p>
+
+                    <div align="right">
+                    <md-button ng-click="vm.save()"> gem</md-button>  <md-button  ng-click="vm.cancelDialog()">fortryd</md-button>
+                    </div>
+
     </md-card-content>
 </md-card>
 </html>

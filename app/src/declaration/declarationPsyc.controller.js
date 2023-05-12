@@ -235,14 +235,6 @@ function PsycController($scope, $mdDialog, $stateParams, DeclarationService, Toa
       console.log("response")
       console.log(response);
     });
-
-
-
-
-
-
-    // sæt boolean værdi for bold for alle 8 felter
-
   }
 
   function viewButton(instrument) {
@@ -288,16 +280,8 @@ function PsycController($scope, $mdDialog, $stateParams, DeclarationService, Toa
         vm.items = response.data;
         let numberOfItems = vm.items.length;
 
-        console.log("vm.items: ");
-        console.log(vm.items);
-
-        // ide hente værdi 1 og vis label og om den er valgt.
-        // setup order as requested by retspsyk pdf
-
-        console.log("hvad er showText: før indlæsning?");
-        console.log(vm.showText);
-
         vm.showText = new Array();
+        // setup order as requested by retspsyk pdf
 
         vm.showText[0] = getItemWithID(1, vm.items);
         vm.showText[1] = getItemWithID(2, vm.items);
@@ -306,11 +290,6 @@ function PsycController($scope, $mdDialog, $stateParams, DeclarationService, Toa
         vm.showText[4] = getItemWithID(5, vm.items);
         vm.showText[5] = getItemWithID(6, vm.items);
         vm.showText[6] = getItemWithID(7, vm.items);
-
-        console.log("hvad er showText: efter indlæsning?");
-        console.log(vm.showText);
-
-
       });
 
       $mdDialog.show({
@@ -322,14 +301,6 @@ function PsycController($scope, $mdDialog, $stateParams, DeclarationService, Toa
     }
 
   function showTextClicked(item) {
-    console.log("jeg har klikket: " + item)
-    console.log("hvad er vm.showText før");
-    console.log(vm.showText);
-
-    vm.showText[item].val = !vm.showText[item].val;
-    console.log("hvad er vm.showText efter");
-    console.log(vm.showText);
-
     vm.showText[item].val = !vm.showText[item].val;
   }
 

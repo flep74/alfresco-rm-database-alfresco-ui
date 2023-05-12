@@ -97,6 +97,7 @@ function PsycController($scope, $mdDialog, $stateParams, DeclarationService, Toa
     console.log(vm.showText);
 
     let selectedIds = "";
+
     for (var i =0; i<=vm.showText.length-1;i++) {
         var instrument = vm.showText[i];
         console.log("hvad er instrument");
@@ -328,7 +329,10 @@ function PsycController($scope, $mdDialog, $stateParams, DeclarationService, Toa
     vm.showText[item].val = !vm.showText[item].val;
     console.log("hvad er vm.showText efter");
     console.log(vm.showText);
+
+    vm.showText[item].val = !vm.showText[item].val;
   }
+
   vm.showTextClicked = showTextClicked;
 
 

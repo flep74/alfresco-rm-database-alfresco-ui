@@ -93,21 +93,40 @@ function PsycController($scope, $mdDialog, $stateParams, DeclarationService, Toa
 
     let val = $scope.myCountry.selected;
 
+    console.log("vm.showText")
+    console.log(vm.showText);
 
     let selectedIds = "";
+    for (var i =0; i<=vm.showText.length-1;i++) {
+        var instrument = vm.showText[i];
+        console.log("hvad er instrument");
 
-    for (const [key, value] of Object.entries(val)) {
-      // response for getOverViewData
-
-      if (value) {
-        if (selectedIds == "") {
-          selectedIds = key;
+        if (instrument.val) {
+            if (selectedIds == "") {
+                  selectedIds = instrument.id;
+            }
+            else {
+              selectedIds = selectedIds + "," + instrument.id;
+            }
         }
-        else {
-          selectedIds = selectedIds + "," + key;
-        }
-      }
     }
+
+
+
+
+
+//    for (const [key, value] of Object.entries(val)) {
+//      // response for getOverViewData
+//
+//      if (value) {
+//        if (selectedIds == "") {
+//          selectedIds = key;
+//        }
+//        else {
+//          selectedIds = selectedIds + "," + key;
+//        }
+//      }
+//    }
 
 
     DeclarationPsycService.saveDetailViewData($stateParams.caseid, vm.selectedInstrument, selectedIds).then(function (response) {
@@ -273,8 +292,23 @@ function PsycController($scope, $mdDialog, $stateParams, DeclarationService, Toa
 
         // ide hente værdi 1 og vis label og om den er valgt.
         // setup order as requested by retspsyk pdf
-        vm.showText[1] = getItemWithID(1, vm.items);
-        vm.showText[2] = getItemWithID(2, vm.items);
+
+        console.log("hvad er showText: før indlæsning?");
+        console.log(vm.showText);
+
+        vm.showText = new Array();
+
+        vm.showText[0] = getItemWithID(1, vm.items);
+        vm.showText[1] = getItemWithID(2, vm.items);
+        vm.showText[2] = getItemWithID(3, vm.items);
+        vm.showText[3] = getItemWithID(4, vm.items);
+        vm.showText[4] = getItemWithID(5, vm.items);
+        vm.showText[5] = getItemWithID(6, vm.items);
+        vm.showText[6] = getItemWithID(7, vm.items);
+
+        console.log("hvad er showText: efter indlæsning?");
+        console.log(vm.showText);
+
 
       });
 
@@ -288,8 +322,12 @@ function PsycController($scope, $mdDialog, $stateParams, DeclarationService, Toa
 
   function showTextClicked(item) {
     console.log("jeg har klikket: " + item)
-    vm.showText[item].val = !vm.showText[item].val;
+    console.log("hvad er vm.showText før");
+    console.log(vm.showText);
 
+    vm.showText[item].val = !vm.showText[item].val;
+    console.log("hvad er vm.showText efter");
+    console.log(vm.showText);
   }
   vm.showTextClicked = showTextClicked;
 

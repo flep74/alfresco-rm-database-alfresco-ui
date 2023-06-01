@@ -13,59 +13,14 @@
             <div>
                 <div ng-repeat="block in vm.items | chunkBy:3">
 
-<!--                        <input id="{{ block[0].id }}" type="checkbox" ng-model="vm.selectedValues.block[0].id" ng-click="vm.clicked(block[0].id, $event)" /><label  title="Tolk" >{{block[0].name}}  {{block[0].id}} </label>-->
-<!--                        <input id="{{ block[1].id }}" type="checkbox" ng-model="block[1].id"  ng-click="vm.clicked(block[1].id, $event)" /><label  title="Tolk" >{{block[1].name}}  {{block[1].id}} </label>-->
-<!--                        <input id="{{ block[2].id }}" type="checkbox" ng-model="block[2].id"  ng-click="vm.clicked(block[2].id, $event)" /><label  title="Tolk" >{{block[2].name}} {{block[2].id}} </label>-->
                     <div layout="row">
                         <md-checkbox layout="column" flex-gt-sm="65" flex-sm="50"flex="100" aria-label="aktiveret"  ng-model="myCountry.selected[block[0].id]"  ng-true-value="true" ng-false-value="false" >{{block[0].label}}</md-checkbox>
                         <md-checkbox ng-hide="myCountry.selected[block[1].id] == null" layout="column" flex-gt-sm="65" flex-sm="50"flex="100" aria-label="aktiveret"  ng-model="myCountry.selected[block[1].id]" ng-true-value="true" ng-false-value="false"> {{block[1].label}}</md-checkbox>
                         <md-checkbox ng-hide="myCountry.selected[block[2].id] == null" layout="column" flex-gt-sm="65" flex-sm="50"flex="100"aria-label="aktiveret"  ng-model="myCountry.selected[block[2].id]" ng-true-value="true" ng-false-value="false"> {{block[2].label}}</md-checkbox>
                     </div>
-<!--                        <md-checkbox aria-label="aktiveret"  ng-click="vm.clicked(block[1].id)"> {{block[1].name}} {{block[1].id}} </md-checkbox>-->
-<!--                        <md-checkbox aria-label="aktiveret"  ng-click="vm.clicked(block[2].id)"> {{block[2].name}} {{block[2].id}} </md-checkbox>-->
-
-                    <!--                        <md-checkbox aria-label="aktiveret"  ng-model="vm.selectedValues{{block[0].id}}" ng-click="vm.clicked(block[0].id)"> {{block[0].name}} {{block[0].id}} </md-checkbox>-->
-                    <!--                        <md-checkbox aria-label="aktiveret"  ng-click="vm.clicked(block[1].id)"> {{block[1].name}} {{block[1].id}} </md-checkbox>-->
-                    <!--                        <md-checkbox aria-label="aktiveret"  ng-click="vm.clicked(block[2].id)"> {{block[2].name}} {{block[2].id}} </md-checkbox>-->
-
                 </div>
             </div>
-
-
-<!--            <div ng-repeat="block in vm.items | chunkBy:3 ">-->
-<!--                <label><input type="checkbox" ng-model="myCountry.selected[block[0].id]" ng-true-value="'{{block[0].name}}'" ng-false-value="''">{{block[0].name}}</label>-->
-<!--                <label><input type="checkbox" ng-model="myCountry.selected[block[1].id]" ng-true-value="'{{block[1].name}}'" ng-false-value="''">{{block[1].name}}</label>-->
-<!--                <label><input type="checkbox" ng-model="myCountry.selected[block[2].id]" ng-true-value="'{{block[2].name}}'" ng-false-value="''">{{block[2].name}}</label>-->
-<!--            </div>-->
         </div>
-
-<!--        <div layout="row">-->
-
-<!--            <md-input-container class="md-block">-->
-<!--                <md-checkbox aria-label="aktiveret" ng-model="bua4">MAS</md-checkbox>-->
-<!--            </md-input-container>-->
-<!--            <md-input-container class="md-block">-->
-<!--                <md-checkbox aria-label="aktiveret" ng-model="bua5">BDI-II</md-checkbox>-->
-<!--            </md-input-container>-->
-<!--            <md-input-container class="md-block">-->
-<!--                <md-checkbox aria-label="aktiveret" ng-model="bua6">HAM-D</md-checkbox>-->
-<!--            </md-input-container>-->
-
-<!--        </div>-->
-
-<!--        <div layout="row">-->
-
-<!--            <md-input-container class="md-block">-->
-<!--                <md-checkbox aria-label="aktiveret" ng-model="bua7">BAI</md-checkbox>-->
-<!--            </md-input-container>-->
-<!--            <md-input-container class="md-block">-->
-<!--                <md-checkbox aria-label="aktiveret" ng-model="bua8">HAM-A</md-checkbox>-->
-<!--            </md-input-container>-->
-<!--            <md-input-container class="md-block">-->
-<!--                <md-checkbox aria-label="aktiveret" ng-model="bua9">Y-BOCS</md-checkbox>-->
-<!--            </md-input-container>-->
-
-<!--        </div>-->
     </md-card-content>
 
 </md-card>

@@ -69,39 +69,19 @@ function PsycController($scope, $mdDialog, $stateParams, DeclarationService, Toa
   }
 
   setupMappings();
-  // caseValues();
-
   setupOverview();
 
   activate();
 
 
-  // function caseValues() {
-  //   console.log("loading values for caseid: " + $stateParams.caseid)
-  //
-  //   DeclarationPsycService.getInstruments("26").then(function (response) {
-  //     console.log("response")
-  //     console.log(response);
-  //   });
-  //
-  //
-  // }
-
   function save() {
-    // console.log("myCountry.selected");
-    // console.log($scope.myCountry.selected);
 
     let val = $scope.myCountry.selected;
-
-    console.log("vm.showText")
-    console.log(vm.showText);
 
     let selectedIds = "";
 
     for (var i =0; i<=vm.showText.length-1;i++) {
         var instrument = vm.showText[i];
-        console.log("hvad er instrument");
-
         if (instrument.val) {
             if (selectedIds == "") {
                   selectedIds = instrument.id;
@@ -111,24 +91,6 @@ function PsycController($scope, $mdDialog, $stateParams, DeclarationService, Toa
             }
         }
     }
-
-
-
-
-
-//    for (const [key, value] of Object.entries(val)) {
-//      // response for getOverViewData
-//
-//      if (value) {
-//        if (selectedIds == "") {
-//          selectedIds = key;
-//        }
-//        else {
-//          selectedIds = selectedIds + "," + key;
-//        }
-//      }
-//    }
-
 
     DeclarationPsycService.saveDetailViewData($stateParams.caseid, vm.selectedInstrument, selectedIds).then(function (response) {
       $scope.myCountry = {

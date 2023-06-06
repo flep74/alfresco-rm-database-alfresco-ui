@@ -262,6 +262,92 @@ function PsycController($scope, $mdDialog, $stateParams, DeclarationService, Toa
       });
     }
 
+function viewButtonPraestationsTests(instrument) {
+
+      $scope.myCountry = {
+        selected:{}
+      };
+
+      vm.selectedInstrument = instrument;
+      vm.selectedInstrumentName = vm.titleMappings[instrument];
+
+      DeclarationPsycService.getDetailViewData($stateParams.caseid, instrument).then(function (response) {
+        vm.items = response.data;
+        let numberOfItems = vm.items.length;
+
+        vm.showText = new Array();
+        // setup order as requested by retspsyk pdf
+
+        vm.showText[0] = getItemWithID(35, vm.items); // "name": "WAIS-III testbatteri",
+        vm.showText[1] = getItemWithID(36, vm.items); // "name": "WAIS-III delprøver",
+        vm.showText[2] = getItemWithID(37, vm.items); // "name": "WAIS-IV testbatteri",
+        vm.showText[3] = getItemWithID(38, vm.items); // "name": "WAIS-IV delprøver",
+
+        vm.showText[4] = getItemWithID(39, vm.items); // "name": "RAVENS 2 screening",
+        vm.showText[5] = getItemWithID(40, vm.items);  // "name": "Leither 3 screening",
+        vm.showText[6] = getItemWithID(41, vm.items); // "name": "RAIS screening",
+        vm.showText[7] = getItemWithID(42, vm.items); // "name": "SON-R 6.40 screening",
+
+        vm.showText[8] = getItemWithID(43, vm.items); // "name": "MMSE testbatteri",
+        vm.showText[9] = getItemWithID(44, vm.items); // "name": "ACE-III testbatteri",
+        vm.showText[10] = getItemWithID(45, vm.items); // "name": "MoCA testbatteri",
+        vm.showText[11] = getItemWithID(46, vm.items); // "name": "RUDAS testbatteri",
+
+        vm.showText[12] = getItemWithID(47, vm.items); // "name": "CTNB testbatteri",
+        vm.showText[13] = getItemWithID(48, vm.items); // "name": "CTNB delprøver",
+        vm.showText[14] = getItemWithID(49, vm.items); // "name": "WAB testbatteri",
+        vm.showText[15] = getItemWithID(50, vm.items); // "name": "WAB delprøver",
+
+        vm.showText[16] = getItemWithID(51, vm.items); // "name": "RBANS testbatteri",
+        vm.showText[17] = getItemWithID(52, vm.items); // "name": "RBANS delprøver",
+        vm.showText[18] = getItemWithID(53, vm.items); // "name": "WMS-III testbatteri",
+        vm.showText[19] = getItemWithID(54, vm.items); // "name": "WMS-III delprøver",
+
+        vm.showText[20] = getItemWithID(55, vm.items); // "name": "D-KEFS testbatteri",
+        vm.showText[21] = getItemWithID(56, vm.items); // "name": "D-KEFS delprøver",
+        vm.showText[22] = getItemWithID(57, vm.items); // "name": "BADS testbatteri",
+        vm.showText[23] = getItemWithID(58, vm.items); // "name": "BADS delprøver",
+
+//        her kommer næste del
+
+        vm.showText[24] = getItemWithID(59, vm.items); // "name": "RME-R",
+        vm.showText[25] = getItemWithID(60, vm.items); // "name": "Brüne's Billedordning",
+        vm.showText[26] = getItemWithID(61, vm.items); // "name": "Animerede trekanter",
+        vm.showText[27] = getItemWithID(62, vm.items); // "name": "TASTIT",
+
+        vm.showText[28] = getItemWithID(63, vm.items); // "name": "Ordmobilisering",
+        vm.showText[29] = getItemWithID(64, vm.items); // "name": "Kognitive Estimater",
+        vm.showText[30] = getItemWithID(65, vm.items); // "name": "Street test",
+        vm.showText[31] = getItemWithID(66, vm.items); // "name": "Kendte Ansigter",
+
+        vm.showText[32] = getItemWithID(67, vm.items); // "name": "STROOP test",
+        vm.showText[33] = getItemWithID(68, vm.items); // "name": "Tower of London",
+        vm.showText[34] = getItemWithID(69, vm.items); // "name": "IOWA Gambling Task V2",
+        vm.showText[35] = getItemWithID(70, vm.items); // "name": "Wisconsin Card Sorting Test",
+
+        vm.showText[36] = getItemWithID(71, vm.items); // "name": "RAVLT",
+        vm.showText[37] = getItemWithID(72, vm.items); // "name": "RCFT",
+        vm.showText[38] = getItemWithID(73, vm.items); // "name": "Ordsprogsprøve",
+        vm.showText[39] = getItemWithID(74, vm.items); // "name": "Sætningsspændvidde",
+
+        vm.showText[40] = getItemWithID(75, vm.items); // "name": "SDMT",
+        vm.showText[41] = getItemWithID(76, vm.items); // "name": "D2/D2-R test",
+        vm.showText[42] = getItemWithID(77, vm.items); // "name": "Katerogistyret billedordning",
+        vm.showText[43] = getItemWithID(78, vm.items); // "name": "Trail-Making test",
+
+
+      });
+
+      $mdDialog.show({
+        templateUrl: 'app/src/declaration/view/psyc/sections/popupPreastationsTests.html',
+        scope: $scope, // use parent scope in template
+        preserveScope: true, // do not forget this if use parent scope
+        clickOutsideToClose: false
+      });
+    }
+
+vm.viewButtonPraestationsTests = viewButtonPraestationsTests;
+
 function viewButtonAnvendteInterviewsRatingScale(instrument) {
 
       $scope.myCountry = {
@@ -280,30 +366,31 @@ function viewButtonAnvendteInterviewsRatingScale(instrument) {
 
         vm.showText[0] = getItemWithID(8, vm.items); // "name": "PSE-10",
         vm.showText[1] = getItemWithID(18, vm.items); // "name": "SCID-5-PD",
-        vm.showText[2] = getItemWithID(26, vm.items); // "name": "ABAS-3",
+        vm.showText[2] = getItemWithID(27, vm.items); // "name": "ABAS-3",
         vm.showText[3] = getItemWithID(9, vm.items); // "name": "EASE",
         vm.showText[4] = getItemWithID(19, vm.items); // "name": "OPD-2",
-        vm.showText[5] = getItemWithID(27, vm.items);  // "name": "Vineland-3",
+        vm.showText[5] = getItemWithID(28, vm.items);  // "name": "Vineland-3",
         vm.showText[6] = getItemWithID(10, vm.items); // "name": "PANSS",
         vm.showText[7] = getItemWithID(20, vm.items); // "name": "PCL-R",
         vm.showText[8] = getItemWithID(29, vm.items); // "name": "ADOS 1 og 2",
         vm.showText[9] = getItemWithID(11, vm.items); // "name": "ASI",
         vm.showText[10] = getItemWithID(21, vm.items); // "name": "PCL:SV",
-        vm.showText[11] = getItemWithID(9, vm.items); // "name": "ADI-R",
-        vm.showText[12] = getItemWithID(9, vm.items); // "name": "HCL-32",
-        vm.showText[13] = getItemWithID(9, vm.items); // "name": "CAPP",
-        vm.showText[14] = getItemWithID(9, vm.items); // "name": "DIVA 1,2 og 5",
-        vm.showText[15] = getItemWithID(9, vm.items); // "name": "BDI-II",
-        vm.showText[16] = getItemWithID(9, vm.items); // "name": "ZAN-BPD",
-        vm.showText[17] = getItemWithID(9, vm.items); // "name": "AAI",
-        vm.showText[18] = getItemWithID(9, vm.items); // "name": "SCID-V",
-        vm.showText[19] = getItemWithID(9, vm.items); // "name": "Hansson SAQ",
-        vm.showText[20] = getItemWithID(9, vm.items); // "name": "SASB",
-        vm.showText[21] = getItemWithID(9, vm.items); // "name": "ADIS-V",
-        vm.showText[22] = getItemWithID(9, vm.items); // "name": "Hostility TWQ",
-        vm.showText[23] = getItemWithID(9, vm.items); // "name": "PCL:YV",
-        vm.showText[24] = getItemWithID(9, vm.items); // "name": "Y-BOCS",
-        vm.showText[25] = getItemWithID(9, vm.items); // "name": "HADS",
+        vm.showText[11] = getItemWithID(30, vm.items); // "name": "ADI-R",
+        vm.showText[12] = getItemWithID(12, vm.items); // "name": "HCL:32",
+        vm.showText[13] = getItemWithID(22, vm.items); // "name": "CAPP",
+        vm.showText[14] = getItemWithID(31, vm.items); // "name": "DIVA 1,2 og 5",
+        vm.showText[15] = getItemWithID(13, vm.items); // "name": "BDI-II",
+        vm.showText[16] = getItemWithID(23, vm.items); // "name": "ZANBPD",
+        vm.showText[17] = getItemWithID(32, vm.items); // "name": "AAI",
+        vm.showText[18] = getItemWithID(14, vm.items); // "name": "SCID-V",
+        vm.showText[19] = getItemWithID(24, vm.items); // "name": "Hansson SAQ",
+        vm.showText[20] = getItemWithID(33, vm.items); // "name": "SASB",
+        vm.showText[21] = getItemWithID(15, vm.items); // "name": "ADIS-V",
+        vm.showText[22] = getItemWithID(25, vm.items); // "name": "Hostility TWQ",
+        vm.showText[23] = getItemWithID(34, vm.items); // "name": "PCL:YV",
+        vm.showText[24] = getItemWithID(16, vm.items); // "name": "Y-BOCS",
+        vm.showText[25] = getItemWithID(26, vm.items); // "name": "HADS",
+        vm.showText[26] = getItemWithID(17, vm.items); // "name": "HTQ",
       });
 
       $mdDialog.show({

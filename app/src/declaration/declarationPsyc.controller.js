@@ -262,6 +262,60 @@ function PsycController($scope, $mdDialog, $stateParams, DeclarationService, Toa
       });
     }
 
+function viewButtonAnvendteInterviewsRatingScale(instrument) {
+
+      $scope.myCountry = {
+        selected:{}
+      };
+
+      vm.selectedInstrument = instrument;
+      vm.selectedInstrumentName = vm.titleMappings[instrument];
+
+      DeclarationPsycService.getDetailViewData($stateParams.caseid, instrument).then(function (response) {
+        vm.items = response.data;
+        let numberOfItems = vm.items.length;
+
+        vm.showText = new Array();
+        // setup order as requested by retspsyk pdf
+
+        vm.showText[0] = getItemWithID(8, vm.items); // "name": "PSE-10",
+        vm.showText[1] = getItemWithID(18, vm.items); // "name": "SCID-5-PD",
+        vm.showText[2] = getItemWithID(26, vm.items); // "name": "ABAS-3",
+        vm.showText[3] = getItemWithID(9, vm.items); // "name": "EASE",
+        vm.showText[4] = getItemWithID(19, vm.items); // "name": "OPD-2",
+        vm.showText[5] = getItemWithID(27, vm.items);  // "name": "Vineland-3",
+        vm.showText[6] = getItemWithID(10, vm.items); // "name": "PANSS",
+        vm.showText[7] = getItemWithID(20, vm.items); // "name": "PCL-R",
+        vm.showText[8] = getItemWithID(29, vm.items); // "name": "ADOS 1 og 2",
+        vm.showText[9] = getItemWithID(11, vm.items); // "name": "ASI",
+        vm.showText[10] = getItemWithID(21, vm.items); // "name": "PCL:SV",
+        vm.showText[11] = getItemWithID(9, vm.items); // "name": "ADI-R",
+        vm.showText[12] = getItemWithID(9, vm.items); // "name": "HCL-32",
+        vm.showText[13] = getItemWithID(9, vm.items); // "name": "CAPP",
+        vm.showText[14] = getItemWithID(9, vm.items); // "name": "DIVA 1,2 og 5",
+        vm.showText[15] = getItemWithID(9, vm.items); // "name": "BDI-II",
+        vm.showText[16] = getItemWithID(9, vm.items); // "name": "ZAN-BPD",
+        vm.showText[17] = getItemWithID(9, vm.items); // "name": "AAI",
+        vm.showText[18] = getItemWithID(9, vm.items); // "name": "SCID-V",
+        vm.showText[19] = getItemWithID(9, vm.items); // "name": "Hansson SAQ",
+        vm.showText[20] = getItemWithID(9, vm.items); // "name": "SASB",
+        vm.showText[21] = getItemWithID(9, vm.items); // "name": "ADIS-V",
+        vm.showText[22] = getItemWithID(9, vm.items); // "name": "Hostility TWQ",
+        vm.showText[23] = getItemWithID(9, vm.items); // "name": "PCL:YV",
+        vm.showText[24] = getItemWithID(9, vm.items); // "name": "Y-BOCS",
+        vm.showText[25] = getItemWithID(9, vm.items); // "name": "HADS",
+      });
+
+      $mdDialog.show({
+        templateUrl: 'app/src/declaration/view/psyc/sections/popupAnvendteInterviewRatingScale.html',
+        scope: $scope, // use parent scope in template
+        preserveScope: true, // do not forget this if use parent scope
+        clickOutsideToClose: false
+      });
+    }
+
+  vm.viewButtonAnvendteInterviewsRatingScale = viewButtonAnvendteInterviewsRatingScale;
+
   function showTextClicked(item) {
     vm.showText[item].val = !vm.showText[item].val;
   }

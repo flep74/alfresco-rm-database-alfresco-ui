@@ -353,6 +353,121 @@ function viewButtonEksplicitteTests(instrument) {
       });
     }
 
+function viewButtonRisiko(instrument) {
+
+      $scope.myCountry = {
+        selected:{}
+      };
+
+      vm.selectedInstrument = instrument;
+      vm.selectedInstrumentName = vm.titleMappings[instrument];
+
+      DeclarationPsycService.getDetailViewData($stateParams.caseid, instrument).then(function (response) {
+        vm.items = response.data;
+        let numberOfItems = vm.items.length;
+
+        vm.showText = new Array();
+        // setup order as requested by retspsyk pdf
+
+        vm.showText[0] = getItemWithID(119, vm.items); // "name": "SIRS og SIRS-2",
+        vm.showText[1] = getItemWithID(120, vm.items); // "name": "RFI",
+        vm.showText[2] = getItemWithID(121, vm.items); // "name": "SIMS",
+        vm.showText[3] = getItemWithID(122, vm.items); // "name": "MMPI-2 / MMPI-2 RF",
+
+        vm.showText[4] = getItemWithID(123, vm.items); // "name": "TOMM",
+        vm.showText[5] = getItemWithID(124, vm.items);  // "name": "M_FAST",
+        vm.showText[6] = getItemWithID(125, vm.items); // "name": "PAI",
+        vm.showText[7] = getItemWithID(126, vm.items); // "name": "RMT-W og RMT-F",
+
+        vm.showText[8] = getItemWithID(127, vm.items); // "name": "MENT",
+        vm.showText[9] = getItemWithID(128, vm.items); // "name": "MCMI-III / MCMI-IV",
+        vm.showText[10] = getItemWithID(129, vm.items); // "name": "VSVT",
+        vm.showText[11] = getItemWithID(130, vm.items); // "name": "ADI",
+
+        vm.showText[12] = getItemWithID(131, vm.items); // "name": "MENT",
+        vm.showText[13] = getItemWithID(132, vm.items); // "name": "MCMI-III / MCMI-IV",
+        vm.showText[14] = getItemWithID(133, vm.items); // "name": "VSVT",
+        vm.showText[15] = getItemWithID(134, vm.items); // "name": "ADI",
+
+        vm.showText[16] = getItemWithID(135, vm.items); // "name": "MENT",
+        vm.showText[17] = getItemWithID(136, vm.items); // "name": "MCMI-III / MCMI-IV",
+        vm.showText[18] = getItemWithID(137, vm.items); // "name": "VSVT",
+        vm.showText[19] = getItemWithID(138, vm.items); // "name": "ADI",
+
+        vm.showText[20] = getItemWithID(139, vm.items); // "name": "ADI",
+        vm.showText[21] = getItemWithID(140, vm.items); // "name": "ADI",
+        vm.showText[22] = getItemWithID(141, vm.items); // "name": "ADI",
+
+        vm.showText[23] = getItemWithID(142, vm.items); // "name": "ADI",
+        vm.showText[24] = getItemWithID(143, vm.items); // "name": "ADI",
+        vm.showText[25] = getItemWithID(144, vm.items); // "name": "ADI",
+
+        vm.showText[26] = getItemWithID(145, vm.items); // "name": "MENT",
+        vm.showText[27] = getItemWithID(146, vm.items); // "name": "MCMI-III / MCMI-IV",
+        vm.showText[28] = getItemWithID(147, vm.items); // "name": "VSVT",
+        vm.showText[29] = getItemWithID(148, vm.items); // "name": "ADI",
+
+        vm.showText[30] = getItemWithID(149, vm.items); // "name": "MENT",
+        vm.showText[31] = getItemWithID(150, vm.items); // "name": "MCMI-III / MCMI-IV",
+        vm.showText[32] = getItemWithID(151, vm.items); // "name": "VSVT",
+        vm.showText[33] = getItemWithID(152, vm.items); // "name": "ADI",
+
+      });
+
+      $mdDialog.show({
+        templateUrl: 'app/src/declaration/view/psyc/sections/popupRisiko.html',
+        scope: $scope, // use parent scope in template
+        preserveScope: true, // do not forget this if use parent scope
+        clickOutsideToClose: false
+      });
+    }
+
+vm.viewButtonRisiko = viewButtonRisiko;
+
+function viewButtonMalingering(instrument) {
+
+      $scope.myCountry = {
+        selected:{}
+      };
+
+      vm.selectedInstrument = instrument;
+      vm.selectedInstrumentName = vm.titleMappings[instrument];
+
+      DeclarationPsycService.getDetailViewData($stateParams.caseid, instrument).then(function (response) {
+        vm.items = response.data;
+        let numberOfItems = vm.items.length;
+
+        vm.showText = new Array();
+        // setup order as requested by retspsyk pdf
+
+        vm.showText[0] = getItemWithID(106, vm.items); // "name": "SIRS og SIRS-2",
+
+        vm.showText[1] = getItemWithID(107, vm.items); // "name": "RFI",
+        vm.showText[2] = getItemWithID(108, vm.items); // "name": "SIMS",
+        vm.showText[3] = getItemWithID(109, vm.items); // "name": "MMPI-2 / MMPI-2 RF",
+
+        vm.showText[4] = getItemWithID(110, vm.items); // "name": "TOMM",
+        vm.showText[5] = getItemWithID(111, vm.items);  // "name": "M_FAST",
+        vm.showText[6] = getItemWithID(112, vm.items); // "name": "PAI",
+
+        vm.showText[7] = getItemWithID(113, vm.items); // "name": "RMT-W og RMT-F",
+        vm.showText[8] = getItemWithID(114, vm.items); // "name": "MENT",
+        vm.showText[9] = getItemWithID(115, vm.items); // "name": "MCMI-III / MCMI-IV",
+
+        vm.showText[10] = getItemWithID(116, vm.items); // "name": "VSVT",
+        vm.showText[11] = getItemWithID(117, vm.items); // "name": "ADI",
+        vm.showText[12] = getItemWithID(118, vm.items); // "name": "WMS-III delprøve (ansigtsgenkendelse)",
+      });
+
+      $mdDialog.show({
+        templateUrl: 'app/src/declaration/view/psyc/sections/popupMalering.html',
+        scope: $scope, // use parent scope in template
+        preserveScope: true, // do not forget this if use parent scope
+        clickOutsideToClose: false
+      });
+    }
+vm.viewButtonMalingering = viewButtonMalingering;
+
 vm.viewButtonEksplicitteTests = viewButtonEksplicitteTests;
 
 function viewButtonPraestationsTests(instrument) {
@@ -408,6 +523,27 @@ function viewButtonPraestationsTests(instrument) {
         vm.showText[24] = getItemWithID(59, vm.items); // "name": "RME-R",
         vm.showText[25] = getItemWithID(60, vm.items); // "name": "Brüne's Billedordning",
         vm.showText[26] = getItemWithID(61, vm.items); // "name": "Animerede trekanter",
+        vm.showText[27] = getItemWithID(62, vm.items); // "name": "TASTIT",
+
+        vm.showText[28] = getItemWithID(63, vm.items); // "name": "Ordmobilisering",
+        vm.showText[29] = getItemWithID(64, vm.items); // "name": "Kognitive Estimater",
+        vm.showText[30] = getItemWithID(65, vm.items); // "name": "Street test",
+        vm.showText[31] = getItemWithID(66, vm.items); // "name": "Kendte Ansigter",
+
+        vm.showText[32] = getItemWithID(67, vm.items); // "name": "STROOP test",
+        vm.showText[33] = getItemWithID(68, vm.items); // "name": "Tower of London",
+        vm.showText[34] = getItemWithID(69, vm.items); // "name": "IOWA Gambling Task V2",
+        vm.showText[35] = getItemWithID(70, vm.items); // "name": "Wisconsin Card Sorting Test",
+
+        vm.showText[36] = getItemWithID(71, vm.items); // "name": "RAVLT",
+        vm.showText[37] = getItemWithID(72, vm.items); // "name": "RCFT",
+        vm.showText[38] = getItemWithID(73, vm.items); // "name": "Ordsprogsprøve",
+        vm.showText[39] = getItemWithID(74, vm.items); // "name": "Sætningsspændvidde",
+
+        vm.showText[40] = getItemWithID(75, vm.items); // "name": "SDMT",
+        vm.showText[41] = getItemWithID(76, vm.items); // "name": "D2/D2-R test",
+        vm.showText[42] = getItemWithID(77, vm.items); // "name": "Katerogistyret billedordning",
+        vm.showText[43] = getItemWithID(78, vm.items); // "name": "Trail-Making test",
 
 
 

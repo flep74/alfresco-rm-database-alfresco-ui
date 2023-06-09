@@ -353,6 +353,75 @@ function viewButtonEksplicitteTests(instrument) {
       });
     }
 
+function viewButtonKonklusion(instrument) {
+
+      $scope.myCountry = {
+        selected:{}
+      };
+
+      vm.selectedInstrument = instrument;
+      vm.selectedInstrumentName = vm.titleMappings[instrument];
+
+      DeclarationPsycService.getDetailViewData($stateParams.caseid, instrument).then(function (response) {
+        vm.items = response.data;
+        let numberOfItems = vm.items.length;
+
+        vm.showText = new Array();
+        // setup order as requested by retspsyk pdf
+
+        vm.showText[0] = getItemWithID(159, vm.items); // "name": "SIRS og SIRS-2",
+        vm.showText[1] = getItemWithID(160, vm.items); // "name": "RFI",
+        vm.showText[2] = getItemWithID(161, vm.items); // "name": "SIMS",
+
+        vm.showText[3] = getItemWithID(162, vm.items); // "name": "MMPI-2 / MMPI-2 RF",
+        vm.showText[4] = getItemWithID(163, vm.items); // "name": "TOMM",
+        vm.showText[5] = getItemWithID(164, vm.items);  // "name": "M_FAST",
+
+        vm.showText[6] = getItemWithID(165, vm.items); // "name": "PAI",
+        vm.showText[7] = getItemWithID(166, vm.items); // "name": "RMT-W og RMT-F",
+        vm.showText[8] = getItemWithID(167, vm.items); // "name": "MENT",
+
+        vm.showText[9] = getItemWithID(168, vm.items); // "name": "MCMI-III / MCMI-IV",
+        vm.showText[10] = getItemWithID(169, vm.items); // "name": "VSVT",
+        vm.showText[11] = getItemWithID(170, vm.items); // "name": "ADI",
+
+        vm.showText[12] = getItemWithID(171, vm.items); // "name": "MENT",
+        vm.showText[13] = getItemWithID(172, vm.items); // "name": "MCMI-III / MCMI-IV",
+        vm.showText[14] = getItemWithID(173, vm.items); // "name": "VSVT",
+
+        vm.showText[15] = getItemWithID(174, vm.items); // "name": "ADI",
+        vm.showText[16] = getItemWithID(175, vm.items); // "name": "MENT",
+        vm.showText[17] = getItemWithID(176, vm.items); // "name": "MCMI-III / MCMI-IV",
+
+        vm.showText[18] = getItemWithID(177, vm.items); // "name": "VSVT",
+        vm.showText[19] = getItemWithID(178, vm.items); // "name": "ADI",
+        vm.showText[20] = getItemWithID(179, vm.items); // "name": "ADI",
+
+        vm.showText[21] = getItemWithID(180, vm.items); // "name": "ADI",
+        vm.showText[22] = getItemWithID(181, vm.items); // "name": "ADI",
+        vm.showText[23] = getItemWithID(182, vm.items); // "name": "ADI",
+
+        vm.showText[24] = getItemWithID(183, vm.items); // "name": "ADI",
+        vm.showText[25] = getItemWithID(184, vm.items); // "name": "ADI",
+        vm.showText[26] = getItemWithID(185, vm.items); // "name": "MENT",
+
+        vm.showText[27] = getItemWithID(186, vm.items); // "name": "MCMI-III / MCMI-IV",
+        vm.showText[28] = getItemWithID(187, vm.items); // "name": "VSVT",
+        vm.showText[29] = getItemWithID(188, vm.items); // "name": "ADI",
+
+      });
+
+      $mdDialog.show({
+        templateUrl: 'app/src/declaration/view/psyc/sections/popupKonklusion.html',
+        scope: $scope, // use parent scope in template
+        preserveScope: true, // do not forget this if use parent scope
+        clickOutsideToClose: false
+      });
+    }
+
+vm.viewButtonKonklusion = viewButtonKonklusion;
+
+
 function viewButtonRisiko(instrument) {
 
       $scope.myCountry = {
@@ -423,6 +492,43 @@ function viewButtonRisiko(instrument) {
     }
 
 vm.viewButtonRisiko = viewButtonRisiko;
+
+function viewButtonPsykoligiskMalingering(instrument) {
+
+      $scope.myCountry = {
+        selected:{}
+      };
+
+      vm.selectedInstrument = instrument;
+      vm.selectedInstrumentName = vm.titleMappings[instrument];
+
+      DeclarationPsycService.getDetailViewData($stateParams.caseid, instrument).then(function (response) {
+        vm.items = response.data;
+        let numberOfItems = vm.items.length;
+
+        vm.showText = new Array();
+        // setup order as requested by retspsyk pdf
+
+        vm.showText[0] = getItemWithID(153, vm.items); // "name": "SIRS og SIRS-2",
+        vm.showText[1] = getItemWithID(154, vm.items); // "name": "RFI",
+
+        vm.showText[2] = getItemWithID(155, vm.items); // "name": "SIMS",
+        vm.showText[3] = getItemWithID(156, vm.items); // "name": "MMPI-2 / MMPI-2 RF",
+
+        vm.showText[4] = getItemWithID(157, vm.items); // "name": "TOMM",
+
+        vm.showText[5] = getItemWithID(158, vm.items);  // "name": "M_FAST",
+      });
+
+      $mdDialog.show({
+        templateUrl: 'app/src/declaration/view/psyc/sections/popupPsykologiskMalering.html',
+        scope: $scope, // use parent scope in template
+        preserveScope: true, // do not forget this if use parent scope
+        clickOutsideToClose: false
+      });
+    }
+
+vm.viewButtonPsykoligiskMalingering = viewButtonPsykoligiskMalingering;
 
 function viewButtonMalingering(instrument) {
 

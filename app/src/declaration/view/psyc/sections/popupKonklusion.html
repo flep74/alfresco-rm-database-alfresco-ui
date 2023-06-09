@@ -1,0 +1,515 @@
+
+
+<html>
+
+<div class="base">
+
+<style type="text/css">
+
+        .base {
+        width: 100%;
+        height: 100%;
+        }
+
+        .true {
+            color: white;
+            background-color: rgb(172,203,252);
+            text-align: center;
+        }
+        .false {
+            text-align: center;
+        }
+        .myBorder_true {
+            text-align: center;
+            border-width:3px;
+            border-style:solid;
+            border-color: black;
+            background-color: rgb(172,203,252);
+            padding: 0.1em;
+            width:350px;
+            margin: 0 auto;
+            display: block;
+            vertical-align: middle;
+        }
+        .myBorder_false {
+            text-align: center;
+            border-width:3px;
+            border-style:solid;
+            border-color: black;
+            padding: 0.1em;
+            width:350px;
+            margin: 0 auto;
+            display: block;
+            vertical-align: middle;
+        }
+        .myBorder {
+            border-width:3px;
+            border-style:solid;
+            border-color: black;
+            padding: 0.1em;
+            width:350px;
+            margin: 0 auto;
+            display: block;
+            vertical-align: middle;
+        }
+        .Border {
+            border-width:3px;
+            border-style:solid;
+            border-color: white;
+            padding: 0.1em;
+            width:350px;
+            margin: 0 auto;
+            display: block;
+            vertical-align: middle;
+        }
+
+        tr:hover td {
+        background: white;
+        }
+
+</style>
+
+<md-card>
+    <md-card-title>
+        <md-card-title-text>
+            <div>
+            <center><span class="md-headline">Konklusion underbygget af den psykologiske undersøgelse</span></center>
+            </div>
+        </md-card-title-text>
+    </md-card-title>
+    <md-card-content >
+
+
+                    <table style="word-wrap:break-word;table-layout:fixed;">
+
+                    <tr>
+
+                        <td  colspan="2">
+                            <div layout="column">
+                                <div>
+                                    <div layout="row">
+                                        <div class="myBorder_false"  layout-align="center">
+                                            <p> <b> ICD-11 kapitel 6 hovedkategorier  </b></div> </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </td>
+
+                        <td >
+                            <div layout="column">
+                                <div>
+                                    <div layout="row">
+                                        <div class="myBorder_false"  layout-align="center">
+                                            <p> <b> Øvrige kategorier  </b></div> </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </td>
+                    </tr>
+
+                        <tr>
+
+                            <td >
+                                <div layout="column">
+                                    <div>
+                                        <div layout="row">
+                                            <div class="myBorder_{{ vm.showText[0].val }}"  layout-align="center">
+                                                <p> <div ng-click="vm.showTextClicked(0)"> {{ vm.showText[0].label }} </div> </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td >
+                                <div layout="column">
+                                    <div>
+                                        <div layout="row">
+                                            <div class="myBorder_{{ vm.showText[1].val }}"  layout-align="center">
+                                                <p> <div ng-click="vm.showTextClicked(1)"> {{ vm.showText[1].label }} </div> </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td >
+                                <div layout="column">
+                                    <div>
+                                        <div layout="row">
+                                            <div class="myBorder_{{ vm.showText[2].val }}"  layout-align="center">
+                                                <p> <div ng-click="vm.showTextClicked(2)"> {{ vm.showText[2].label }} </div> </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+
+                            <td >
+                                <div layout="column">
+                                    <div>
+                                        <div layout="row">
+                                            <div class="myBorder_{{ vm.showText[3].val }}"  layout-align="center">
+                                                <p> <div ng-click="vm.showTextClicked(3)"> {{ vm.showText[3].label }} </div> </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td >
+                                <div layout="column">
+                                    <div>
+                                        <div layout="row">
+                                            <div class="myBorder_{{ vm.showText[4].val }}"  layout-align="center">
+                                                <p> <div ng-click="vm.showTextClicked(4)"> {{ vm.showText[4].label }} </div> </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td >
+                                <div layout="column">
+                                    <div>
+                                        <div layout="row">
+                                            <div class="myBorder_{{ vm.showText[5].val }}"  layout-align="center">
+                                                <p> <div ng-click="vm.showTextClicked(5)"> {{ vm.showText[5].label }} </div> </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+
+                            <td >
+                                <div layout="column">
+                                    <div>
+                                        <div layout="row">
+                                            <div class="myBorder_{{ vm.showText[6].val }}"  layout-align="center">
+                                                <p> <div ng-click="vm.showTextClicked(6)"> {{ vm.showText[6].label }} </div> </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td >
+                                <div layout="column">
+                                    <div>
+                                        <div layout="row">
+                                            <div class="myBorder_{{ vm.showText[7].val }}"  layout-align="center">
+                                                <p> <div ng-click="vm.showTextClicked(7)"> {{ vm.showText[7].label }} </div> </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td >
+                                <div layout="column">
+                                    <div>
+                                        <div layout="row">
+                                            <div class="myBorder_{{ vm.showText[8].val }}"  layout-align="center">
+                                                <p> <div ng-click="vm.showTextClicked(8)"> {{ vm.showText[8].label }} </div> </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+
+                            <td >
+                                <div layout="column">
+                                    <div>
+                                        <div layout="row">
+                                            <div class="myBorder_{{ vm.showText[9].val }}"  layout-align="center">
+                                                <p> <div ng-click="vm.showTextClicked(9)"> {{ vm.showText[9].label }} </div> </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td >
+                                <div layout="column">
+                                    <div>
+                                        <div layout="row">
+                                            <div class="myBorder_{{ vm.showText[10].val }}"  layout-align="center">
+                                                <p> <div ng-click="vm.showTextClicked(10)"> {{ vm.showText[10].label }} </div> </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td >
+                                <div layout="column">
+                                    <div>
+                                        <div layout="row">
+                                            <div class="myBorder_{{ vm.showText[11].val }}"  layout-align="center">
+                                                <p> <div ng-click="vm.showTextClicked(11)"> {{ vm.showText[11].label }} </div> </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+
+                            <td >
+                                <div layout="column">
+                                    <div>
+                                        <div layout="row">
+                                            <div class="myBorder_{{ vm.showText[12].val }}"  layout-align="center">
+                                                <p> <div ng-click="vm.showTextClicked(12)"> {{ vm.showText[12].label }} </div> </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td >
+                                <div layout="column">
+                                    <div>
+                                        <div layout="row">
+                                            <div class="myBorder_{{ vm.showText[13].val }}"  layout-align="center">
+                                                <p> <div ng-click="vm.showTextClicked(13)"> {{ vm.showText[13].label }} </div> </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td >
+                                <div layout="column">
+                                    <div>
+                                        <div layout="row">
+                                            <div class="myBorder_{{ vm.showText[14].val }}"  layout-align="center">
+                                                <p> <div ng-click="vm.showTextClicked(14)"> {{ vm.showText[14].label }} </div> </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+
+                            <td >
+                                <div layout="column">
+                                    <div>
+                                        <div layout="row">
+                                            <div class="myBorder_{{ vm.showText[15].val }}"  layout-align="center">
+                                                <p> <div ng-click="vm.showTextClicked(15)"> {{ vm.showText[15].label }} </div> </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td >
+                                <div layout="column">
+                                    <div>
+                                        <div layout="row">
+                                            <div class="myBorder_{{ vm.showText[16].val }}"  layout-align="center">
+                                                <p> <div ng-click="vm.showTextClicked(16)"> {{ vm.showText[16].label }} </div> </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td >
+                                <div layout="column">
+                                    <div>
+                                        <div layout="row">
+                                            <div class="myBorder_{{ vm.showText[17].val }}"  layout-align="center">
+                                                <p> <div ng-click="vm.showTextClicked(17)"> {{ vm.showText[17].label }} </div> </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+
+                            <td >
+                                <div layout="column">
+                                    <div>
+                                        <div layout="row">
+                                            <div class="myBorder_{{ vm.showText[18].val }}"  layout-align="center">
+                                                <p> <div ng-click="vm.showTextClicked(18)"> {{ vm.showText[18].label }} </div> </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td >
+                                <div layout="column">
+                                    <div>
+                                        <div layout="row">
+                                            <div class="myBorder_{{ vm.showText[19].val }}"  layout-align="center">
+                                                <p> <div ng-click="vm.showTextClicked(19)"> {{ vm.showText[19].label }} </div> </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td >
+                                <div layout="column">
+                                    <div>
+                                        <div layout="row">
+                                            <div class="myBorder_{{ vm.showText[20].val }}"  layout-align="center">
+                                                <p> <div ng-click="vm.showTextClicked(20)"> {{ vm.showText[20].label }} </div> </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+
+                            <td >
+                                <div layout="column">
+                                    <div>
+                                        <div layout="row">
+                                            <div class="myBorder_{{ vm.showText[21].val }}"  layout-align="center">
+                                                <p> <div ng-click="vm.showTextClicked(21)"> {{ vm.showText[21].label }} </div> </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td >
+                                <div layout="column">
+                                    <div>
+                                        <div layout="row">
+                                            <div class="myBorder_{{ vm.showText[22].val }}"  layout-align="center">
+                                                <p> <div ng-click="vm.showTextClicked(22)"> {{ vm.showText[22].label }} </div> </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td >
+                                <div layout="column">
+                                    <div>
+                                        <div layout="row">
+                                            <div class="myBorder_{{ vm.showText[23].val }}"  layout-align="center">
+                                                <p> <div ng-click="vm.showTextClicked(23)"> {{ vm.showText[23].label }} </div> </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+
+                            <td >
+                                <div layout="column">
+                                    <div>
+                                        <div layout="row">
+                                            <div class="myBorder_{{ vm.showText[24].val }}"  layout-align="center">
+                                                <p> <div ng-click="vm.showTextClicked(24)"> {{ vm.showText[24].label }} </div> </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td >
+                                <div layout="column">
+                                    <div>
+                                        <div layout="row">
+                                            <div class="myBorder_{{ vm.showText[25].val }}"  layout-align="center">
+                                                <p> <div ng-click="vm.showTextClicked(25)"> {{ vm.showText[25].label }} </div> </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td >
+                                <div layout="column">
+                                    <div>
+                                        <div layout="row">
+                                            <div class="myBorder_{{ vm.showText[26].val }}"  layout-align="center">
+                                                <p> <div ng-click="vm.showTextClicked(26)"> {{ vm.showText[26].label }} </div> </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+
+                            <td >
+                                <div layout="column">
+                                    <div>
+                                        <div layout="row">
+                                            <div class="myBorder_{{ vm.showText[27].val }}"  layout-align="center">
+                                                <p> <div ng-click="vm.showTextClicked(27)"> {{ vm.showText[27].label }} </div> </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td >
+                                <div layout="column">
+                                    <div>
+                                        <div layout="row">
+                                            <div class="myBorder_{{ vm.showText[28].val }}"  layout-align="center">
+                                                <p> <div ng-click="vm.showTextClicked(28)"> {{ vm.showText[28].label }} </div> </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td >
+                                <div layout="column">
+                                    <div>
+                                        <div layout="row">
+                                            <div class="myBorder_{{ vm.showText[29].val }}"  layout-align="center">
+                                                <p> <div ng-click="vm.showTextClicked(29)"> {{ vm.showText[29].label }} </div> </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+
+                </table>
+
+
+
+
+                    <div align="right">
+                    <md-button ng-click="vm.save()"> gem</md-button>  <md-button  ng-click="vm.cancelDialog()">fortryd</md-button>
+                    </div>
+
+    </md-card-content>
+</md-card>
+</div>
+</html>

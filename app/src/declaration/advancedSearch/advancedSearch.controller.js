@@ -181,6 +181,17 @@ function AdvancedSearchController($scope, $state, $templateCache, $mdDialog, $tr
 
     }
 
+  vm.searchPop = function() {
+
+    $mdDialog.show({
+        templateUrl: 'app/src/declaration/view/psyc/sections/popupSearch3.html',
+        scope: $scope, // use parent scope in template
+        preserveScope: true, // do not forget this if use parent scope
+        clickOutsideToClose: false
+      });
+
+  }
+
 
   vm.pop = function(){
 
@@ -212,6 +223,94 @@ function AdvancedSearchController($scope, $state, $templateCache, $mdDialog, $tr
 
   }
   vm.close = close;
+
+  vm.pop2 = function() {
+
+          console.log("hvad er der valgt:")
+          console.log($scope.searchParams.psyktests);
+
+          if ($scope.searchParams.psyktests == vm.PROP_PSYC_LIBRARY_KONKLUSION_TAGS) {
+
+            viewButtonKonklusion(vm.PROP_PSYC_LIBRARY_KONKLUSION_TAGS);
+
+          }
+
+
+    };
+
+  function viewButtonKonklusion(instrument) {
+
+        $scope.myCountry.konklusion = {
+          selected:{}
+        };
+
+        vm.selectedInstrument = instrument;
+        vm.selectedInstrumentName = vm.titleMappings[instrument];
+
+        DeclarationPsycService.getAdvancedSearchInstrument(instrument).then(function (response) {
+
+                console.log("havd er response")
+            console.log(response);
+
+            vm.items = response.data;
+
+
+          let numberOfItems = vm.items.length;
+
+          vm.showText = new Array();
+          // setup order as requested by retspsyk pdf
+
+          vm.showText[0] = getItemWithID(159, vm.items); // "name": "SIRS og SIRS-2",
+          vm.showText[1] = getItemWithID(160, vm.items); // "name": "RFI",
+          vm.showText[2] = getItemWithID(161, vm.items); // "name": "SIMS",
+
+          vm.showText[3] = getItemWithID(162, vm.items); // "name": "MMPI-2 / MMPI-2 RF",
+          vm.showText[4] = getItemWithID(163, vm.items); // "name": "TOMM",
+          vm.showText[5] = getItemWithID(164, vm.items);  // "name": "M_FAST",
+
+          vm.showText[6] = getItemWithID(165, vm.items); // "name": "PAI",
+          vm.showText[7] = getItemWithID(166, vm.items); // "name": "RMT-W og RMT-F",
+          vm.showText[8] = getItemWithID(167, vm.items); // "name": "MENT",
+
+          vm.showText[9] = getItemWithID(168, vm.items); // "name": "MCMI-III / MCMI-IV",
+          vm.showText[10] = getItemWithID(169, vm.items); // "name": "VSVT",
+          vm.showText[11] = getItemWithID(170, vm.items); // "name": "ADI",
+
+          vm.showText[12] = getItemWithID(171, vm.items); // "name": "MENT",
+          vm.showText[13] = getItemWithID(172, vm.items); // "name": "MCMI-III / MCMI-IV",
+          vm.showText[14] = getItemWithID(173, vm.items); // "name": "VSVT",
+
+          vm.showText[15] = getItemWithID(174, vm.items); // "name": "ADI",
+          vm.showText[16] = getItemWithID(175, vm.items); // "name": "MENT",
+          vm.showText[17] = getItemWithID(176, vm.items); // "name": "MCMI-III / MCMI-IV",
+
+          vm.showText[18] = getItemWithID(177, vm.items); // "name": "VSVT",
+          vm.showText[19] = getItemWithID(178, vm.items); // "name": "ADI",
+          vm.showText[20] = getItemWithID(179, vm.items); // "name": "ADI",
+
+          vm.showText[21] = getItemWithID(180, vm.items); // "name": "ADI",
+          vm.showText[22] = getItemWithID(181, vm.items); // "name": "ADI",
+          vm.showText[23] = getItemWithID(182, vm.items); // "name": "ADI",
+
+          vm.showText[24] = getItemWithID(183, vm.items); // "name": "ADI",
+          vm.showText[25] = getItemWithID(184, vm.items); // "name": "ADI",
+          vm.showText[26] = getItemWithID(185, vm.items); // "name": "MENT",
+
+          vm.showText[27] = getItemWithID(186, vm.items); // "name": "MCMI-III / MCMI-IV",
+          vm.showText[28] = getItemWithID(187, vm.items); // "name": "VSVT",
+          vm.showText[29] = getItemWithID(188, vm.items); // "name": "ADI",
+
+        });
+
+        $mdDialog.show({
+          templateUrl: 'app/src/declaration/view/psyc/sections/popupKonklusion.html',
+          scope: $scope, // use parent scope in template
+          preserveScope: true, // do not forget this if use parent scope
+          clickOutsideToClose: false
+        });
+  }
+  vm.viewButtonKonklusion = viewButtonKonklusion;
+
 
   function viewInstrument(instrument) {
     vm.selectedInstrument = instrument;
@@ -495,6 +594,79 @@ function AdvancedSearchController($scope, $state, $templateCache, $mdDialog, $tr
   function nextPage() {
     advancedSearch(vm.next, 25, $scope.searchParams, false)
   }
+
+    function getItemWithID(id, itemList) {
+      var found = false;
+      var i = 0;
+
+      while (!found && i <= itemList.length-1) {
+          if (itemList[i].id == id) {
+              console.log("me found you");
+              console.log(itemList[i]);
+              return itemList[i];
+              found = true;
+          }
+          else {
+              i = i +1;
+          }
+      }
+    }
+
+function save() {
+
+    let val = $scope.myCountry.selected;
+
+    let selectedIds = "";
+
+    for (var i =0; i<=vm.showText.length-1;i++) {
+        var instrument = vm.showText[i];
+        if (instrument.val) {
+            if (selectedIds == "") {
+                  selectedIds = instrument.id;
+            }
+            else {
+              selectedIds = selectedIds + "," + instrument.id;
+            }
+        }
+    }
+
+    console.log("hvad er selectedIds:")
+    console.log(selectedIds)
+    console.log(selectedIds)
+    console.log(selectedIds)
+
+//    DeclarationPsycService.saveDetailViewData($stateParams.caseid, vm.selectedInstrument, selectedIds).then(function (response) {
+//      $scope.myCountry = {
+//        selected:{}
+//      };
+//
+//      // needed or else the template shows a glimse of the old template before drawing the new
+//      $templateCache.removeAll();
+//      $mdDialog.cancel();
+//
+//      activate();
+//
+//    });
+  }
+
+  vm.save = save;
+
+  function cancelDialog() {
+      $scope.myCountry = {
+        selected:{}
+      };
+
+      // needed or else the template shows a glimse of the old template before drawing the new
+      $templateCache.removeAll();
+      $mdDialog.cancel();
+    }
+    vm.cancelDialog = cancelDialog;
+
+    function showTextClicked(item) {
+        vm.showText[item].val = !vm.showText[item].val;
+      }
+
+      vm.showTextClicked = showTextClicked;
 
   function clean(obj) {
     for (var propName in obj) {

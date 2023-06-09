@@ -728,7 +728,6 @@ function viewButtonAnvendteInterviewsRatingScale(instrument) {
 
 
   function getItemWithID(id, itemList) {
-
     var found = false;
     var i = 0;
 
@@ -742,9 +741,7 @@ function viewButtonAnvendteInterviewsRatingScale(instrument) {
         else {
             i = i +1;
         }
-
     }
-
   }
 
 

@@ -62,6 +62,22 @@
             display: block;
             vertical-align: middle;
         }
+        .bigfont {
+            font-size: 34px;
+        }
+        .myBorder_color {
+            text-align: center;
+            border-width:3px;
+            border-style:solid;
+            border-color: black;
+            padding: 0.1em;
+            width:350px;
+            margin: 0 auto;
+            display: block;
+            vertical-align: middle;
+            background-color: rgb(153, 0, 51);
+            color : white;
+        }
 
         tr:hover td {
         background: white;
@@ -79,10 +95,12 @@
     </md-card-title>
     <md-card-content >
 
-                    <div class="Border"  style="width: 600px;" layout-align="center" >
-                        <p> Anvendte kognitive og neuropsykologiske præstationstest- og screeningsbatterier</p>
-                    </div>
 
+        <table>
+            <tr>
+                <p align="center" class="bigfont"> <b>Anvendte eksplicitte (spørgeskema) tests</b></p>
+            </tr>
+        </table>
 
 
                     <table style="word-wrap:break-word;table-layout:fixed;">
@@ -93,7 +111,7 @@
                                 <div layout="column">
                                     <div>
                                         <div layout="row">
-                                            <div class="myBorder_false"  layout-align="center">
+                                            <div class="myBorder_color"  layout-align="center">
                                                 <p> Svære sindslidelser og psykiatriske tilstande </div> </p>
                                             </div>
                                         </div>
@@ -104,7 +122,7 @@
                                 <div layout="column">
                                     <div>
                                         <div layout="row">
-                                            <div class="myBorder_false"  layout-align="center">
+                                            <div class="myBorder_color"  layout-align="center">
                                                 <p> Forstyrrelser af personlighed m.m </div> </p>
                                         </div>
                                     </div>
@@ -116,7 +134,7 @@
                                 <div layout="column">
                                     <div>
                                         <div layout="row">
-                                            <div class="myBorder_false"  layout-align="center">
+                                            <div class="myBorder_color"  layout-align="center">
                                                 <p> Forstyrrelser af udvikling og adfærd </div> </p>
                                         </div>
                                     </div>

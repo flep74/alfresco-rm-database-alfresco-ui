@@ -42,6 +42,67 @@
             display: block;
             vertical-align: middle;
         }
+        .myBorder2_true {
+           text-align: center;
+            border-width:3px;
+            border-style:solid;
+            border-color: black;
+            background-color: rgb(172,203,252);
+            padding: 0.1em;
+            width:350px;
+            margin: 0 auto;
+            display: block;
+            vertical-align: middle;
+            right: 650px;
+
+        }
+        .myBorder2_false {
+             text-align: center;
+            border-width:3px;
+            border-style:solid;
+            border-color: black;
+            padding: 0.1em;
+            width:350px;
+            margin: 0 auto;
+        }
+        .myBorder3_true {
+            text-align: center;
+            border-width:3px;
+            border-style:solid;
+            border-color: black;
+            background-color: rgb(172,203,252);
+            padding: 0.1em;
+            width:350px;
+            margin: 0 auto;
+            display: block;
+            vertical-align: middle;
+            right: 650px;
+        }
+        .myBorder3_false {
+            text-align: center;
+            border-width:3px;
+            border-style:solid;
+            border-color: black;
+            padding: 0.1em;
+            width:350px;
+            margin: 0 auto;
+
+            display: block;
+            vertical-align: middle;
+        }
+        .myBorder_color {
+            text-align: center;
+            border-width:3px;
+            border-style:solid;
+            border-color: black;
+            padding: 0.1em;
+            width:350px;
+            margin: 0 auto;
+            display: block;
+            vertical-align: middle;
+            background-color: rgb(153, 0, 51);
+            color : white;
+        }
         .myBorder {
             border-width:3px;
             border-style:solid;
@@ -100,7 +161,7 @@
                             <div layout="column">
                                 <div>
                                     <div layout="row">
-                                        <div class="myBorder_false"  layout-align="center">
+                                        <div class="myBorder_color"  layout-align="center">
                                             <p>  Bemærk: Malingering adresseres her  sinde brede betydning,
                                         hvori misrepræsentation af tilstande, symptomer og adfærd
                                         dels gradbøjes, dels har flertydige motivationsgrundlag, og dels
@@ -123,6 +184,18 @@
                         </td>
 
                     </tr>
+
+                    <tr>
+                        <td >
+                            <div layout="column">
+                                <div>
+                                    <div layout="row">
+                                        <div class="Border"  layout-align="center">
+                                            <p>  </div> </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
 
                         <td >
                             <div layout="column">
@@ -148,18 +221,43 @@
                             </div>
                         </td>
 
-                        <td >
-                            <div layout="column">
-                                <div>
-                                    <div layout="row">
-                                        <div class="myBorder_{{ vm.showText[1].val }}"  layout-align="center">
-                                            <p> <div ng-click="vm.showTextClicked(1)"> {{ vm.showText[1].label }} </div> </p>
+                        </tr>
+
+                        <tr>
+                            <td >
+                                <div layout="column">
+                                    <div>
+                                        <div layout="row">
+                                            <div class="Border"  layout-align="center">
+                                                <p>  </div> </p>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </td>
 
-                        </td>
+                            <td >
+                                <div layout="column">
+                                    <div>
+                                        <div layout="row">
+                                            <div class="myBorder_{{ vm.showText[1].val }}"  layout-align="center">
+                                                <p> <div ng-click="vm.showTextClicked(1)"> {{ vm.showText[1].label }} </div> </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </td>
+
+                            <td >
+                                <div layout="column">
+                                    <div>
+                                        <div layout="row">
+                                            <div class="Border"  layout-align="center">
+                                                <p>  </div> </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
 
                         </tr>
 
@@ -169,7 +267,7 @@
                                 <div layout="column">
                                     <div>
                                         <div layout="row">
-                                            <div class="myBorder_{{ vm.showText[2].val }}"  layout-align="center">
+                                            <div class="myBorder2_{{ vm.showText[2].val }}"  layout-align="center">
                                                 <p> <div ng-click="vm.showTextClicked(2)"> {{ vm.showText[2].label }} </div> </p>
                                             </div>
                                         </div>
@@ -188,11 +286,12 @@
                                     </div>
                                 </div>
                             </td>
+
                             <td >
                                 <div layout="column">
                                     <div>
                                         <div layout="row">
-                                            <div class="myBorder_{{ vm.showText[3].val }}"  layout-align="center">
+                                            <div class="myBorder3_{{ vm.showText[3].val }}"  layout-align="center">
                                                 <p> <div ng-click="vm.showTextClicked(3)"> {{ vm.showText[3].label }} </div> </p>
                                             </div>
                                         </div>
@@ -201,19 +300,10 @@
 
                             </td>
 
+
                         </tr>
 
                         <tr>
-                            <td >
-                                <div layout="column">
-                                    <div>
-                                        <div layout="row">
-                                            <div class="Border"  layout-align="center">
-                                                <p>  </div> </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </td>
 
                             <td >
                                 <div layout="column">
@@ -239,20 +329,6 @@
                                 </div>
                             </td>
 
-                        </tr>
-
-                        <tr>
-                            <td >
-                                <div layout="column">
-                                    <div>
-                                        <div layout="row">
-                                            <div class="Border"  layout-align="center">
-                                                <p>  </div> </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </td>
-
                             <td >
                                 <div layout="column">
                                     <div>
@@ -266,18 +342,11 @@
 
                             </td>
 
-                            <td >
-                                <div layout="column">
-                                    <div>
-                                        <div layout="row">
-                                            <div class="Border"  layout-align="center">
-                                                <p>  </div> </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </td>
 
                         </tr>
+
+
+
 
 
 

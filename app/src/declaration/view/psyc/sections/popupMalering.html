@@ -63,6 +63,23 @@
             vertical-align: middle;
         }
 
+        .bigfont {
+            font-size: 34px;
+        }
+        .myBorder_color {
+            text-align: center;
+            border-width:3px;
+            border-style:solid;
+            border-color: black;
+            padding: 0.1em;
+            width:350px;
+            margin: 0 auto;
+            display: block;
+            vertical-align: middle;
+            background-color: rgb(153, 0, 51);
+            color : white;
+        }
+
         tr:hover td {
         background: white;
         }
@@ -73,12 +90,18 @@
     <md-card-title>
         <md-card-title-text>
             <div>
-            <center><span class="md-headline">Anvendte instrumenter for indikation på malingering</span></center>
+            <center><span class="md-headline"></span></center>
             </div>
         </md-card-title-text>
     </md-card-title>
     <md-card-content >
 
+
+        <table>
+            <tr>
+                <p align="center" class="bigfont"> <b>Anvendte instrumenter for indikation på malingering</b></p>
+            </tr>
+        </table>
 
 
                     <table style="word-wrap:break-word;table-layout:fixed;">
@@ -100,7 +123,7 @@
                             <div layout="column">
                                 <div>
                                     <div layout="row">
-                                        <div class="myBorder_false"  layout-align="center">
+                                        <div class="myBorder_color"  layout-align="center">
                                             <p> <b> Validitetsorienterede interviews  </b></div> </p>
                                     </div>
                                 </div>
@@ -160,6 +183,45 @@
 
                         </tr>
 
+                        <tr>
+
+                            <td >
+                                <div layout="column">
+                                    <div>
+                                        <div layout="row">
+                                            <div class="Border"  layout-align="center">
+                                                <p>  </div> </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td >
+                                <div layout="column">
+                                    <div>
+                                        <div layout="row">
+                                            <div class="myBorder_{{ vm.showText[1].val }}"  layout-align="center">
+                                                <p> <div ng-click="vm.showTextClicked(1)"> {{ vm.showText[1].label }} </div> </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </td>
+
+                            <td >
+                                <div layout="column">
+                                    <div>
+                                        <div layout="row">
+                                            <div class="Border"  layout-align="center">
+                                                <p>  </div> </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+
+                        </tr>
+
                         </tr>
 
 
@@ -169,7 +231,7 @@
                                 <div layout="column">
                                     <div>
                                         <div layout="row">
-                                            <div class="myBorder_false"  layout-align="center">
+                                            <div class="myBorder_color"  layout-align="center">
                                                 <p> <b>Performance validitets tests (PVT) </b></div> </p>
                                         </div>
                                     </div>
@@ -180,7 +242,7 @@
                                 <div layout="column">
                                     <div>
                                         <div layout="row">
-                                            <div class="myBorder_false"  layout-align="center">
+                                            <div class="myBorder_color"  layout-align="center">
                                                 <p> <b> Symptom validitets tests (SVT) </b></div> </p>
                                         </div>
                                     </div>
@@ -191,7 +253,7 @@
                                 <div layout="column">
                                     <div>
                                         <div layout="row">
-                                            <div class="myBorder_false"  layout-align="center">
+                                            <div class="myBorder_color"  layout-align="center">
                                                 <p> <b> Indlejrede validitets tests (EVT) </b> </div> </p>
                                         </div>
                                     </div>
@@ -207,7 +269,7 @@
                                     <div>
                                         <div layout="row">
                                             <div class="myBorder_{{ vm.showText[1].val }}"  layout-align="center">
-                                                <p> <div ng-click="vm.showTextClicked(1)"> {{ vm.showText[1].label }} </div> </p>
+                                                <p> <div ng-click="vm.showTextClicked(1)"> {{ vm.showText[2].label }} </div> </p>
                                             </div>
                                         </div>
                                     </div>
@@ -219,7 +281,7 @@
                                     <div>
                                         <div layout="row">
                                             <div class="myBorder_{{ vm.showText[2].val }}"  layout-align="center">
-                                                <p> <div ng-click="vm.showTextClicked(2)"> {{ vm.showText[2].label }} </div> </p>
+                                                <p> <div ng-click="vm.showTextClicked(2)"> {{ vm.showText[3].label }} </div> </p>
                                             </div>
                                         </div>
                                     </div>
@@ -232,7 +294,7 @@
                                     <div>
                                         <div layout="row">
                                             <div class="myBorder_{{ vm.showText[3].val }}"  layout-align="center">
-                                                <p> <div ng-click="vm.showTextClicked(3)"> {{ vm.showText[3].label }} </div> </p>
+                                                <p> <div ng-click="vm.showTextClicked(3)"> {{ vm.showText[4].label }} </div> </p>
                                             </div>
                                         </div>
                                     </div>
@@ -247,7 +309,7 @@
                                     <div>
                                         <div layout="row">
                                             <div class="myBorder_{{ vm.showText[4].val }}"  layout-align="center">
-                                                <p> <div ng-click="vm.showTextClicked(4)"> {{ vm.showText[4].label }} </div> </p>
+                                                <p> <div ng-click="vm.showTextClicked(4)"> {{ vm.showText[5].label }} </div> </p>
                                             </div>
                                         </div>
                                     </div>
@@ -259,7 +321,7 @@
                                     <div>
                                         <div layout="row">
                                             <div class="myBorder_{{ vm.showText[5].val }}"  layout-align="center">
-                                                <p> <div ng-click="vm.showTextClicked(5)"> {{ vm.showText[5].label }} </div> </p>
+                                                <p> <div ng-click="vm.showTextClicked(5)"> {{ vm.showText[6].label }} </div> </p>
                                             </div>
                                         </div>
                                     </div>
@@ -272,7 +334,7 @@
                                     <div>
                                         <div layout="row">
                                             <div class="myBorder_{{ vm.showText[6].val }}"  layout-align="center">
-                                                <p> <div ng-click="vm.showTextClicked(6)"> {{ vm.showText[6].label }} </div> </p>
+                                                <p> <div ng-click="vm.showTextClicked(6)"> {{ vm.showText[7].label }} </div> </p>
                                             </div>
                                         </div>
                                     </div>
@@ -287,7 +349,7 @@
                                     <div>
                                         <div layout="row">
                                             <div class="myBorder_{{ vm.showText[7].val }}"  layout-align="center">
-                                                <p> <div ng-click="vm.showTextClicked(7)"> {{ vm.showText[7].label }} </div> </p>
+                                                <p> <div ng-click="vm.showTextClicked(7)"> {{ vm.showText[8].label }} </div> </p>
                                             </div>
                                         </div>
                                     </div>
@@ -299,7 +361,7 @@
                                     <div>
                                         <div layout="row">
                                             <div class="myBorder_{{ vm.showText[8].val }}"  layout-align="center">
-                                                <p> <div ng-click="vm.showTextClicked(8)"> {{ vm.showText[8].label }} </div> </p>
+                                                <p> <div ng-click="vm.showTextClicked(8)"> {{ vm.showText[9].label }} </div> </p>
                                             </div>
                                         </div>
                                     </div>
@@ -312,7 +374,7 @@
                                     <div>
                                         <div layout="row">
                                             <div class="myBorder_{{ vm.showText[9].val }}"  layout-align="center">
-                                                <p> <div ng-click="vm.showTextClicked(9)"> {{ vm.showText[9].label }} </div> </p>
+                                                <p> <div ng-click="vm.showTextClicked(9)"> {{ vm.showText[10].label }} </div> </p>
                                             </div>
                                         </div>
                                     </div>
@@ -327,7 +389,7 @@
                                     <div>
                                         <div layout="row">
                                             <div class="myBorder_{{ vm.showText[10].val }}"  layout-align="center">
-                                                <p> <div ng-click="vm.showTextClicked(10)"> {{ vm.showText[10].label }} </div> </p>
+                                                <p> <div ng-click="vm.showTextClicked(10)"> {{ vm.showText[11].label }} </div> </p>
                                             </div>
                                         </div>
                                     </div>
@@ -338,8 +400,8 @@
                                 <div layout="column">
                                     <div>
                                         <div layout="row">
-                                            <div class="myBorder_{{ vm.showText[11].val }}"  layout-align="center">
-                                                <p> <div ng-click="vm.showTextClicked(11)"> {{ vm.showText[11].label }} </div> </p>
+                                            <div class="Border"  layout-align="center">
+                                                <p> <div>  </div> </p>
                                             </div>
                                         </div>
                                     </div>
@@ -351,8 +413,8 @@
                                 <div layout="column">
                                     <div>
                                         <div layout="row">
-                                            <div class="myBorder_{{ vm.showText[12].val }}"  layout-align="center">
-                                                <p> <div ng-click="vm.showTextClicked(12)"> {{ vm.showText[12].label }} </div> </p>
+                                            <div class="Border"  layout-align="center">
+                                                <p> <div >  </div> </p>
                                             </div>
                                         </div>
                                     </div>

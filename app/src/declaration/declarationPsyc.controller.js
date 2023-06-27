@@ -438,48 +438,48 @@ function viewButtonRisiko(instrument) {
         vm.showText = new Array();
         // setup order as requested by retspsyk pdf
 
-        vm.showText[0] = getItemWithID(119, vm.items); // "name": "SIRS og SIRS-2",
-        vm.showText[1] = getItemWithID(120, vm.items); // "name": "RFI",
-        vm.showText[2] = getItemWithID(121, vm.items); // "name": "SIMS",
-        vm.showText[3] = getItemWithID(122, vm.items); // "name": "MMPI-2 / MMPI-2 RF",
+        vm.showText[0] = getItemWithID(118, vm.items); // "name": "SIRS og SIRS-2",
+        vm.showText[1] = getItemWithID(119, vm.items); // "name": "RFI",
+        vm.showText[2] = getItemWithID(120, vm.items); // "name": "SIMS",
+        vm.showText[3] = getItemWithID(121, vm.items); // "name": "MMPI-2 / MMPI-2 RF",
 
-        vm.showText[4] = getItemWithID(123, vm.items); // "name": "TOMM",
-        vm.showText[5] = getItemWithID(124, vm.items);  // "name": "M_FAST",
-        vm.showText[6] = getItemWithID(125, vm.items); // "name": "PAI",
-        vm.showText[7] = getItemWithID(126, vm.items); // "name": "RMT-W og RMT-F",
+        vm.showText[4] = getItemWithID(122, vm.items); // "name": "TOMM",
+        vm.showText[5] = getItemWithID(123, vm.items);  // "name": "M_FAST",
+        vm.showText[6] = getItemWithID(124, vm.items); // "name": "PAI",
+        vm.showText[7] = getItemWithID(125, vm.items); // "name": "RMT-W og RMT-F",
 
-        vm.showText[8] = getItemWithID(127, vm.items); // "name": "MENT",
-        vm.showText[9] = getItemWithID(128, vm.items); // "name": "MCMI-III / MCMI-IV",
-        vm.showText[10] = getItemWithID(129, vm.items); // "name": "VSVT",
-        vm.showText[11] = getItemWithID(130, vm.items); // "name": "ADI",
+        vm.showText[8] = getItemWithID(126, vm.items); // "name": "MENT",
+        vm.showText[9] = getItemWithID(127, vm.items); // "name": "MCMI-III / MCMI-IV",
+        vm.showText[10] = getItemWithID(128, vm.items); // "name": "VSVT",
+        vm.showText[11] = getItemWithID(129, vm.items); // "name": "ADI",
 
-        vm.showText[12] = getItemWithID(131, vm.items); // "name": "MENT",
-        vm.showText[13] = getItemWithID(132, vm.items); // "name": "MCMI-III / MCMI-IV",
-        vm.showText[14] = getItemWithID(133, vm.items); // "name": "VSVT",
-        vm.showText[15] = getItemWithID(134, vm.items); // "name": "ADI",
+        vm.showText[12] = getItemWithID(130, vm.items); // "name": "MENT",
+        vm.showText[13] = getItemWithID(131, vm.items); // "name": "MCMI-III / MCMI-IV",
+        vm.showText[14] = getItemWithID(132, vm.items); // "name": "VSVT",
+        vm.showText[15] = getItemWithID(133, vm.items); // "name": "ADI",
 
-        vm.showText[16] = getItemWithID(135, vm.items); // "name": "MENT",
-        vm.showText[17] = getItemWithID(136, vm.items); // "name": "MCMI-III / MCMI-IV",
-        vm.showText[18] = getItemWithID(137, vm.items); // "name": "VSVT",
-        vm.showText[19] = getItemWithID(138, vm.items); // "name": "ADI",
+        vm.showText[16] = getItemWithID(134, vm.items); // "name": "MENT",
+        vm.showText[17] = getItemWithID(135, vm.items); // "name": "MCMI-III / MCMI-IV",
+        vm.showText[18] = getItemWithID(136, vm.items); // "name": "VSVT",
+        vm.showText[19] = getItemWithID(137, vm.items); // "name": "ADI",
 
-        vm.showText[20] = getItemWithID(139, vm.items); // "name": "ADI",
-        vm.showText[21] = getItemWithID(140, vm.items); // "name": "ADI",
-        vm.showText[22] = getItemWithID(141, vm.items); // "name": "ADI",
+        vm.showText[20] = getItemWithID(138, vm.items); // "name": "ADI",
+        vm.showText[21] = getItemWithID(139, vm.items); // "name": "ADI",
+        vm.showText[22] = getItemWithID(140, vm.items); // "name": "ADI",
 
-        vm.showText[23] = getItemWithID(142, vm.items); // "name": "ADI",
-        vm.showText[24] = getItemWithID(143, vm.items); // "name": "ADI",
-        vm.showText[25] = getItemWithID(144, vm.items); // "name": "ADI",
+        vm.showText[23] = getItemWithID(141, vm.items); // "name": "ADI",
+        vm.showText[24] = getItemWithID(142, vm.items); // "name": "ADI",
+        vm.showText[25] = getItemWithID(143, vm.items); // "name": "ADI",
 
-        vm.showText[26] = getItemWithID(145, vm.items); // "name": "MENT",
-        vm.showText[27] = getItemWithID(146, vm.items); // "name": "MCMI-III / MCMI-IV",
-        vm.showText[28] = getItemWithID(147, vm.items); // "name": "VSVT",
-        vm.showText[29] = getItemWithID(148, vm.items); // "name": "ADI",
+        vm.showText[26] = getItemWithID(144, vm.items); // "name": "MENT",
+        vm.showText[27] = getItemWithID(145, vm.items); // "name": "MCMI-III / MCMI-IV",
+        vm.showText[28] = getItemWithID(146, vm.items); // "name": "VSVT",
+        vm.showText[29] = getItemWithID(147, vm.items); // "name": "ADI",
 
-        vm.showText[30] = getItemWithID(149, vm.items); // "name": "MENT",
-        vm.showText[31] = getItemWithID(150, vm.items); // "name": "MCMI-III / MCMI-IV",
-        vm.showText[32] = getItemWithID(151, vm.items); // "name": "VSVT",
-        vm.showText[33] = getItemWithID(152, vm.items); // "name": "ADI",
+        vm.showText[30] = getItemWithID(148, vm.items); // "name": "MENT",
+        vm.showText[31] = getItemWithID(149, vm.items); // "name": "MCMI-III / MCMI-IV",
+        vm.showText[32] = getItemWithID(150, vm.items); // "name": "VSVT",
+        vm.showText[33] = getItemWithID(151, vm.items); // "name": "ADI",
 
       });
 
@@ -509,15 +509,15 @@ function viewButtonPsykoligiskMalingering(instrument) {
         vm.showText = new Array();
         // setup order as requested by retspsyk pdf
 
-        vm.showText[0] = getItemWithID(153, vm.items); // "name": "SIRS og SIRS-2",
-        vm.showText[1] = getItemWithID(154, vm.items); // "name": "RFI",
+        vm.showText[0] = getItemWithID(152, vm.items); // "name": "SIRS og SIRS-2",
 
-        vm.showText[2] = getItemWithID(155, vm.items); // "name": "SIMS",
-        vm.showText[3] = getItemWithID(156, vm.items); // "name": "MMPI-2 / MMPI-2 RF",
+        vm.showText[1] = getItemWithID(153, vm.items); // "name": "RFI",
 
-        vm.showText[4] = getItemWithID(157, vm.items); // "name": "TOMM",
+        vm.showText[2] = getItemWithID(154, vm.items); // "name": "SIMS",
+        vm.showText[3] = getItemWithID(155, vm.items); // "name": "MMPI-2 / MMPI-2 RF",
 
-        vm.showText[5] = getItemWithID(158, vm.items);  // "name": "M_FAST",
+        vm.showText[4] = getItemWithID(156, vm.items); // "name": "TOMM",
+        vm.showText[5] = getItemWithID(157, vm.items);  // "name": "M_FAST",
       });
 
       $mdDialog.show({
@@ -547,22 +547,21 @@ function viewButtonMalingering(instrument) {
         // setup order as requested by retspsyk pdf
 
         vm.showText[0] = getItemWithID(106, vm.items); // "name": "SIRS og SIRS-2",
-
         vm.showText[1] = getItemWithID(107, vm.items); // "name": "RFI",
+
         vm.showText[2] = getItemWithID(108, vm.items); // "name": "SIMS",
         vm.showText[3] = getItemWithID(109, vm.items); // "name": "MMPI-2 / MMPI-2 RF",
-
         vm.showText[4] = getItemWithID(110, vm.items); // "name": "TOMM",
+
         vm.showText[5] = getItemWithID(111, vm.items);  // "name": "M_FAST",
         vm.showText[6] = getItemWithID(112, vm.items); // "name": "PAI",
-
         vm.showText[7] = getItemWithID(113, vm.items); // "name": "RMT-W og RMT-F",
+
         vm.showText[8] = getItemWithID(114, vm.items); // "name": "MENT",
         vm.showText[9] = getItemWithID(115, vm.items); // "name": "MCMI-III / MCMI-IV",
-
         vm.showText[10] = getItemWithID(116, vm.items); // "name": "VSVT",
+
         vm.showText[11] = getItemWithID(117, vm.items); // "name": "ADI",
-        vm.showText[12] = getItemWithID(118, vm.items); // "name": "WMS-III delprøve (ansigtsgenkendelse)",
       });
 
       $mdDialog.show({

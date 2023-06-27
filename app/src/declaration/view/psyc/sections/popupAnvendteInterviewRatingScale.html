@@ -42,10 +42,33 @@
             display: block;
             vertical-align: middle;
         }
+        .myBorder_color {
+            text-align: center;
+            border-width:3px;
+            border-style:solid;
+            border-color: black;
+            padding: 0.1em;
+            width:350px;
+            margin: 0 auto;
+            display: block;
+            vertical-align: middle;
+            background-color: rgb(153, 0, 51);
+            color : white;
+        }
         .myBorder {
             border-width:3px;
             border-style:solid;
             border-color: black;
+            padding: 0.1em;
+            width:350px;
+            margin: 0 auto;
+            display: block;
+            vertical-align: middle;
+        }
+        .Border {
+            border-width:3px;
+            border-style:solid;
+            border-color: white;
             padding: 0.1em;
             width:350px;
             margin: 0 auto;
@@ -63,16 +86,16 @@
     <md-card-title>
         <md-card-title-text>
             <div>
-            <center><span class="md-headline">{{vm.selectedInstrumentName}}</span></center>
+            <center><span class="md-headline">Anvendte interviews og ratingscales</span></center>
             </div>
         </md-card-title-text>
     </md-card-title>
     <md-card-content >
 
-                    <div class="myBorder"  style="width: 600px;" layout-align="center" >
-                        <p> Den psykologiske undersøgelse har haft primær fokus på, foretaget sekundær vurdering af, og
-                        har ført til underbyggede konklusioner om følgende områder: </p>
-                    </div>
+<!--                    <div class="myBorder"  style="width: 600px;" layout-align="center" >-->
+<!--                        <p> Den psykologiske undersøgelse har haft primær fokus på, foretaget sekundær vurdering af, og-->
+<!--                        har ført til underbyggede konklusioner om følgende områder: </p>-->
+<!--                    </div>-->
 
 
 
@@ -84,7 +107,7 @@
                                 <div layout="column">
                                     <div>
                                         <div layout="row">
-                                            <div class="myBorder_false"  layout-align="center">
+                                            <div class="myBorder_color"  layout-align="center">
                                                 <p>  <b>Symptomlidelser-og tilstande </b> </div> </p>
                                             </div>
                                         </div>
@@ -96,7 +119,7 @@
                                 <div layout="column">
                                     <div>
                                         <div layout="row">
-                                            <div class="myBorder_false"  layout-align="center">
+                                            <div class="myBorder_color"  layout-align="center">
                                                 <p> <b>Forstyrrelser af personlighed m.m.</b> </div> </p>
                                             </div>
                                         </div>
@@ -108,7 +131,7 @@
                                 <div layout="column">
                                     <div>
                                         <div layout="row">
-                                            <div class="myBorder_false"  layout-align="center">
+                                            <div class="myBorder_color"  layout-align="center">
                                                 <p> <b>Forstyrrelser af udvikling og adfærd </b> </div> </p>
                                             </div>
                                         </div>

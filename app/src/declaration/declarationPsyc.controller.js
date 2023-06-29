@@ -495,6 +495,8 @@ vm.viewButtonRisiko = viewButtonRisiko;
 
 function viewButtonPsykoligiskMalingering(instrument) {
 
+    console.log("erdermam");
+
       $scope.myCountry = {
         selected:{}
       };
@@ -505,6 +507,9 @@ function viewButtonPsykoligiskMalingering(instrument) {
       DeclarationPsycService.getDetailViewData($stateParams.caseid, instrument).then(function (response) {
         vm.items = response.data;
         let numberOfItems = vm.items.length;
+
+        console.log("vm.items");
+        console.log(vm.items);
 
         vm.showText = new Array();
         // setup order as requested by retspsyk pdf
@@ -729,7 +734,6 @@ function viewButtonAnvendteInterviewsRatingScale(instrument) {
   function getItemWithID(id, itemList) {
     var found = false;
     var i = 0;
-
     while (!found && i <= itemList.length-1) {
         if (itemList[i].id == id) {
             console.log("me found you");

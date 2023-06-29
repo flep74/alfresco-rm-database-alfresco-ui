@@ -67,6 +67,10 @@
                             <md-tooltip md-direction="top" md-delay="500" ng-if="searchParams.mainDiagnosis != null">{{searchParams.mainDiagnosis.join(', ')}}</md-tooltip>
                             </div>
 
+                            <div class="md-input-container md-block">
+                                <md-checkbox id="flowhighlight"  class="checkbox style-2 pull-right"   ng-model="searchParams.forvaring">Forvaring</md-checkbox>
+                                <md-tooltip md-direction="top" md-delay="500" >Henviser beder om stillingtagen til forvaring</md-tooltip>
+                            </div>
 
 
                             <md-input-container class="md-block"><x></x>
@@ -424,32 +428,37 @@
 
                     <md-card flex>
 
+
                     <md-card-content>
 
-<!--                        som udgangspunkt tom - ved valg kommer popop automatisk -->
+                        <!--                    <md-input-container class="md-block" ng-click="vm.searchPop()">-->
+                        <!--                        <label>Psykologiske tests</label>-->
+                        <!--                        <input ng-model="searchParams.psyktests" >-->
+                        <!--                    </md-input-container>-->
+
+                        <!--                        som udgangspunkt tom - ved valg kommer popop automatisk -->
+
+                        <md-input-container class="md-block">
+                            <label>Psykologiske undersøgelser</label>
+                            <md-select ng-model="searchParams.psyktests" ng-change="vm.pop()">
+                                <md-option ng-value="'psykologisk_undersoegelsestype'" >Psykologisk undersøgelsestype</md-option>
+                                <md-option ng-value="'psykiatriske_interviews_og_ratingscales'" >Psykiatriske interviews og ratingscales</md-option>
+                                <md-option ng-value="'kognitive_og_neuropsykologiske_praestationstests'" >Kognitive og neuropsykologiske præstationstests</md-option>
+                                <md-option ng-value="'implicitte_projektive_tests'" >Implicitte (projektive) tests</md-option>
+                                <md-option ng-value="'eksplicitte_spoergeskema_tests'" >Eksplicitte (spørgeskema) tests</md-option>
+                                <md-option ng-value="'instrumenter_for_indikation_på_malingering'" >Instrumenter for indikation på malingering</md-option>
+                                <md-option ng-value="'risikovurderingsinstrumenter'" >Risikovurderingsinstrumenter</md-option>
+                                <md-option ng-value="'psykologisk_vurdering_af_forekomst_af_malingering'" >Psykologisk vurdering af forekomst af malingering</md-option>
+                                <md-option ng-value="'konklusion_tags'" >Standard formuleringer</md-option>
+                            </md-select>
+                        </md-input-container>
 
 
-<!--                    <md-input-container class="md-block" ng-click="vm.searchPop()">-->
-<!--                        <label>Psykologiske tests</label>-->
-<!--                        <input ng-model="searchParams.psyktests" >-->
-<!--                    </md-input-container>-->
+                    </md-card-content>
+                    </md-card>
 
-
-                    <md-input-container class="md-block">
-                        <label>Psykologiske tests</label>
-                        <md-select ng-model="searchParams.psyktests" ng-change="vm.pop()">
-                            <md-option ng-value="'psykologisk_undersoegelsestype'" >Psykologisk undersøgelsestype</md-option>
-                            <md-option ng-value="'psykiatriske_interviews_og_ratingscales'" >Psykiatriske interviews og ratingscales</md-option>
-                            <md-option ng-value="'kognitive_og_neuropsykologiske_praestationstests'" >Kognitive og neuropsykologiske præstationstests</md-option>
-                            <md-option ng-value="'implicitte_projektive_tests'" >Implicitte (projektive) tests</md-option>
-                            <md-option ng-value="'eksplicitte_spoergeskema_tests'" >Eksplicitte (spørgeskema) tests</md-option>
-                            <md-option ng-value="'instrumenter_for_indikation_på_malingering'" >Instrumenter for indikation på malingering</md-option>
-                            <md-option ng-value="'risikovurderingsinstrumenter'" >Risikovurderingsinstrumenter</md-option>
-                            <md-option ng-value="'psykologisk_vurdering_af_forekomst_af_malingering'" >Psykologisk vurdering af forekomst af malingering</md-option>
-                            <md-option ng-value="'konklusion_tags'" >Standard formuleringer</md-option>
-                        </md-select>
-                    </md-input-container>
-
+                        <md-card flex>
+                    <md-card-content>
 
 
 
@@ -467,6 +476,11 @@
                     <md-input-container class="md-block">
                         <label>Fornavn</label>
                         <input ng-model="searchParams.firstName" >
+                    </md-input-container>
+
+                    <md-input-container class="md-block">
+                        <label>Efternavn</label>
+                        <input ng-model="searchParams.lastName" >
                     </md-input-container>
 
                     <md-input-container class="md-block">
@@ -488,10 +502,21 @@
     <md-card ng-show="showResults">
         <md-card-title>
             <md-button class="md-raised" ng-click="vm.toggleResults(); vm.clearResults()">Ret søgning</md-button>
+
+            <span>
+            <div class="md-body-2">søgekriterier: </div>
+
+            <div style=" font-size: 10px;" class="md-body-2" > {{ vm.showCriteria }} </div>
+
+                </span>
+
             <span flex></span>
             <div layout="row" layout-align="center center">
                 <div>Antal: <span class="md-body-2">{{vm.totalResults}}</span></div>
             </div>
+
+
+
         </md-card-title>
         <md-card-content>
             <md-progress-linear md-mode="indeterminate" ng-show="vm.isLoading"></md-progress-linear>

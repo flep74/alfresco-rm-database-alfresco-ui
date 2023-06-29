@@ -16,11 +16,39 @@ function AlfrescoDocumentService($http, alfrescoNodeUtils) {
         return $http.get(url).then(function (result) {
 
             var docName = result.data.item.node.properties["cm:name"];
-            if (docName.split(".")[1] == "odt") {
-                return getPreview(result.data.item.node.nodeRef, params);
+
+
+// todo -
+//fejlen er herunden
+
+console.log("docName.split");
+console.log("docName.split");
+console.log(docName.split("."));
+
+            // bugfix
+
+            var bugfixCount = docName.split(".");
+            console.log("bugfixCount");
+            console.log(bugfixCount.length);
+
+
+            if (bugfixCount.length == 3) {
+                // take care of the converted pdfs with the .odt in the filename
+                if (docName.split(".")[2] == "odt") {
+                    return getPreview(result.data.item.node.nodeRef, params);
+                }
+                else {
+                    return result.data.item;
+                }
             }
             else {
-                return result.data.item;
+                if (docName.split(".")[1] == "odt") {
+                    console.log("er jeg her...")
+                    return getPreview(result.data.item.node.nodeRef, params);
+                }
+                else {
+                    return result.data.item;
+                }
             }
 
 

@@ -94,6 +94,13 @@
         </div>
         </div>
 
+        <div>
+        <md-checkbox id="flowhighlight"  class="checkbox style-2 pull-right" ng-disabled="!editPatientData"  ng-model="case.forvaring">Forvaring</md-checkbox>
+            <md-tooltip md-direction="top" md-delay="500">Henviser beder om stillingtagen til forvaring</md-tooltip>
+        </div>
+
+
+
         <div ng-hide="vm.afslutwarning_status">
             <md-autocomplete flex md-selected-item="case.status" md-search-text="statusSearch" md-items="status in propertyFilter(propertyValues['status'],statusSearch)"
                 md-item-text="status" md-min-length="0" md-floating-label="Status" ng-disabled="!editPatientData"

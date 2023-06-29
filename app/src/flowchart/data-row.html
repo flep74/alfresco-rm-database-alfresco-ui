@@ -17,7 +17,10 @@
             <div flex="15"><span class="go-to-case-link" ng-click="vm.gotoCase(i.caseNumber)">{{i.cprNumber}}</span> <img ng-show="i.redflag" src="app/assets/images/priority.png" class="priority"></div>
             <div flex="15">{{i.firstName}}</div>
             <div flex="15">{{i.lastName}}</div>
-            <div flex="40">{{i.mainCharge}}</div>
+            <div flex="40">{{i.mainCharge}}  <div style="color:red" ng-show="i.forvaring"> (F)
+
+                <md-tooltip md-direction="top" md-delay="500" >Henviser beder om stillingtagen til forvaring</md-tooltip>
+                                            </div> </div>
 
 
             <div flex="5"></div>

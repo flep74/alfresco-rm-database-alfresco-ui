@@ -42,6 +42,9 @@
             display: block;
             vertical-align: middle;
         }
+        .bigfont {
+            font-size: 30px;
+        }
         .myBorder {
             border-width:3px;
             border-style:solid;
@@ -51,6 +54,19 @@
             margin: 0 auto;
             display: block;
             vertical-align: middle;
+        }
+        .myBorder_color {
+            text-align: center;
+            border-width:3px;
+            border-style:solid;
+            border-color: black;
+            padding: 0.1em;
+            width:350px;
+            margin: 0 auto;
+            display: block;
+            vertical-align: middle;
+            background-color: rgb(153, 0, 51);
+            color : white;
         }
         .Border {
             border-width:3px;
@@ -73,11 +89,17 @@
     <md-card-title>
         <md-card-title-text>
             <div>
-            <center><span class="md-headline">Konklusion underbygget af den psykologiske undersøgelse</span></center>
+            <center><span class="md-headline"></span></center>
             </div>
         </md-card-title-text>
     </md-card-title>
     <md-card-content >
+
+        <table>
+            <tr>
+                <p align="center" class="bigfont"> <b>Konklusion underbygget af den psykologiske undersøgelse</b></p>
+            </tr>
+        </table>
 
 
                     <table style="word-wrap:break-word;table-layout:fixed;">
@@ -88,7 +110,7 @@
                             <div layout="column">
                                 <div>
                                     <div layout="row">
-                                        <div class="myBorder_false"  layout-align="center">
+                                        <div class="myBorder_color"  layout-align="center">
                                             <p> <b> ICD-11 kapitel 6 hovedkategorier  </b></div> </p>
                                     </div>
                                 </div>
@@ -100,7 +122,7 @@
                             <div layout="column">
                                 <div>
                                     <div layout="row">
-                                        <div class="myBorder_false"  layout-align="center">
+                                        <div class="myBorder_color"  layout-align="center">
                                             <p> <b> Øvrige kategorier  </b></div> </p>
                                     </div>
                                 </div>

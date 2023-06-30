@@ -398,6 +398,23 @@
                                 </md-autocomplete>
                             </div>
 
+                            <div class="md-input-container md-block">
+                                <md-checkbox ng-model="searchParams.finalVerdict" ng-change="vm.noDeclaration()">Endelig dom afsagt</md-checkbox>
+
+                                <div data-ng-if="searchParams.finalVerdict">
+                                    <label>Dom</label>
+                                    <md-select ng-model="searchParams.bua">
+                                        <md-option ng-value="''" ></md-option>
+                                        <md-option ng-value="'BUA'" >BUA</md-option>
+                                        <md-option ng-value="undefined">Alle</md-option>
+                                    </md-select>
+                                    </md-input-container>
+                                </div>
+
+
+                                </md-autocomplete>
+                            </div>
+
 
                             <div layout-gt-sm="row" class="layout-gt-sm-row" ng-show="searchParams.closedWithoutDeclarationReason == 'Tilbagesendt'">
                                 <md-input-container>

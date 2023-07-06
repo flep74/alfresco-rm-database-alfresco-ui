@@ -1,9 +1,22 @@
+
+
+
 <html>
+
+<style type="text/css">
+
+md-dialog {
+ width: 2200px;
+ height: 800px;
+}
+</style>
+
+<div >
 <md-card>
     <md-card-title>
         <md-card-title-text>
             <div>
-            <span class="md-headline">Psykologiske tests <md-button ng-click="vm.close()">luk</md-button> </span> <md-button class="md-icon-button" ng-click="vm.cancelDialog()"><md-icon>clear</md-icon></md-button>
+
             </div>
         </md-card-title-text>
     </md-card-title>
@@ -25,8 +38,19 @@
         </md-select>
     </md-input-container>
 
+        <table>
+            <tr>
+
+                <div align="right">
+                <md-button  ng-click="vm.close()">luk</md-button> <md-button class="md-icon-button" ng-click="vm.cancelDialog()"><md-icon>clear</md-icon></md-button>
+                </div>
+            </tr>
+        </table>
+
 
     </md-card-content>
 
 </md-card>
+
+</div>
 </html>

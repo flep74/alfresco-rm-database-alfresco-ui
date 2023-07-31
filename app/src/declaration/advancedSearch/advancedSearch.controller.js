@@ -185,9 +185,10 @@ function AdvancedSearchController($scope, $state, $templateCache, $mdDialog, $tr
 
   vm.searchPop = function() {
 
-    $mdDialog.show({
+    vm.pop3 = $mdDialog.show({
         templateUrl: 'app/src/declaration/view/psyc/sections/popupSearch3.html',
         scope: $scope, // use parent scope in template
+        multiple: true,
         preserveScope: true, // do not forget this if use parent scope
         clickOutsideToClose: false
       });
@@ -225,6 +226,11 @@ function AdvancedSearchController($scope, $state, $templateCache, $mdDialog, $tr
 
   }
   vm.close = close;
+
+  vm.selectInstruments = function(inst) {
+    console.log("valgt");
+    console.log(inst)
+  }
 
   vm.pop2 = function() {
 
@@ -811,4 +817,120 @@ function save() {
       }
     }
   }
+
+
+  function viewButtonUndersoegelsestype(instrument) {
+
+console.log("vm.selectedUndersoegelsetype")
+        console.log(vm.selectedUndersoegelsetype);
+
+        $scope.myCountry = {
+          selected:{}
+        };
+
+        vm.selectedInstrument = instrument;
+        vm.selectedInstrumentName = vm.titleMappings[instrument];
+
+
+
+        if (vm.selectedUndersoegelsetype.length != 0) {
+
+           vm.items = vm.selectedUndersoegelsetype;
+          let numberOfItems = vm.items.length;
+
+          vm.showText = new Array();
+          // setup order as requested by retspsyk pdf
+
+          vm.showText[0] = getItemWithID(1, vm.items);
+          vm.showText[1] = getItemWithID(2, vm.items);
+          vm.showText[2] = getItemWithID(3, vm.items);
+          vm.showText[3] = getItemWithID(4, vm.items);
+          vm.showText[4] = getItemWithID(5, vm.items);
+          vm.showText[5] = getItemWithID(6, vm.items);
+          vm.showText[6] = getItemWithID(7, vm.items);
+
+
+        $mdDialog.show({
+          templateUrl: 'app/src/declaration/view/psyc/sections/popupUndersoegelsestype.html',
+          scope: $scope, // use parent scope in template
+           multiple: true,
+          preserveScope: true, // do not forget this if use parent scope
+          clickOutsideToClose: false
+        });
+
+
+
+        }
+        else {
+
+            DeclarationPsycService.getAdvancedSearchInstrument(instrument).then(function (response) {
+                vm.items = response.data;
+              let numberOfItems = vm.items.length;
+
+              vm.showText = new Array();
+              // setup order as requested by retspsyk pdf
+
+              vm.showText[0] = getItemWithID(1, vm.items);
+              vm.showText[1] = getItemWithID(2, vm.items);
+              vm.showText[2] = getItemWithID(3, vm.items);
+              vm.showText[3] = getItemWithID(4, vm.items);
+              vm.showText[4] = getItemWithID(5, vm.items);
+              vm.showText[5] = getItemWithID(6, vm.items);
+              vm.showText[6] = getItemWithID(7, vm.items);
+            });
+
+            $mdDialog.show({
+              templateUrl: 'app/src/declaration/view/psyc/sections/popupUndersoegelsestype.html',
+              scope: $scope, // use parent scope in template
+               multiple: true,
+              preserveScope: true, // do not forget this if use parent scope
+              clickOutsideToClose: false
+            }).onClose.subscribe(confirm => {
+                      if(confirm) {
+                          console.log(confirm);
+                          this.record();
+                      }
+                  });
+
+          }
+      }
+
+      vm.viewButtonUndersoegelsestype = viewButtonUndersoegelsestype;
+
+      vm.selectedUndersoegelsetype = [];
+
+
+
+      function save(inp, instrument) {
+        console.log("tilbage fra vælg");
+        console.log("inp");
+        console.log(inp);
+        console.log("hvad er instrument");
+        console.log(instrument);
+        console.log("hvad er instrument");
+
+        switch(instrument) {
+          case 'psykologisk_undersoegelsestype':
+            // code block
+            console.log("hejk");
+            vm.selectedUndersoegelsetype = inp;
+            break;
+          case 'psykologisk_undersoegelsestype1':
+            // code block
+            break;
+          default:
+            // code block
+        }
+
+
+        $mdDialog.cancel();
+
+      }
+
+      vm.save = save;
+
+
+
+
+
 }

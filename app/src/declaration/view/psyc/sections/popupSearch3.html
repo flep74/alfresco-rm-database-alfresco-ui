@@ -9,6 +9,22 @@ md-dialog {
  width: 2200px;
  height: 800px;
 }
+
+.addlink {
+    color: blue;
+    margin-left: 20px;
+ }
+
+.headline {
+ display: flex;
+
+}
+
+.instruments_padded {
+   margin-left: 35px;
+}
+
+
 </style>
 
 <div >
@@ -22,30 +38,43 @@ md-dialog {
     </md-card-title>
     <md-card-content>
 
+<!--        <md-input-container class="md-block">-->
+<!--        <label>Kategorier</label>-->
+<!--        <md-select ng-model="searchParams.psyktests" ng-change="vm.pop2()">-->
+<!--            <md-option ng-value="'psykologisk_undersoegelsestype'" >Psykologisk undersøgelsestype</md-option>-->
+<!--            <md-option ng-value="'psykiatriske_interviews_og_ratingscales'" >Psykiatriske interviews og ratingscales</md-option>-->
+<!--            <md-option ng-value="'kognitive_og_neuropsykologiske_praestationstests'" >Kognitive og neuropsykologiske præstationstests</md-option>-->
+<!--            <md-option ng-value="'implicitte_projektive_tests'" >Implicitte (projektive) tests</md-option>-->
+<!--            <md-option ng-value="'eksplicitte_spoergeskema_tests'" >Eksplicitte (spørgeskema) tests</md-option>-->
+<!--            <md-option ng-value="'instrumenter_for_indikation_på_malingering'" >Instrumenter for indikation på malingering</md-option>-->
+<!--            <md-option ng-value="'risikovurderingsinstrumenter'" >Risikovurderingsinstrumenter</md-option>-->
+<!--            <md-option ng-value="'psykologisk_vurdering_af_forekomst_af_malingering'" >Psykologisk vurdering af forekomst af malingering</md-option>-->
+<!--            <md-option ng-value="'konklusion_tags'" >Standard formuleringer</md-option>-->
+<!--        </md-select>-->
+<!--    </md-input-container>-->
 
-        <md-input-container class="md-block">
-        <label>Kategorier</label>
-        <md-select ng-model="searchParams.psyktests" ng-change="vm.pop2()">
-            <md-option ng-value="'psykologisk_undersoegelsestype'" >Psykologisk undersøgelsestype</md-option>
-            <md-option ng-value="'psykiatriske_interviews_og_ratingscales'" >Psykiatriske interviews og ratingscales</md-option>
-            <md-option ng-value="'kognitive_og_neuropsykologiske_praestationstests'" >Kognitive og neuropsykologiske præstationstests</md-option>
-            <md-option ng-value="'implicitte_projektive_tests'" >Implicitte (projektive) tests</md-option>
-            <md-option ng-value="'eksplicitte_spoergeskema_tests'" >Eksplicitte (spørgeskema) tests</md-option>
-            <md-option ng-value="'instrumenter_for_indikation_på_malingering'" >Instrumenter for indikation på malingering</md-option>
-            <md-option ng-value="'risikovurderingsinstrumenter'" >Risikovurderingsinstrumenter</md-option>
-            <md-option ng-value="'psykologisk_vurdering_af_forekomst_af_malingering'" >Psykologisk vurdering af forekomst af malingering</md-option>
-            <md-option ng-value="'konklusion_tags'" >Standard formuleringer</md-option>
-        </md-select>
-    </md-input-container>
+    <div aria-label class="headline">
+        <p>Psykologisk undersøgelstype: </p>
+        <p class="addlink" ng-click="vm.viewButtonUndersoegelsestype('psykologisk_undersoegelsestype')"> ( tilføj ) </p>
+    </div>
+        <div class="instruments_padded">
+        <li ng-if="c.val" ng-repeat="c in vm.selectedUndersoegelsetype">
+            <em>{{c.label}}</em>
+        </li>
+        </div>
 
-        <table>
-            <tr>
+    <div aria-label class="headline">
+        <p>Psykiatriske interviews og ratingscales: </p>
+        <p class="addlink" ng-click="vm.selectInstruments('test')"> ( tilføj ) </p>
+    </div>
 
-                <div align="right">
-                <md-button  ng-click="vm.close()">luk</md-button> <md-button class="md-icon-button" ng-click="vm.cancelDialog()"><md-icon>clear</md-icon></md-button>
-                </div>
-            </tr>
-        </table>
+
+
+
+    <div align="right">
+        <md-button  ng-click="vm.close()">luk</md-button> <md-button class="md-icon-button" ng-click="vm.cancelDialog()"><md-icon>clear</md-icon></md-button>
+    </div>
+
 
 
     </md-card-content>

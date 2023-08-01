@@ -558,6 +558,21 @@ function AdvancedSearchController($scope, $state, $templateCache, $mdDialog, $tr
             vm.showCriteria = vm.showCriteria + query.firstName + ", "
         }
 
+        if (query.lastName != undefined) {
+            vm.showCriteria = vm.showCriteria + query.lastName + ", "
+        }
+
+        if (query.finalVerdict != undefined) {
+
+            if (query.selectedVerdict != undefined) {
+                vm.showCriteria = vm.showCriteria + "endelig dom: " + query.selectedVerdict + ", "
+            }
+            else {
+                vm.showCriteria = vm.showCriteria + "endelig dom: alle" + ", "
+            }
+
+        }
+
         if (query.cpr != undefined) {
             vm.showCriteria = vm.showCriteria + query.cpr + ", "
         }

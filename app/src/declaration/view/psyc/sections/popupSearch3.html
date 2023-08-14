@@ -65,7 +65,22 @@ md-dialog {
 
     <div aria-label class="headline">
         <p>Psykiatriske interviews og ratingscales: </p>
-        <p class="addlink" ng-click="vm.selectInstruments('test')"> ( tilføj ) </p>
+        <p class="addlink" ng-click="vm.viewButtonAnvendteInterviewsRatingScale('psykiatriske_interviews_og_ratingscales')"> ( tilføj ) </p>
+    </div>
+        <div class="instruments_padded">
+            <li ng-if="c.val" ng-repeat="c in vm.selectedPsykiatriskeInterviewRatingScales">
+                <em>{{c.label}}</em>
+            </li>
+        </div>
+
+    <div aria-label class="headline">
+        <p>Kognitive og neuropsykologiske præstationstests: </p>
+        <p class="addlink" ng-click="vm.viewButtonAnvendteInterviewsRatingScale('kognitive_og_neuropsykologiske_praestationstests')"> ( tilføj ) </p>
+    </div>
+    <div class="instruments_padded">
+        <li ng-if="c.val" ng-repeat="c in vm.selectedPsykiatriskeInterviewRatingScales">
+            <em>{{c.label}}</em>
+        </li>
     </div>
 
 

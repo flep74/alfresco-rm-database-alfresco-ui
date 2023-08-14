@@ -821,7 +821,7 @@ function save() {
 
   function viewButtonUndersoegelsestype(instrument) {
 
-console.log("vm.selectedUndersoegelsetype")
+        console.log("vm.selectedUndersoegelsetype")
         console.log(vm.selectedUndersoegelsetype);
 
         $scope.myCountry = {
@@ -900,6 +900,124 @@ console.log("vm.selectedUndersoegelsetype")
       vm.selectedUndersoegelsetype = [];
 
 
+    function viewButtonAnvendteInterviewsRatingScale(instrument) {
+
+        console.log("vm.selectedUndersoegelsetype")
+        console.log(vm.selectedUndersoegelsetype);
+
+        $scope.myCountry = {
+          selected:{}
+        };
+
+        vm.selectedInstrument = instrument;
+        vm.selectedInstrumentName = vm.titleMappings[instrument];
+
+
+
+        if (vm.selectedPsykiatriskeInterviewRatingScales.length != 0) {
+
+            vm.items = vm.selectedPsykiatriskeInterviewRatingScales;
+            let numberOfItems = vm.items.length;
+
+            vm.showText = new Array();
+
+            // setup order as requested by retspsyk pdf
+
+             vm.showText[0] = getItemWithID(8, vm.items); // "name": "PSE-10",
+             vm.showText[1] = getItemWithID(18, vm.items); // "name": "SCID-5-PD",
+             vm.showText[2] = getItemWithID(27, vm.items); // "name": "ABAS-3",
+             vm.showText[3] = getItemWithID(9, vm.items); // "name": "EASE",
+             vm.showText[4] = getItemWithID(19, vm.items); // "name": "OPD-2",
+             vm.showText[5] = getItemWithID(28, vm.items);  // "name": "Vineland-3",
+             vm.showText[6] = getItemWithID(10, vm.items); // "name": "PANSS",
+             vm.showText[7] = getItemWithID(20, vm.items); // "name": "PCL-R",
+             vm.showText[8] = getItemWithID(29, vm.items); // "name": "ADOS 1 og 2",
+             vm.showText[9] = getItemWithID(11, vm.items); // "name": "ASI",
+             vm.showText[10] = getItemWithID(21, vm.items); // "name": "PCL:SV",
+             vm.showText[11] = getItemWithID(30, vm.items); // "name": "ADI-R",
+             vm.showText[12] = getItemWithID(12, vm.items); // "name": "HCL:32",
+             vm.showText[13] = getItemWithID(22, vm.items); // "name": "CAPP",
+             vm.showText[14] = getItemWithID(31, vm.items); // "name": "DIVA 1,2 og 5",
+             vm.showText[15] = getItemWithID(13, vm.items); // "name": "BDI-II",
+             vm.showText[16] = getItemWithID(23, vm.items); // "name": "ZANBPD",
+             vm.showText[17] = getItemWithID(32, vm.items); // "name": "AAI",
+             vm.showText[18] = getItemWithID(14, vm.items); // "name": "SCID-V",
+             vm.showText[19] = getItemWithID(24, vm.items); // "name": "Hansson SAQ",
+             vm.showText[20] = getItemWithID(33, vm.items); // "name": "SASB",
+             vm.showText[21] = getItemWithID(15, vm.items); // "name": "ADIS-V",
+             vm.showText[22] = getItemWithID(25, vm.items); // "name": "Hostility TWQ",
+             vm.showText[23] = getItemWithID(34, vm.items); // "name": "PCL:YV",
+             vm.showText[24] = getItemWithID(16, vm.items); // "name": "Y-BOCS",
+             vm.showText[25] = getItemWithID(26, vm.items); // "name": "HADS",
+             vm.showText[26] = getItemWithID(17, vm.items); // "name": "HTQ",
+
+
+            $mdDialog.show({
+              templateUrl: 'app/src/declaration/view/psyc/sections/popupAnvendteInterviewRatingScale.html',
+              scope: $scope, // use parent scope in template
+               multiple: true,
+              preserveScope: true, // do not forget this if use parent scope
+              clickOutsideToClose: false
+            });
+        }
+        else {
+
+            DeclarationPsycService.getAdvancedSearchInstrument(instrument).then(function (response) {
+                vm.items = response.data;
+              let numberOfItems = vm.items.length;
+
+              vm.showText = new Array();
+              // setup order as requested by retspsyk pdf
+
+             vm.showText[0] = getItemWithID(8, vm.items); // "name": "PSE-10",
+             vm.showText[1] = getItemWithID(18, vm.items); // "name": "SCID-5-PD",
+             vm.showText[2] = getItemWithID(27, vm.items); // "name": "ABAS-3",
+             vm.showText[3] = getItemWithID(9, vm.items); // "name": "EASE",
+             vm.showText[4] = getItemWithID(19, vm.items); // "name": "OPD-2",
+             vm.showText[5] = getItemWithID(28, vm.items);  // "name": "Vineland-3",
+             vm.showText[6] = getItemWithID(10, vm.items); // "name": "PANSS",
+             vm.showText[7] = getItemWithID(20, vm.items); // "name": "PCL-R",
+             vm.showText[8] = getItemWithID(29, vm.items); // "name": "ADOS 1 og 2",
+             vm.showText[9] = getItemWithID(11, vm.items); // "name": "ASI",
+             vm.showText[10] = getItemWithID(21, vm.items); // "name": "PCL:SV",
+             vm.showText[11] = getItemWithID(30, vm.items); // "name": "ADI-R",
+             vm.showText[12] = getItemWithID(12, vm.items); // "name": "HCL:32",
+             vm.showText[13] = getItemWithID(22, vm.items); // "name": "CAPP",
+             vm.showText[14] = getItemWithID(31, vm.items); // "name": "DIVA 1,2 og 5",
+             vm.showText[15] = getItemWithID(13, vm.items); // "name": "BDI-II",
+             vm.showText[16] = getItemWithID(23, vm.items); // "name": "ZANBPD",
+             vm.showText[17] = getItemWithID(32, vm.items); // "name": "AAI",
+             vm.showText[18] = getItemWithID(14, vm.items); // "name": "SCID-V",
+             vm.showText[19] = getItemWithID(24, vm.items); // "name": "Hansson SAQ",
+             vm.showText[20] = getItemWithID(33, vm.items); // "name": "SASB",
+             vm.showText[21] = getItemWithID(15, vm.items); // "name": "ADIS-V",
+             vm.showText[22] = getItemWithID(25, vm.items); // "name": "Hostility TWQ",
+             vm.showText[23] = getItemWithID(34, vm.items); // "name": "PCL:YV",
+             vm.showText[24] = getItemWithID(16, vm.items); // "name": "Y-BOCS",
+             vm.showText[25] = getItemWithID(26, vm.items); // "name": "HADS",
+             vm.showText[26] = getItemWithID(17, vm.items); // "name": "HTQ",
+            });
+
+            $mdDialog.show({
+              templateUrl: 'app/src/declaration/view/psyc/sections/popupAnvendteInterviewRatingScale.html',
+              scope: $scope, // use parent scope in template
+               multiple: true,
+              preserveScope: true, // do not forget this if use parent scope
+              clickOutsideToClose: false
+            }).onClose.subscribe(confirm => {
+                      if(confirm) {
+                          console.log(confirm);
+                          this.record();
+                      }
+                  });
+
+          }
+      }
+
+      vm.viewButtonAnvendteInterviewsRatingScale = viewButtonAnvendteInterviewsRatingScale;
+
+      vm.selectedPsykiatriskeInterviewRatingScales = [];
+
 
       function save(inp, instrument) {
         console.log("tilbage fra vælg");
@@ -915,9 +1033,13 @@ console.log("vm.selectedUndersoegelsetype")
             console.log("hejk");
             vm.selectedUndersoegelsetype = inp;
             break;
-          case 'psykologisk_undersoegelsestype1':
+          case 'psykiatriske_interviews_og_ratingscales':
             // code block
+            vm.selectedPsykiatriskeInterviewRatingScales = inp;
             break;
+          case 'kognitive_og_neuropsykologiske_praestationstests':
+            vm.selectedPsykiatriskeInterviewRatingScales = inp;
+             break;
           default:
             // code block
         }

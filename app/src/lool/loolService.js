@@ -70,6 +70,7 @@ function loolService($http, transformRequestAsFormPost, ALFRESCO_URI) {
             data: {access_token: access_token},
             headers: {
                 "content-type": "application/x-www-form-urlencoded",
+                "Sec-Fetch-Site": "none",
                 "x-requested-with": ''
             }
         }).then(

@@ -28,6 +28,7 @@ function LoolController($stateParams, loolService, alfrescoNodeUtils, $state) {
             var wopiFileURL = serviceUrl + "/wopi/files/" + shortRef;
             var frameSrcURL = wopi_src_url + "WOPISrc=" + encodeURIComponent(wopiFileURL);
             var access_token = encodeURIComponent(response.access_token);
+            frameSrcURL = frameSrcURL + "&lang=da";
             //Use JQuery to submit the form and 'target' the iFrame
             $(function () {
                 var form = '<form id="loleafletform" name="loleafletform" target="loleafletframe" action="' + frameSrcURL + '" method="post">' +

@@ -75,13 +75,52 @@ md-dialog {
 
     <div aria-label class="headline">
         <p>Kognitive og neuropsykologiske præstationstests: </p>
-        <p class="addlink" ng-click="vm.viewButtonAnvendteInterviewsRatingScale('kognitive_og_neuropsykologiske_praestationstests')"> ( tilføj ) </p>
+        <p class="addlink" ng-click="vm.viewButtonKognitiveNeuro('kognitive_og_neuropsykologiske_praestationstests')"> ( tilføj ) </p>
     </div>
     <div class="instruments_padded">
-        <li ng-if="c.val" ng-repeat="c in vm.selectedPsykiatriskeInterviewRatingScales">
+        <li ng-if="c.val" ng-repeat="c in vm.selectedKognitiveNeuro">
             <em>{{c.label}}</em>
         </li>
     </div>
+
+    <div aria-label class="headline">
+        <p>Implicitte (perceptuelle) tests: </p>
+        <p class="addlink" ng-click="vm.viewButtonImplicitte('implicitte_projektive_tests')"> ( tilføj ) </p>
+    </div>
+    <div class="instruments_padded">
+        <li ng-if="c.val" ng-repeat="c in vm.selectedImplicitte">
+            <em>{{c.label}}</em>
+        </li>
+    </div>
+
+    <div aria-label class="headline">
+        <p>Eksplicitte (spørgeskema) tests: </p>
+        <p class="addlink" ng-click="vm.viewButtonEksplicitte('eksplicitte_spoergeskema_tests')"> ( tilføj ) </p>
+    </div>
+    <div class="instruments_padded">
+        <li ng-if="c.val" ng-repeat="c in vm.selectedEksplicitte">
+            <em>{{c.label}}</em>
+        </li>
+    </div>
+
+    <div aria-label class="headline">
+        <p>Instrumenter for indikation på malingering: </p>
+        <p class="addlink" ng-click="vm.viewButtonMalingering('instrumenter_for_indikation_på_malingering')"> ( tilføj ) </p>
+    </div>
+    <div class="instruments_padded">
+        <li ng-if="c.val" ng-repeat="c in vm.selectedMalingering">
+            <em>{{c.label}}</em>
+        </li>
+    </div>
+
+
+
+
+
+
+
+
+
 
 
 

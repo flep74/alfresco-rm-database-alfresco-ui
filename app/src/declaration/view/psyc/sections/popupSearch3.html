@@ -113,7 +113,35 @@ md-dialog {
         </li>
     </div>
 
+    <div aria-label class="headline">
+        <p>Risikoinstrumenter: </p>
+        <p class="addlink" ng-click="vm.viewButtonRisikoInstrumenter('risikovurderingsinstrumenter')"> ( tilføj ) </p>
+    </div>
+    <div class="instruments_padded">
+        <li ng-if="c.val" ng-repeat="c in vm.selectedRisikoInstrumenter">
+            <em>{{c.label}}</em>
+        </li>
+    </div>
 
+    <div aria-label class="headline">
+        <p>Psykologisk vurdering af forekomst af malingering: </p>
+        <p class="addlink" ng-click="vm.viewButtonPsykMalingering('psykologisk_vurdering_af_forekomst_af_malingering')"> ( tilføj ) </p>
+    </div>
+    <div class="instruments_padded">
+        <li ng-if="c.val" ng-repeat="c in vm.selectedPsykMalingering">
+            <em>{{c.label}}</em>
+        </li>
+    </div>
+
+    <div aria-label class="headline">
+        <p>Konklusion underbygget af den psykologiske undersøgelse: </p>
+        <p class="addlink" ng-click="vm.viewButtonKonklusion('konklusion_tags')"> ( tilføj ) </p>
+    </div>
+    <div class="instruments_padded">
+        <li ng-if="c.val" ng-repeat="c in vm.selectedKonklusion">
+            <em>{{c.label}}</em>
+        </li>
+    </div>
 
 
 

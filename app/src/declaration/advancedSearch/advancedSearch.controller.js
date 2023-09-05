@@ -223,10 +223,14 @@ function AdvancedSearchController($scope, $state, $templateCache, $mdDialog, $tr
 //    vm.searchInstrumentsQuery[vm.selectedInstrument] = $scope.myInstrument.selected;
 
     vm.searchInstrumentsQuery["psykologisk_undersoegelsestype"] = vm.selectedUndersoegelsetype;
-
-    // lav funktion til at parse objekterne i selectedUndersoegelsestype - loop og vælg kun dem med true - adskilt af ,
-
-
+    vm.searchInstrumentsQuery["psykiatriske_interviews_og_ratingscales"] = vm.selectedPsykiatriskeInterviewRatingScales;
+    vm.searchInstrumentsQuery["kognitive_og_neuropsykologiske_praestationstests"] = vm.selectedKognitiveNeuro;
+    vm.searchInstrumentsQuery["implicitte_projektive_tests"] = vm.selectedImplicitte;
+    vm.searchInstrumentsQuery["eksplicitte_spoergeskema_tests"] = vm.selectedEksplicitte;
+    vm.searchInstrumentsQuery["instrumenter_for_indikation_på_malingering"] = vm.selectedMalingering;
+    vm.searchInstrumentsQuery["risikovurderingsinstrumenter"] = vm.selectedRisikoInstrumenter;
+    vm.searchInstrumentsQuery["psykologisk_vurdering_af_forekomst_af_malingering"] = vm.selectedPsykMalingering;
+    vm.searchInstrumentsQuery["konklusion_tags"] = vm.selectedKonklusion;
 
     console.log("hvad er der i searchInstrumentQuery")
     console.log(vm.searchInstrumentsQuery);

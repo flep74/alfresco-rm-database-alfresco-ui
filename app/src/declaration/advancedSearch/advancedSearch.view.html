@@ -398,6 +398,25 @@
                                 </md-autocomplete>
                             </div>
 
+                            <div class="md-input-container md-block">
+                                <md-checkbox ng-model="searchParams.finalVerdict" ng-change="vm.noDeclaration()">Endelig dom afsagt</md-checkbox>
+
+                                <md-autocomplete flex
+                                                 ng-show="searchParams.finalVerdict"
+                                                 md-selected-item="searchParams.selectedVerdict"
+                                                 md-search-text="verdictSearch"
+                                                 md-items="verdict in propertyFilter(propertyValues['sanctionProposal'],verdictSearch)"
+                                                 md-item-text="verdict"
+                                                 md-min-length="0"
+                                                 md-floating-label="dom"
+                                                 md-require-match="true"
+                                                 md-clear-button="true">
+                                    <md-item-template>
+                                        <span md-highlight-text="verdictSearch" md-highlight-flags="gi">{{verdict}}</span>
+                                    </md-item-template>
+                                </md-autocomplete>
+                            </div>
+
 
                             <div layout-gt-sm="row" class="layout-gt-sm-row" ng-show="searchParams.closedWithoutDeclarationReason == 'Tilbagesendt'">
                                 <md-input-container>

@@ -19,6 +19,8 @@ function AdvancedSearchController($scope, $state, $templateCache, $mdDialog, $tr
   $scope.propertyValues = propertyService.getAllPropertyValues();
   $scope.propertyFilter = propertyFilter;
 
+
+
   vm.showCriteria = "";
 
   vm.printFriendlytStarted = false;
@@ -92,6 +94,7 @@ function AdvancedSearchController($scope, $state, $templateCache, $mdDialog, $tr
   $scope.searchParams.bua = "PS";
   $scope.searchParams.closed = "CLOSED";
   $scope.searchParams.koen = "alle";
+  $scope.searchParams.finalVerdict = true;
 
   if (Object.keys($stateParams.searchquery).length) {
         $scope.searchParams = $stateParams.searchquery;
@@ -570,7 +573,6 @@ function AdvancedSearchController($scope, $state, $templateCache, $mdDialog, $tr
             else {
                 vm.showCriteria = vm.showCriteria + "endelig dom: alle" + ", "
             }
-
         }
 
         if (query.cpr != undefined) {

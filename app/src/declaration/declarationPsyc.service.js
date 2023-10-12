@@ -32,8 +32,6 @@ function DeclarationPsycService($http, $filter) {
   }
 
   function test2() {
-
-
     return $http.post("/alfresco/s/database/retspsyk/psyc", {
       "properties": {"method" : "test", "gaf" : "kat"}
     }).then(function (response) {

@@ -398,24 +398,64 @@
                                 </md-autocomplete>
                             </div>
 
-                            <div class="md-input-container md-block">
-                                <md-checkbox ng-model="searchParams.finalVerdict" ng-change="vm.noDeclaration()">Alle domme inkl. sager uden afsagt dom</md-checkbox>
 
-                                <md-autocomplete flex
-                                                 ng-show="searchParams.finalVerdict"
-                                                 md-selected-item="searchParams.selectedVerdict"
-                                                 md-search-text="verdictSearch"
-                                                 md-items="verdict in propertyFilter(propertyValues['sanctionProposal'],verdictSearch)"
-                                                 md-item-text="verdict"
-                                                 md-min-length="0"
-                                                 md-floating-label="dom"
-                                                 md-require-match="true"
-                                                 md-clear-button="true">
-                                    <md-item-template>
-                                        <span md-highlight-text="verdictSearch" md-highlight-flags="gi">{{verdict}}</span>
-                                    </md-item-template>
-                                </md-autocomplete>
+
+
+                            <div class="md-input-container md-block">
+                                <md-checkbox ng-model="searchParams.finalVerdict" ng-change="vm.noDeclaration()">Endelig dom</md-checkbox>
+
+<!--                                <md-autocomplete flex-->
+<!--                                                 ng-show="searchParams.finalVerdict"-->
+<!--                                                 md-selected-item="searchParams.selectedVerdict"-->
+<!--                                                 md-search-text="verdictSearch"-->
+<!--                                                 md-items="verdict in propertyFilter(propertyValues['sanctionProposal'],verdictSearch)"-->
+<!--                                                 md-item-text="verdict"-->
+<!--                                                 md-min-length="0"-->
+<!--                                                 md-floating-label="dom"-->
+<!--                                                 md-require-match="true"-->
+<!--                                                 md-clear-button="true">-->
+<!--                                    <md-item-template>-->
+<!--                                        <span md-highlight-text="verdictSearch" md-highlight-flags="gi">{{verdict}}</span>-->
+<!--                                    </md-item-template>-->
+<!--                                </md-autocomplete>-->
+                                <div>
+
+                                <md-chips ng-model="searchParams.selectedVerdict"
+                                          md-transform-chip="vm.ChipED($chip)"
+                                          input-aria-label="Dom"
+                                          md-require-match="true"
+                                          ng-show="searchParams.finalVerdict">
+                                    <md-autocomplete
+                                            md-selected-item="vm.selectedVerdict"
+                                            md-search-text="verdictSearch"
+                                            md-items="verdict in propertyFilter(propertyValues['sanctionProposal'],verdictSearch)"
+                                            md-item-text="verdict"
+                                            md-min-length="0"
+                                            md-floating-label="dom"
+                                            md-require-match="true"
+                                            md-clear-button="true">
+                                        <md-item-template>
+                                            <span md-highlight-text="verdictSearch" md-highlight-flags="gi">{{verdict}}</span>
+                                        </md-item-template>
+                                    </md-autocomplete>
+                                    <md-chip-template>
+                                        {{ $chip }}
+                                    </md-chip-template>
+                                </md-chips>
+                                <md-tooltip md-direction="top" md-delay="500" ng-if="searchParams.selectedVerdict != null">{{searchParams.selectedVerdict.join(', ')}}</md-tooltip>
+                                </div>
+
+
+
+
+
+
+
                             </div>
+
+
+
+
 
 
                             <div layout-gt-sm="row" class="layout-gt-sm-row" ng-show="searchParams.closedWithoutDeclarationReason == 'Tilbagesendt'">

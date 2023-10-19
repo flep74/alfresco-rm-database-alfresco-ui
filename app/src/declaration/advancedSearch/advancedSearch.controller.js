@@ -30,6 +30,7 @@ function AdvancedSearchController($scope, $state, $templateCache, $mdDialog, $tr
   vm.clearResults = clearResults;
   vm.evalAll = evalAll;
   vm.transformChip = transformChip;
+  vm.ChipED = ChipED;
   vm.ChipHD = ChipHD;
   vm.ChipMD = ChipMD;
   vm.ChipSP = ChipSP;
@@ -48,6 +49,7 @@ function AdvancedSearchController($scope, $state, $templateCache, $mdDialog, $tr
   vm.selectedSOCIAL = null;
   vm.selectedSUPERVISOR = null;
   vm.selectedSanctionProposal = null;
+  vm.selectedFinalVerdict = null;
 
   vm.PROP_PSYC_LIBRARY_PSYCH_TYPE = "psykologisk_undersoegelsestype";
 
@@ -113,6 +115,10 @@ function AdvancedSearchController($scope, $state, $templateCache, $mdDialog, $tr
   if (!$scope.searchParams.mainDiagnosis) {
     $scope.searchParams.mainDiagnosis = []
   }
+
+  if (!$scope.searchParams.selectedVerdict) {
+      $scope.searchParams.selectedVerdict = []
+    }
 
   if (!$scope.searchParams.placement) {
     $scope.searchParams.placement = []
@@ -593,6 +599,11 @@ function AdvancedSearchController($scope, $state, $templateCache, $mdDialog, $tr
    * Return the proper object when the append is called.
    */
   function transformChip(chip) {
+    // just return the chip as we are simply dealing with a flat list of strings
+    return chip;
+  }
+
+  function ChipED(chip) {
     // just return the chip as we are simply dealing with a flat list of strings
     return chip;
   }

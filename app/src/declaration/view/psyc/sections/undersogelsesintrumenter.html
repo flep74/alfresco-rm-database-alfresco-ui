@@ -20,7 +20,7 @@
                 <input ng-model="case.cprNumber" maxlength="10" minlength="10" ng-disabled="!editPatientData" name="cprNo" ng-disabled="true">
             </md-input-container>
 
-            <md-button class="md-icon-button" ng-click="vm.viewButton2(vm.PROP_PSYC_LIBRARY_INTERVIEWRATING)" ">
+            <md-button class="md-icon-button" ng-click="vm.viewButtonAnvendteInterviewsRatingScale(vm.PROP_PSYC_LIBRARY_INTERVIEWRATING)" ">
                 <md-icon>edit</md-icon>
             </md-button>
 
@@ -34,7 +34,7 @@
                 <input ng-model="case.cprNumber" maxlength="10" minlength="10" ng-disabled="!editPatientData" name="cprNo" ng-disabled="true">
             </md-input-container>
 
-            <md-button class="md-icon-button" ng-click="vm.viewButton2(vm.PROP_PSYC_LIBRARY_KOGNITIV)" ">
+            <md-button class="md-icon-button" ng-click="vm.viewButtonPraestationsTests(vm.PROP_PSYC_LIBRARY_KOGNITIV)" ">
             <md-icon>edit</md-icon>
             </md-button>
 
@@ -43,12 +43,12 @@
         <div layout="row">
 
             <md-input-container class="md-block" flex>
-                <label ng-show="vm.oneormoreImpTest" class="oneormore" >Implicitte (projektive) tests</label>
-                <label ng-hide="vm.oneormoreImpTest">Implicitte (projektive) tests</label>
+                <label ng-show="vm.oneormoreImpTest" class="oneormore" >Implicitte (perceptuelle) tests</label>
+                <label ng-hide="vm.oneormoreImpTest">Implicitte (perceptuelle) tests</label>
                 <input ng-model="case.cprNumber" maxlength="10" minlength="10" ng-disabled="!editPatientData" name="cprNo" ng-disabled="true">
             </md-input-container>
 
-            <md-button class="md-icon-button" ng-click="vm.viewButton2(vm.PROP_PSYC_LIBRARY_IMPLECITE)" ">
+            <md-button class="md-icon-button" ng-click="vm.viewButtonImplicitteTests(vm.PROP_PSYC_LIBRARY_IMPLECITE)" ">
             <md-icon>edit</md-icon>
             </md-button>
 
@@ -62,7 +62,7 @@
                 <input ng-model="case.cprNumber" maxlength="10" minlength="10" ng-disabled="!editPatientData" name="cprNo" ng-disabled="true">
             </md-input-container>
 
-            <md-button class="md-icon-button" ng-click="vm.viewButton2(vm.PROP_PSYC_LIBRARY_EXPLICIT)" ">
+            <md-button class="md-icon-button" ng-click="vm.viewButtonEksplicitteTests(vm.PROP_PSYC_LIBRARY_EXPLICIT)" ">
             <md-icon>edit</md-icon>
             </md-button>
 
@@ -76,7 +76,7 @@
                 <input ng-model="case.cprNumber" maxlength="10" minlength="10" ng-disabled="!editPatientData" name="cprNo" ng-disabled="true">
             </md-input-container>
 
-            <md-button class="md-icon-button" ng-click="vm.viewButton2(vm.PROP_PSYC_LIBRARY_MALERING)" ">
+            <md-button class="md-icon-button" ng-click="vm.viewButtonMalingering(vm.PROP_PSYC_LIBRARY_MALERING)" ">
             <md-icon>edit</md-icon>
             </md-button>
 
@@ -85,13 +85,13 @@
         <div layout="row">
 
             <md-input-container class="md-block" flex>
-                <label ng-show="vm.oneormoreRisikoVurdering" class="oneormore">Risikovurderingsinstrumenter</label>
-                <label ng-hide="vm.oneormoreRisikoVurdering" >Risikovurderingsinstrumenter</label>
+                <label ng-show="vm.oneormoreRisikoVurdering" class="oneormore">Risikoinstrumenter</label>
+                <label ng-hide="vm.oneormoreRisikoVurdering" >Risikoinstrumenter</label>
 
                 <input ng-model="case.cprNumber" maxlength="10" minlength="10" ng-disabled="!editPatientData" name="cprNo" ng-disabled="true">
             </md-input-container>
 
-            <md-button class="md-icon-button" ng-click="vm.viewButton2(vm.PROP_PSYC_LIBRARY_RISIKO)" ">
+            <md-button class="md-icon-button" ng-click="vm.viewButtonRisiko(vm.PROP_PSYC_LIBRARY_RISIKO)" ">
             <md-icon>edit</md-icon>
             </md-button>
 

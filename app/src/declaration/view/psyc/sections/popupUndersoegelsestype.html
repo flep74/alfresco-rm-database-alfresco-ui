@@ -1,0 +1,102 @@
+
+
+<html>
+
+<style type="text/css">
+        .true {
+            color: white;
+            background-color: rgb(172,203,252);
+            text-align: center;
+        }
+        .false {
+            text-align: center;
+        }
+        .myBorder_true {
+            text-align: center;
+            border-width:3px;
+            border-style:solid;
+            border-color: black;
+            background-color: rgb(172,203,252);
+            padding: 0.1em;
+            width:350px;
+            margin: 0 auto;
+            display: block;
+            vertical-align: middle;
+        }
+        .myBorder_false {
+            text-align: center;
+            border-width:3px;
+            border-style:solid;
+            border-color: black;
+            padding: 0.1em;
+            width:350px;
+            margin: 0 auto;
+            display: block;
+            vertical-align: middle;
+        }
+        .myBorder {
+            border-width:3px;
+            border-style:solid;
+            border-color: black;
+            padding: 0.1em;
+            width:350px;
+            margin: 0 auto;
+            display: block;
+            vertical-align: middle;
+            background-color: rgb(153, 0, 51);
+            color : white;
+        }
+
+</style>
+
+<md-card style="width: 1000px;">
+    <md-card-title>
+        <md-card-title-text>
+            <div>
+            <center><span class="md-headline">{{vm.selectedInstrumentName}}</span></center>
+            </div>
+        </md-card-title-text>
+    </md-card-title>
+    <md-card-content >
+
+                    <div class="myBorder"  style="width: 600px;" layout-align="center" >
+                        <p>Den psykologiske undersøgelse har haft primært fokus på, foretaget sekundær
+                            vurdering af, og har ført til underbyggede konklusioner om følgende områder: </p>
+                    </div>
+                    <p></p>
+                    <div class="myBorder_{{ vm.showText[0].val }}"  layout-align="center" >
+                        <p> <div ng-click="vm.showTextClicked(0)"> {{ vm.showText[0].label }} </div> </p>
+                    </div>
+                    <p></p>
+                    <div class="myBorder_{{ vm.showText[1].val }}" layout-align="center" >
+                        <div ng-click="vm.showTextClicked(1)"> {{ vm.showText[1].label }} </div>
+                    </div>
+                    <p></p>
+                    <div class="myBorder_{{ vm.showText[2].val }}" layout-align="center" >
+                        <div ng-click="vm.showTextClicked(2)"> {{ vm.showText[2].label }} </div>
+                    </div>
+                    <p></p>
+                    <div class="myBorder_{{ vm.showText[3].val }}" layout-align="center" >
+                        <div ng-click="vm.showTextClicked(3)"> {{ vm.showText[3].label }} </div>
+                    </div>
+                    <p></p>
+                    <div class="myBorder_{{ vm.showText[4].val }}" layout-align="center" >
+                        <div ng-click="vm.showTextClicked(4)"> {{ vm.showText[4].label }} </div>
+                    </div>
+                    <p></p>
+                    <div class="myBorder_{{ vm.showText[5].val }}" layout-align="center" >
+                        <div ng-click="vm.showTextClicked(5)"> {{ vm.showText[5].label }} </div>
+                    </div>
+                    <p></p>
+                    <div class="myBorder_{{ vm.showText[6].val }}" layout-align="center" >
+                        <div ng-click="vm.showTextClicked(6)"> {{ vm.showText[6].label }} </div>
+                    </div>
+                    <p></p>
+
+                    <div align="right">
+                    <md-button ng-click="vm.save(vm.showText, 'psykologisk_undersoegelsestype')"> gem</md-button>  <md-button  ng-click="vm.cancelDialog()">fortryd</md-button>
+                    </div>
+
+    </md-card-content>
+</md-card>
+</html>

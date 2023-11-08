@@ -10,6 +10,7 @@
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "~3.1.0",
     "gulp-change": "^1.0.0",
+    "gulp-cli": "^2.3.0",
     "gulp-concat": "^2.6.0",
     "gulp-git": "1.6.0",
     "gulp-install": "^0.6.0",
@@ -42,7 +43,6 @@
     "angular-popeye": "^1.0.5",
     "del": "^6.1.1",
     "filter": "^0.1.1",
-    "gulp-cli": "^2.3.0",
     "moment": "^2.29.4",
     "print-js": "^1.6.0"
   }

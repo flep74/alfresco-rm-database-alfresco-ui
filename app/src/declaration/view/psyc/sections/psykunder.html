@@ -14,14 +14,14 @@
         <div layout="row">
 
             <md-input-container class="md-block" flex>
-                <label ng-show="vm.oneormorePsykologiskUnder" class="oneormore">psykologisk undersøgelsestype</label>
-                <label ng-hide="vm.oneormorePsykologiskUnder" >psykologisk undersøgelsestype</label>
+                <label ng-show="vm.oneormorePsykologiskUnder" class="oneormore">Psykologisk undersøgelsestype</label>
+                <label ng-hide="vm.oneormorePsykologiskUnder" >Psykologisk undersøgelsestype</label>
 
 
                 <input ng-model="vm.PsycInstruments" maxlength="10" minlength="10" name="psychInstruments" ng-disabled="true">
             </md-input-container>
 
-            <md-button class="md-icon-button" ng-click="vm.viewButton2(vm.PROP_PSYC_LIBRARY_PSYCH_TYPE)" ">
+            <md-button class="md-icon-button" ng-click="vm.viewButtonUndersoegelsestype(vm.PROP_PSYC_LIBRARY_PSYCH_TYPE)" ">
                 <md-icon>edit</md-icon>
             </md-button>
 

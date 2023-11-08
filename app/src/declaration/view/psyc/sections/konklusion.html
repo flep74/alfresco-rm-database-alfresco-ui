@@ -8,16 +8,20 @@
     .oneormore {
         font-weight: bold;
     }
+    .border {
+        border-width:3px;
+        border-style:solid;
+        border-color: black;
+    }
 
 </style>
 
 <html>
-<md-card>
+<md-card class="border">
     <md-card-title>
         <md-card-title-text>
-            <span ng-show="vm.oneormoreKonklusion" class="md-headline oneormore">Konklusion på psykologisk undersøgelse</span>
-            <span ng-hide="vm.oneormoreKonklusion" class="md-headline">Konklusion på psykologisk undersøgelse</span>
-<!--            <span class="md-headline">Konklusion på psykologisk undersøgelse</span>-->
+            <span ng-show="vm.oneormoreKonklusion" class="md-headline oneormore">Konklusion underbygget af den psykologisk undersøgelse</span>
+            <span ng-hide="vm.oneormoreKonklusion" class="md-headline">Konklusion underbygget af den psykologisk undersøgelse</span>
         </md-card-title-text>
     </md-card-title>
     <md-card-content>
@@ -27,7 +31,7 @@
                 <textarea  ng-disabled="vm.disableTextArea" style="width: 500px" ng-model="vm.conclusionText" rows="3"></textarea>
             </md-input-container>
 
-        <md-button  ng-click="vm.viewButton2(vm.PROP_PSYC_LIBRARY_KONKLUSION_TAGS)" ">Standard formuleringer
+        <md-button  ng-click="vm.viewButtonKonklusion(vm.PROP_PSYC_LIBRARY_KONKLUSION_TAGS)" ">Standard formuleringer
         <md-icon>edit</md-icon>
         </md-button>
 

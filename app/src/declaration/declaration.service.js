@@ -126,7 +126,7 @@ function DeclarationService($http, $filter) {
   }
 
   function createEntry(entry) {
-    return $http.post("/alfresco/s/database/retspsyk/entry", {
+    return $http.post("/alfresco/s/database/retspsyk/entrytest", {
       "type": "forensicPsychiatryDeclaration",
       "properties": entry.properties,
       "bua": entry.bua

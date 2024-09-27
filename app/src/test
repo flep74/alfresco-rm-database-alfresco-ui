@@ -1,0 +1,174 @@
+{
+	"data": [
+		{
+			"val": false,
+			"id": "130",
+			"label": "ARMADILO-G"
+		},
+		{
+			"val": false,
+			"id": "131",
+			"label": "ARMADILO-S"
+		},
+		{
+			"val": false,
+			"id": "148",
+			"label": "BVC"
+		},
+		{
+			"val": false,
+			"id": "138",
+			"label": "EARL 20B/21G"
+		},
+		{
+			"val": false,
+			"id": "142",
+			"label": "ERASOR v2"
+		},
+		{
+			"val": false,
+			"id": "135",
+			"label": "ERG-22+"
+		},
+		{
+			"val": false,
+			"id": "121",
+			"label": "FAM"
+		},
+		{
+			"val": false,
+			"id": "119",
+			"label": "HCR-20 v3"
+		},
+		{
+			"val": false,
+			"id": "118",
+			"label": "HCR-20-v2"
+		},
+		{
+			"val": false,
+			"id": "141",
+			"label": "J-SOAP II"
+		},
+		{
+			"val": false,
+			"id": "132",
+			"label": "M-TTAF"
+		},
+		{
+			"val": false,
+			"id": "143",
+			"label": "MEGA"
+		},
+		{
+			"val": false,
+			"id": "134",
+			"label": "MLG"
+		},
+		{
+			"val": false,
+			"id": "133",
+			"label": "NFRA"
+		},
+		{
+			"val": false,
+			"id": "127",
+			"label": "PATRIARCH v2"
+		},
+		{
+			"val": false,
+			"id": "124",
+			"label": "RSVP v1"
+		},
+		{
+			"val": false,
+			"id": "125",
+			"label": "RSVP v2"
+		},
+		{
+			"val": false,
+			"id": "128",
+			"label": "SAM"
+		},
+		{
+			"val": false,
+			"id": "120",
+			"label": "SAPROV v2"
+		},
+		{
+			"val": false,
+			"id": "140",
+			"label": "SAPROV:YV"
+		},
+		{
+			"val": false,
+			"id": "126",
+			"label": "SARA v3"
+		},
+		{
+			"val": false,
+			"id": "139",
+			"label": "SAVRY"
+		},
+		{
+			"val": false,
+			"id": "129",
+			"label": "SRP"
+		},
+		{
+			"val": false,
+			"id": "149",
+			"label": "START"
+		},
+		{
+			"val": false,
+			"id": "147",
+			"label": "STATIC-2000"
+		},
+		{
+			"val": false,
+			"id": "146",
+			"label": "STATIC-99-R"
+		},
+		{
+			"val": false,
+			"id": "122",
+			"label": "SVR-20 v1"
+		},
+		{
+			"val": false,
+			"id": "123",
+			"label": "SVR-20 v2"
+		},
+		{
+			"val": false,
+			"id": "137",
+			"label": "TRAP-18"
+		},
+		{
+			"val": false,
+			"id": "150",
+			"label": "V-RISK 10"
+		},
+		{
+			"val": false,
+			"id": "136",
+			"label": "VERA-2R"
+		},
+		{
+			"val": false,
+			"id": "144",
+			"label": "VRAG"
+		},
+		{
+			"val": false,
+			"id": "145",
+			"label": "VRAG-R"
+		},
+		{
+			"val": false,
+			"id": "151",
+			"label": "VRT"
+		}
+	]
+}

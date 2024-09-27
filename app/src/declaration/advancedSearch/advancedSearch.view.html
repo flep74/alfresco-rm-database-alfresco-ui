@@ -552,11 +552,6 @@
                             <th md-column md-order-by="bua">Type</th>
                             <th md-column md-order-by="fullName">Navn</th>
                             <th md-column md-numeric md-order-by="cprNumber">CPR</th>
-
-
-                            <th ng-show="!searchParams.finalVerdict" md-column md-numeric md-order-by="journalNumber">JNR</th>
-                            <th ng-show="!searchParams.finalVerdict" md-column md-numeric md-order-by="RefA">HI</th>
-
                             <th md-column md-order-by="doctor">Læge</th>
                             <th md-column md-order-by="supervisingDoctor">Tiltrædes af læge</th>
                             <th md-column md-order-by="closed">Erklæring afgivet</th>
@@ -572,11 +567,6 @@
                             <td md-cell>{{case.bua ? 'BUA' : 'PS'}}</td>
                             <td md-cell>{{case.fullName}}</td>
                             <td md-cell>{{case.cprNumber}} </td>
-
-                            <div ng-show="searchParams.finalVerdict != True">
-                                <td md-cell>{{case.journalNumber}}</td>
-                                <td md-cell>{{case.referingAgency}}</td>
-                            </div>
                             <td md-cell>{{case.doctor}}</td>
                             <td md-cell>{{case.supervisingDoctor}}</td>
                             <td md-cell>
